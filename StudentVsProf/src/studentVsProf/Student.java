@@ -2,25 +2,34 @@ package studentVsProf;
 
 public class Student {
 
-	static int HP = 0; // HP = HealthPoints
-	static int DMG = 0; // DMG = Damage
+	static int HP = 2; // HP = HealthPoints
+	static int DMG = 1; // DMG = Damage
 	static double posXY;
+	static double speed;
+	static Prof prof;
 
-	
-	public void studentLoader() {		//Hier sollen Studenten automatisch zufällig auf dem Spielfeld erscheinen
-		  
-		
-		
-	}
-	
-	public double move(double posXY) {
-		posXY++; // Student bewegt sich um ein Feld
+	public double move(double posXY, double speed) {
+		posXY++; // Student bewegt sich um ein Feld auf der xAchse nach vorne
 
 		return posXY;
 	}
 
-	public void eat() {
-		
+	public int eat(Prof prof) { // wenn gefressen, delete Professor
+		prof.HP = prof.HP - DMG;
+		System.out.println("Prof angekaut!");
+		if (prof.HP <= 0) {
+			prof = null;
+			System.out.println("Prof tot!");
+		}
+		return prof.HP;
 	}
 
+	public void studentLoader() {
+
+		// Hier sollen Studenten automatisch zufällig(auf der yAchse) auf dem Spielfeld
+		// erscheinen.
+		// x = 0!
+		// Nach Zeit immer mehr Studenten
+
+	}
 }
