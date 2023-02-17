@@ -70,7 +70,7 @@ public class Client {
 	public static void endOfGame() {
 
 		//player = "Sebastian";
-		score = 61;
+		score = -45;
 		db.insertScore(player, getDate(), score);
 
 	}
