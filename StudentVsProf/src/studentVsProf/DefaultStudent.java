@@ -1,5 +1,5 @@
 package studentVsProf;
 
-public class DefaultStudent extends Student{
-
+public class DefaultStudent{
+//asoeiudfhboluishufd lqudfhlöiasdhdöoubsahnoidnj oökl.jda löaksnlik test
 }
