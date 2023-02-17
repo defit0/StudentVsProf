@@ -1,0 +1,18 @@
+SQL Datenbankaufbau
+
+
+CREATE DATABASE hvsdatabase;
+
+CREATE TABLE benutzer (
+	name VARCHAR(50),
+    CONSTRAINT pkbenutzer PRIMARY KEY (name)
+);
+
+CREATE TABLE highscoreliste (
+	id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(50),
+    datum DATE,
+    score Integer,
+    CONSTRAINT pkhighscoreliste PRIMARY KEY (id),
+    CONSTRAINT fkhighscorelistebenutzer FOREIGN KEY (name) REFERENCES benutzer (name)
+);
