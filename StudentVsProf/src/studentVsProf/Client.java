@@ -49,7 +49,7 @@ public class Client {
 
 	public static void main(String[] args) {
 
-		//createUser();
+		createUser();
 		endOfGame();
 
 	}
@@ -69,7 +69,7 @@ public class Client {
 
 	public static void endOfGame() {
 
-		player = "Sebastian2";
+		//player = "Sebastian";
 		score = 61;
 		db.insertScore(player, getDate(), score);
 
