@@ -1,18 +1,12 @@
 package Student;
 import Dozenten.attackType;
 
-public class DefenseType {
+public interface DefenseType {
 
 	
 	
 	
-	public void getDamage(int damage, attackType at) {
-		
-		
-		
-		
-		
-	}
+	public Effect getHit(int damage, attackType at);
 	
 	
 	
