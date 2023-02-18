@@ -1,0 +1,16 @@
+Wichtige Infos und Links!
+
+https://falconbyte.net/java-mysql.php
+https://dev.mysql.com/downloads/connector/j/
+https://www.schattenbaum.net/php/verbindung.php
+
+
+statement.executeUpdate("INSERT INTO benutzer (name) VALUES ('Beispielnutzer')");//Benutzer hinzufügen
+statement.executeUpdate("DELETE FROM `spieler` WHERE name = 'test';"); //nutzer löschen
+"REPLACE INTO highscoreliste (name,datum,score) VALUES ('" + name + "','" + date+ "'," + score + ");" //score eintragen
+
+Statement stm = con.createStatement(); //benötigt für SELECT-Abfrage
+ResultSet rs = stm.executeQuery("SELECT * FROM highscoreliste;"); //SELECT Abfrage
+while(rs.next()){ //Ausgabe aller Daten
+System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + " "   );	}
+
