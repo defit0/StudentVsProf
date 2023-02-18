@@ -3,6 +3,7 @@ package Student;
 import java.util.ArrayList;
 
 import Dozenten.attackType;
+import StudentenVsDozenten.Effekte.Effect;
 
 public class Student {
 

@@ -1,10 +1,10 @@
 package Dozenten;
 
-import Student.Effect;
 import Student.Genie;
 import Student.SingleDamage;
 import Student.deaf;
 import Student.standart;
+import StudentenVsDozenten.Effekte.Effect;
 
 public class talk implements attackType{
 

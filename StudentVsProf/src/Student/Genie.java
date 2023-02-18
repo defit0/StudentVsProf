@@ -1,6 +1,7 @@
 package Student;
 
 import Dozenten.attackType;
+import StudentenVsDozenten.Effekte.Effect;
 
 public class Genie implements DefenseType{
 

@@ -1,4 +1,6 @@
-package Student;
+package StudentenVsDozenten.Effekte;
+
+import Student.Student;
 
 public interface Effect {
 	

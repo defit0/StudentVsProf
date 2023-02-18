@@ -1,5 +1,7 @@
 package Student;
 
+import StudentenVsDozenten.Effekte.Effect;
+
 public class SingleDamage implements Effect {
 	int Damage = 0;
 	
