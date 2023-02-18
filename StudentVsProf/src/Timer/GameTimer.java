@@ -23,11 +23,18 @@ public class GameTimer {
 
 			@Override
 			public void run() {
-				System.out.println("hey");
+				System.out.println("Hey");
+				for(TimerAction at: ActionList) {
+					at.TimerActionPerform();
+				}
 				
 			}
 			
 		};
 		timer.schedule(toDo, tack, tack);
+	}
+	
+	public void add(TimerAction at) {
+		ActionList.add(at);
 	}
 }

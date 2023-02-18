@@ -1,6 +1,6 @@
-package Student;
+package StudentenVsDozenten.Effekte;
 
-import StudentenVsDozenten.Effekte.Effect;
+import Student.Student;
 
 public class SingleDamage implements Effect {
 	int Damage = 0;
@@ -12,7 +12,11 @@ public class SingleDamage implements Effect {
 		this.Damage = d;
 	}
 	 public void influence(Student S) {
-		S.getDamage(0);
+		S.AllEffects.remove(this);
+	}
+	@Override
+	public void influenceFirst(Student S) {
+		S.getDamage(Damage);
 		S.AllEffects.remove(this);
 	}
 }

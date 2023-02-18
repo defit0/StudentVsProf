@@ -6,8 +6,8 @@ import StudentenVsDozenten.Effekte.Effect;
 public class deaf implements DefenseType{
 
 	@Override
-	public Effect getHit(int damage, attackType at) {
-		return at.attacPattern(this,damage);
+	public Effect getHit(int damage, attackType at,int length,int intensity) {
+		return at.attacPattern(this,damage, length, intensity);
 		
 	}
 

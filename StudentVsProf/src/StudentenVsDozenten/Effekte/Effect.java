@@ -4,7 +4,7 @@ import Student.Student;
 
 public interface Effect {
 	
-	default void influence(Student S) {
-		
-	}
+	 void influence(Student S);
+	 void influenceFirst(Student S);
+	 //S.AllEffects.remove(this);
 }
