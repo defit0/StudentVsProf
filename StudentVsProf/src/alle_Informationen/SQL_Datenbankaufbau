@@ -5,6 +5,7 @@ CREATE DATABASE hvsdatabase;
 
 CREATE TABLE benutzer (
 	name VARCHAR(50),
+	passwort VARCHAR(50),
     CONSTRAINT pkbenutzer PRIMARY KEY (name)
 );
 

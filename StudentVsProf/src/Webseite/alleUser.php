@@ -8,6 +8,18 @@
 </head>
 
 <body>
+    <div class="navbar">
+        <img src="paint.svg" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="register.php">Account erstellen</a></li>
+                <li><a href="alleUser.php">Übersicht Nutzer</a></li>
+                <li><a href="impressum.php">Impressum</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
     <header>
         <h1>Alle User</h1>
     </header>
@@ -37,10 +49,6 @@
         </table>
 
     </main>
-    <footer>
-    <a href="Highscoreliste.php">zurück</a>
-    
-    </footer>
 
 </body>
 
