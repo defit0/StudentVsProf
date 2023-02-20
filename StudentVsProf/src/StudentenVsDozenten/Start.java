@@ -18,7 +18,7 @@ public class Start {
 		Peter.gethit(0, AT,5,2);
 		Peter.gethit(5, AT,5,2);
 		gt.start();
-		//ich habe was geändert
+		
 
 	}
 

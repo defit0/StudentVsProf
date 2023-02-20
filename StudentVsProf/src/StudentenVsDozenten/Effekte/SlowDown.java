@@ -31,7 +31,10 @@ public class SlowDown implements Effect {
 		
 		//überprüft ob es bereits einen solo down efeckt gibt... ÜBERARBEITEN
 		for(Effect E: S.AllEffects) {
-			if(E.getClass() == this.getClass()) {
+			//System.out.println("Sloodauon.influencFirst.E."+E.getClass());
+			//System.out.println("Sloodauon.influencFirst.this."+this.getClass());
+			if(E.getClass() == this.getClass()&& !this.equals(E)) {
+				found = true;
 				otherEffect = (SlowDown) E;
 			}
 		}
