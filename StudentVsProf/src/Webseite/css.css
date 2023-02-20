@@ -1,26 +1,166 @@
-table{
+table {
     margin-left: auto;
     margin-right: auto;
 }
-th{
+
+th {
     text-align: left;
     padding-right: 5px;
     padding-left: 5px;
 }
-td{
-   padding-right: 5px;
-   padding-left: 5px;
+
+td {
+    padding-right: 5px;
+    padding-left: 5px;
 }
-h1{
+
+h1 {
     text-align: center;
+    font-family: "Shlop";
+    font-size: 40pt;
+    color: #0a8a13;
 }
-header{
+
+header {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    
+
 }
-body{
+
+body {
     width: 100%;
     font-family: cursive;
+    margin: 0;
+    padding: 0;
+
 }
+
+input {
+    clear: right;
+    margin-left: auto;
+    //text-align: center;
+
+
+
+}
+
+#formular {
+    text-align: center;
+}
+
+.inputfelder {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    padding: 20px;
+    //background-color: red;
+    width: 17%;
+    
+
+}
+
+input {
+
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 1px solid dimgrey;
+    border-radius: 8px;
+    //box-sizing: border-box;
+
+}
+
+button {
+    background-color: dimgrey;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Shlop";
+    font-size: 20pt;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+
+}
+
+button:hover,
+button:focus {
+    background-color: #0a8a13;
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    float: right;
+    font-family: "Shlop";
+    font-size: 15pt;
+}
+
+li {
+    display: inline;
+    margin: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #353535;
+    display: inline-block;
+    padding-top: 15px;
+}
+
+nav a:hover {
+    color: #0a8a13;
+    /*damals #00b2b2*/
+}
+
+nav a:active {
+    font-weight: bold;
+}
+
+.navbar {
+    background-color: #e5e5e5;
+    height: 50px;
+}
+
+.navbar img {
+    width: 150px;
+    padding: 1px;
+}
+
+@font-face {
+    font-family: "Shlop";
+    src: url("shlop.otf");
+}
+
+
+@media screen and (max-width: 700px) {
+    nav {
+        width: 100%;
+        margin-top: -5px;
+    }
+
+    nav li {
+        display: block;
+        background-color: #e5e5e5;
+        text-align: center;
+    }

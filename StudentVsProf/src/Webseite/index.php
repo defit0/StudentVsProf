@@ -2,12 +2,26 @@
 
 
 <head>
-    <title>StudiVsProf</title>
+    <title>StudiVsDozent</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css.css">
 </head>
 
 <body>
+
+    <div class="navbar">
+    <img src="paint.svg" alt="logo">
+    <nav>
+        <ul>
+            <li><a href="index.php">Home</a></li>
+            <li><a href="register.php">Account erstellen</a></li>
+            <li><a href="alleUser.php">Übersicht Nutzer</a></li>
+            <li><a href="impressum.php">Impressum</a></li>
+        </ul>
+    </nav>
+    </div>
+    <br>
+    
     <header>
         <h1>Top 10</h1>
     </header>
@@ -19,7 +33,7 @@
                 <th>erspielt am:</th>
                 <th>Score</th>
             </tr>
-<?php
+            <?php
     
     include("dbconnect.php");
     include("SQL_Abfragen.php");
