@@ -2,11 +2,8 @@ package StudentenVsDozenten;
 
 import Dozenten.attackType;
 import Dozenten.practice;
-import Dozenten.talk;
 import Student.Student;
 import Student.deaf;
-import StudentenVsDozenten.Effekte.Effect;
-import StudentenVsDozenten.Effekte.SingleDamage;
 import Timer.GameTimer;
 
 public class Start {
@@ -19,6 +16,7 @@ public class Start {
 		attackType AT = new practice();
 		Peter.gethit(5, AT,5,2);
 		gt.start();
+		//ich habe was geändert
 
 	}
 
