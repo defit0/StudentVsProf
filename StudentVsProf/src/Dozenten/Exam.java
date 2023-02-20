@@ -9,11 +9,7 @@ public class Exam implements attackType{
 
 	@Override
 	public Effect attacPattern(deaf dt, int damage,int length,int intensity) {
-		int criticel = 1;
-		if(Math.random()<0.10) {
-			criticel = 1000;
-		}
-		return new SingleDamage(damage*criticel);
+		return standard(damage,length,intensity);
 	}
 
 	@Override
@@ -27,6 +23,10 @@ public class Exam implements attackType{
 
 	@Override
 	public Effect attacPattern(standart dt, int damage,int length,int intensity) {
+		return standard(damage,length,intensity);
+	}
+	
+	private Effect standard( int damage,int length,int intensity) {
 		int criticel = 1;
 		if(Math.random()<0.10) {
 			criticel = 1000;

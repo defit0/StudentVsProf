@@ -29,7 +29,7 @@ public class SlowDown implements Effect {
 		boolean found = false;
 		SlowDown otherEffect = null; 
 		
-		//überprüft ob es bereits einen solo down efeckt gibt
+		//überprüft ob es bereits einen solo down efeckt gibt... ÜBERARBEITEN
 		for(Effect E: S.AllEffects) {
 			if(E.getClass() == this.getClass()) {
 				otherEffect = (SlowDown) E;

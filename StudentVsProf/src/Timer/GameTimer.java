@@ -23,7 +23,6 @@ public class GameTimer {
 
 			@Override
 			public void run() {
-				System.out.println("Hey");
 				for(TimerAction at: ActionList) {
 					at.TimerActionPerform();
 				}
