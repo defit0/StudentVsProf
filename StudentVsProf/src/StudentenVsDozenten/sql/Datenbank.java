@@ -15,9 +15,9 @@ public class Datenbank {
 	static String pass = "";
 	*/
 	//öffentliche DB-Verbindung
-	static String url = "jdbc:mysql://dozentvsstudent.bplaced.net:5432/dozentvsstudent_hvsdatabase";
-	static String user = "dozentvsstudent_mainuser";
-	static String pass = "mainuser23";
+	static String url = "jdbc:mysql://cp40.sp-server.net:3306/leondie1_hochschule";
+	static String user = "leondie1_hochschule_user";
+	static String pass = "m*tjgK7H9n*W";
 	String playerdb;
 	String pwdb;
 	String salt;
