@@ -18,7 +18,7 @@ public class Datenbank {
 	public void login(String player, String pw) {
 
 		try {
-			BCrypt bcrypt = new BCrypt();
+			
 			Connection db = DriverManager.getConnection(url, user, pass);
 			System.out.println("Verbindung erfolgreich hergestellt");
 			Statement stm = db.createStatement();
@@ -30,8 +30,9 @@ public class Datenbank {
 			}
 			System.out.println("pw: "+ pw);
 			System.out.println("pwdb: "+pwdb);
-			salt = "$2a$";
-			pw = bcrypt.hashpw(pw, salt);
+			salt = "$2a$" + pwdb.substring(4);
+			System.out.println("salt: "+salt);
+			pw = BCrypt.hashpw(pw, salt);
 			System.out.println("gehashtes pw"+pw);
 			
 			//bcrypt.checkpw(pw, pwdb);
