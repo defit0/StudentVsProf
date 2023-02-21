@@ -18,25 +18,36 @@ public class Datenbank {
 	public void login(String player, String pw) {
 
 		try {
-			
+
 			Connection db = DriverManager.getConnection(url, user, pass);
 			System.out.println("Verbindung erfolgreich hergestellt");
 			Statement stm = db.createStatement();
-			ResultSet rs = stm.executeQuery("SELECT * FROM benutzer WHERE name = '"+player+"'");
-			while(rs.next()){
-				System.out.println(rs.getString(1) + " " +rs.getString(2));
+			ResultSet rs = stm.executeQuery("SELECT * FROM benutzer WHERE name = '" + player + "'");
+			while (rs.next()) {
+				System.out.println(rs.getString(1) + " " + rs.getString(2));
 				playerdb = rs.getString(1);
 				pwdb = rs.getString(2);
 			}
-			System.out.println("pw: "+ pw);
-			System.out.println("pwdb: "+pwdb);
-			salt = "$2a$" + pwdb.substring(4);
-			System.out.println("salt: "+salt);
-			pw = BCrypt.hashpw(pw, salt);
-			System.out.println("gehashtes pw: "+pw);
-			
-			//bcrypt.checkpw(pw, pwdb);
-			
+			if (pwdb == null || playerdb == null) {
+				System.out.println("Falscher Benutzername.");
+				return;
+			} 
+				salt = "$2a$" + pwdb.substring(4);
+
+				pw = BCrypt.hashpw(pw, salt);
+				pw = pw.substring(0, pw.length() - 10);
+				pw = "$2y$" + pw.substring(4);
+				System.out.println("pwdb: " + pwdb);
+				System.out.println("pw  : " + pw);
+
+				if (pw.equals(pwdb)) {
+
+					System.out.println("angemeldet");
+
+				} else {
+					System.out.println("Falsches Passwort.");
+				}
+
 			
 
 		} catch (SQLException e) {
@@ -66,7 +77,8 @@ public class Datenbank {
 			// Statement stm = con.createStatement();
 			// ResultSet rs = stm.executeQuery("SELECT score FROM `highscoreliste` WHERE
 			// name ='" + name + "'");
-			statement.executeUpdate("REPLACE INTO highscoreliste (name,datum,score) VALUES ('"+name+"','"+date+"',"+score+");");
+			statement.executeUpdate("REPLACE INTO highscoreliste (name,datum,score) VALUES ('" + name + "','" + date
+					+ "'," + score + ");");
 
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
