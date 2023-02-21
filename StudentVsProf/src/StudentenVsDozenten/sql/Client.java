@@ -17,7 +17,7 @@ public class Client {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		start();
-
+		//endOfGame();
 	}
 	
 		
@@ -34,8 +34,8 @@ public class Client {
 
 	public static void endOfGame() {
 
-		//player = "Sebastian";
-		score = -45;
+		player = "Patricia";
+		score = 90;
 		db.insertScore(player, getDate(), score);
 
 	}

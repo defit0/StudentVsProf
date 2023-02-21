@@ -8,9 +8,16 @@ import java.sql.Statement;
 
 public class Datenbank {
 
-	static String url = "jdbc:mysql://localhost:3306/hvsdatabase";
+	/*
+	 lokale Datenbankverbindung
+	static String url = "jdbc:mysql://localhost:3306/hvsdatabase"; 
 	static String user = "root";
 	static String pass = "";
+	*/
+	//öffentliche DB-Verbindung
+	static String url = "jdbc:mysql://dozentvsstudent.bplaced.net:5432/dozentvsstudent_hvsdatabase";
+	static String user = "dozentvsstudent_mainuser";
+	static String pass = "mainuser23";
 	String playerdb;
 	String pwdb;
 	String salt;
