@@ -33,7 +33,7 @@ public class Datenbank {
 			salt = "$2a$" + pwdb.substring(4);
 			System.out.println("salt: "+salt);
 			pw = BCrypt.hashpw(pw, salt);
-			System.out.println("gehashtes pw"+pw);
+			System.out.println("gehashtes pw: "+pw);
 			
 			//bcrypt.checkpw(pw, pwdb);
 			

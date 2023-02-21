@@ -7,6 +7,9 @@
         if (strlen($_POST["password"]) >= 3 && strlen($_POST["name"]) >= 5 && !str_contains($_POST["name"], ' ') && !str_contains($_POST["password"], ' ')){
         $name = $_POST["name"];
         $password = PASSWORD_HASH($_POST["password"], PASSWORD_DEFAULT);
+        //$password = PASSWORD_HASH($_POST["password"], CRYPT_BLOWFISH);    
+            
+              
         //Bedingenungen um User zu erstellen: name und pw mind. 3 Zeichen max. 50. 
         $stmt = $db->prepare($getUser);//getuser
         $stmt->bindParam(":name", $name);
