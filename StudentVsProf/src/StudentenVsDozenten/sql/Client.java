@@ -1,45 +1,36 @@
 package StudentenVsDozenten.sql;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.*;
-import java.text.DateFormat;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.GregorianCalendar;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Client {
 
+	
 	static Scanner s = new Scanner(System.in);
 	static Datenbank db = new Datenbank();
 	static String player;
+	static String pw;
 	static int score;
 
 	public static void main(String[] args) {
-
-		createUser();
-		endOfGame();
+		// TODO Auto-generated method stub
+		start();
 
 	}
-
-	public static void createUser() {
-
-		System.out.println("Was soll dein Spielername sein?");
-		String eingabe = s.next();
-
-		if (db.userAlreadyExists(eingabe) == true) {
-			createUser();
-		} else {
-			db.insertUser(eingabe);
-		}
-		player = eingabe;
+	
+		
+	public static void start() {
+		
+		System.out.println("Benutzer:");
+		player = s.next();
+		System.out.println("Passwort:");
+		pw = s.next();
+		db.login(player,pw);
+		
 	}
+
 
 	public static void endOfGame() {
 
