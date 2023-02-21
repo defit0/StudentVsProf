@@ -6,12 +6,20 @@ import Student.deaf;
 import Student.standart;
 import StudentenVsDozenten.Effekte.Effect;
 
-public interface attackType {
+public abstract class attackType {
 	
 	
-	Effect attacPattern(deaf dt,int damage,int length,int intensity);
-	Effect attacPattern(Genie dt,int damage,int length,int intensity);
-	Effect attacPattern(standart dt, int damage,int length,int intensity);
+	public Effect attacPattern(deaf dt,int damage,int length,int intensity) {
+		return standard(damage,length,intensity);
+	}
+	public Effect attacPattern(Genie dt,int damage,int length,int intensity) {
+		return standard(damage,length,intensity);
+	}
+	public Effect attacPattern(standart dt, int damage,int length,int intensity) {
+		return standard(damage,length,intensity);
+	}
+	
+	abstract protected Effect standard( int damage,int length,int intensity) ;
 
 	
 
