@@ -23,7 +23,8 @@ public class GameTimer {
 
 			@Override
 			public void run() {
-				for(TimerAction at: ActionList) {
+				ArrayList<TimerAction> tuDo = new ArrayList<TimerAction>(ActionList);
+				for(TimerAction at: tuDo) {
 					at.TimerActionPerform();
 				}
 				
@@ -35,5 +36,8 @@ public class GameTimer {
 	
 	public void add(TimerAction at) {
 		ActionList.add(at);
+	}
+	public void remov(TimerAction at) {
+		ActionList.remove(at);
 	}
 }
