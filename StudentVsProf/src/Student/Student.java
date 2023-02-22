@@ -3,24 +3,31 @@ package Student;
 import java.util.ArrayList;
 
 import Dozenten.attackType;
+import DozentenVsStudenten.Map.Field;
+import DozentenVsStudenten.Map.PlayingField;
 import StudentenVsDozenten.Effekte.Effect;
+import StudentenVsDozenten.Hilfsklasse.Position;
 import Timer.TimerAction;
 
 public class Student implements TimerAction{
 
 	int attackspeed;
-	int speed;
+	float speed;
 	int hitpoints;
 	int damage;
+	Position Pos;
+	
 	DefenseType dt;
 	public ArrayList<Effect> AllEffects= new ArrayList<Effect>();
 	
-	public Student(){
+	public Student(float x , int y){
 		this.attackspeed = 1;
-		this.speed = 2;
-		this.hitpoints = 8;
+		this.speed = 0.2f;
+		this.hitpoints = 6;
 		this.damage = 2;
 		this.dt = new standart();
+		this.Pos = new Position( x, y,0.4f);
+		System.out.println("start:" + this);
 	}
 	
 	public void gethit(int damage,attackType at,int length,int intensity) {
@@ -42,6 +49,14 @@ public class Student implements TimerAction{
 		}
 	}
 	
+	private void run() {
+		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), Pos.getyPosition());
+		F.removStudent(this);
+		Pos = Pos.subX(speed);
+		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), Pos.getyPosition());
+		F.addStudent(this);
+	}
+	
 	
 	public void getDamage(int damage){
 		hitpoints -= damage;
@@ -52,22 +67,34 @@ public class Student implements TimerAction{
 	
 	void die(){
 		System.out.println("Ich bin jetzt tot");
+		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), Pos.getyPosition());
+		F.removStudent(this);
+		PlayingField.gameTimer.remov(this);
+	}
+	
+	@Override
+	public void TimerActionPerform() {
+		activateEffects();
+		run();
+		System.out.println(this);
+		
 	}
 
-	public int getSpeed() {
+	public float getSpeed() {
 		return speed;
 	}
 
-	public void setSpeed(int speed) {
+	public void setSpeed(float speed) {
 		this.speed = speed;
 	}
 
 	@Override
 	public String toString() {
 		return "Student [attackspeed=" + attackspeed + ", speed=" + speed + ", hitpoints=" + hitpoints + ", damage="
-				+ damage + ", dt=" + dt.getClass() + ", AllEffects=" + AllEffects + "]";
+				+ damage + ", dt=" + dt.getClass() + ", AllEffects=" + AllEffects + "Pos=" +Pos+"]";
 	}
 
+	
 	public DefenseType getDt() {
 		return dt;
 	}
@@ -76,12 +103,15 @@ public class Student implements TimerAction{
 		this.dt = dt;
 	}
 
-	@Override
-	public void TimerActionPerform() {
-		activateEffects();
-		System.out.println(this);
-		
+	public Position getPos() {
+		return Pos;
 	}
+
+	public void setPos(Position pos) {
+		Pos = pos;
+	}
+
+	
 	
 	
 	

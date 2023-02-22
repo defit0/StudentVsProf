@@ -1,23 +1,24 @@
 package StudentenVsDozenten;
 
-import Dozenten.attackType;
-import Dozenten.practice;
+import Dozenten.Dozent;
+import DozentenVsStudenten.Map.Map;
+import DozentenVsStudenten.Map.PlayingField;
+import DozentenVsStudenten.Map.Printer;
 import Student.Student;
-import Student.deaf;
 import Timer.GameTimer;
 
 public class Start {
 
 	public static void main(String[] args) {
-		GameTimer gt = new GameTimer();
-		Student Peter = new Student();
-		gt.add(Peter);
-		System.out.println(Peter);
-		Peter.setDt(new deaf());
-		attackType AT = new practice();
-		Peter.gethit(0, AT,5,2);
-		Peter.gethit(5, AT,5,2);
-		gt.start();
+		
+		PlayingField pf = new PlayingField();
+		Printer p = new Printer();
+		Dozent Euler = new Dozent(PlayingField.GameMap.getFieldIn(0, 3));
+		Student Tom = new Student(7.9f,3);
+		PlayingField.gameTimer.add(Euler);
+		PlayingField.gameTimer.add(Tom);
+		PlayingField.gameTimer.add(p);
+		PlayingField.gameTimer.start();
 		
 
 	}
