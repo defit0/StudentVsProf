@@ -6,6 +6,7 @@ CREATE DATABASE hvsdatabase;
 CREATE TABLE benutzer (
 	name VARCHAR(50),
 	passwort VARCHAR(50),
+	geld INTEGER,
     CONSTRAINT pkbenutzer PRIMARY KEY (name)
 );
 
@@ -17,3 +18,55 @@ CREATE TABLE highscoreliste (
     CONSTRAINT pkhighscoreliste PRIMARY KEY (id),
     CONSTRAINT fkhighscorelistebenutzer FOREIGN KEY (name) REFERENCES benutzer (name)
 );
+
+CREATE TABLE dozent(
+
+	doid INTEGER NOT NULL AUTO_INCREMENT,
+	doname VARCHAR(100),
+	beschreibung  VARCHAR(255),
+	
+	CONSTRAINT pkdozent PRIMARY KEY (doid) 
+
+);
+
+CREATE TABLE level(
+
+	lvlid INTEGER NOT NULL AUTO_INCREMENT,
+	titel VARCHAR(200),
+	
+	CONSTRAINT pklevel PRIMARY KEY (lvlid) 
+);
+
+CREATE TABLE levelfreigeschaltet(
+
+	name VARCHAR(50),
+	lvlid INTEGER,
+	boolgeschafft boolean NOT NULL default 0,
+	
+	CONSTRAINT pklevelfreigeschaltet PRIMARY KEY (name,lvlid),
+	CONSTRAINT fkbenutzer FOREIGN KEY (name) REFERENCES benutzer (name),
+	CONSTRAINT fklevel FOREIGN KEY (lvlid) REFERENCES level (lvlid)
+
+);
+
+CREATE TABLE dozentfreigeschaltet(
+
+	lvlid INTEGER,
+	doid INTEGER,
+	
+	CONSTRAINT pkdozentfreigeschaltet PRIMARY KEY (lvlid,doid),
+	CONSTRAINT fklevel FOREIGN KEY (lvlid) REFERENCES level (lvlid),
+	CONSTRAINT fkdozent FOREIGN KEY (doid) REFERENCES dozent (doid)
+
+);
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+Webseite: http://hochschule.indieentwickler.net
+
+FTP-Verbindung (Filezilla):
+Serveradresse: ssh.stato.de
+Benutzername: hochschule@hochschule.indieentwickler.net
+Passwort: uG8FeqN3pj8Y3Eb
+
+Datenbankverbindung (Heidi-SQL):
+Hostname/IP: cp40.sp-server.net
+Benutzername: leondie1_hochschule_user
+Passwort: m*tjgK7H9n*W
