@@ -59,14 +59,3 @@ CREATE TABLE dozentfreigeschaltet(
 	CONSTRAINT fkdozent FOREIGN KEY (doid) REFERENCES dozent (doid)
 
 );
-
-
-
-
-
-
-
-
-
-
-
