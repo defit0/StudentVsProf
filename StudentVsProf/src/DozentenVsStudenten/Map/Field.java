@@ -18,6 +18,9 @@ ArrayList<Projectile> Bullets = new ArrayList<Projectile>();//themporer muss vie
 	 Pos = p;
 	 S = s;
  }
+ public boolean hasStudents() {
+	 return Studenten.isEmpty();
+ }
  
  public boolean addDozent(Dozent d) {
 	 if(Doz == null) {
@@ -61,9 +64,11 @@ public void setPos(Position pos) {
 }
 public void addStudent(Student s) {
 	Studenten.add(s);
+	S.addStudent(s);
 }
 public void removStudent(Student s) {
 	Studenten.remove(s);
+	S.removStudent(s);
 }
 
 public void addProjectile(Projectile p) {

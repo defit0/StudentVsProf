@@ -2,9 +2,11 @@ package DozentenVsStudenten.Dozenten;
 
 import DozentenVsStudenten.Map.Field;
 import DozentenVsStudenten.Timer.TimerAction;
+import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
+import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
 import StudentenVsDozenten.Hilfsklasse.Position;
 
-public class Dozent implements TimerAction{
+public class Dozent {
 
 	int attackspeed;
 	int thempAttackspeed;
@@ -12,6 +14,7 @@ public class Dozent implements TimerAction{
 	Position Pos;
 	Field myField;
 	attackType attackType;
+	perceptualBehaviour percBehav;
 	//für die Projektiele
 	int damage;
 	int length;
@@ -24,6 +27,7 @@ public class Dozent implements TimerAction{
 		this.hitpoints = 6;
 		this.myField = F;
 		this.Pos = F.getPos();
+		this.percBehav = new InLineInfinite(this);
 		this.attackType = new talk();
 		this.damage = 2;
 		this.length = 0;
@@ -46,10 +50,6 @@ public class Dozent implements TimerAction{
 		Pos = F.getPos();
 	}
 	
-	@Override
-	public void TimerActionPerform() {
-		Shoot();
-	}
 
 	public Position getPos() {
 		return Pos;

@@ -1,6 +1,6 @@
 package DozentenVsStudenten.Map;
 
-
+import StudentenVsDozenten.Hilfsklasse.Position;
 
 public class Map {
 	final int wide = 5;
@@ -18,6 +18,13 @@ public class Map {
 
 		public Field getFieldIn(int x , int y) {
 			return Series[y].Fields[x];
+		}
+		
+		public Series getSeriesBy(int y) {
+			return Series[y];
+		}
+		public Series getSeriesBy(Position P) {
+			return Series[P.getyPosition()];
 		}
 
 		@Override

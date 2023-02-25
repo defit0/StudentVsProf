@@ -13,12 +13,12 @@ public class Start {
 		
 		PlayingField pf = new PlayingField();
 		Printer p = new Printer();
-		Dozent Euler = new Dozent(PlayingField.GameMap.getFieldIn(0, 4));
+		Dozent Euler = new Dozent(PlayingField.GameMap.getFieldIn(0, 3));
 		Student Tom = new Student(7.9f,3);
-		PlayingField.gameTimer.add(Euler);
 		PlayingField.gameTimer.add(Tom);
 		PlayingField.gameTimer.add(p);
 		PlayingField.gameTimer.start();
+		PlayingField.allePerceptualBehaviour.start();
 		
 
 	}

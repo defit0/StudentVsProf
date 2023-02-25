@@ -34,7 +34,7 @@ public class Projectile implements TimerAction{
 		F.subProjectile(this);
 		Position tempPos = Pos.addX(speet);
 		System.out.print(tempPos);
-		if(Math.round(tempPos.getxPosition())>= PlayingField.EdgeY ) {
+		if(Math.round(tempPos.getxPosition())>= PlayingField.Edgex ) {
 			removMe();//auserhalb das Spielfelds
 			return;
 		}
