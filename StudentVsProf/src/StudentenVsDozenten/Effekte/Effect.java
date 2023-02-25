@@ -1,6 +1,6 @@
 package StudentenVsDozenten.Effekte;
 
-import Student.Student;
+import DozentenVsStudenten.Student.Student;
 
 public interface Effect {
 	

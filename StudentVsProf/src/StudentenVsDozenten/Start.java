@@ -1,11 +1,11 @@
 package StudentenVsDozenten;
 
-import Dozenten.Dozent;
+import DozentenVsStudenten.Dozenten.Dozent;
 import DozentenVsStudenten.Map.Map;
 import DozentenVsStudenten.Map.PlayingField;
 import DozentenVsStudenten.Map.Printer;
-import Student.Student;
-import Timer.GameTimer;
+import DozentenVsStudenten.Student.Student;
+import DozentenVsStudenten.Timer.GameTimer;
 
 public class Start {
 
@@ -13,7 +13,7 @@ public class Start {
 		
 		PlayingField pf = new PlayingField();
 		Printer p = new Printer();
-		Dozent Euler = new Dozent(PlayingField.GameMap.getFieldIn(0, 3));
+		Dozent Euler = new Dozent(PlayingField.GameMap.getFieldIn(0, 4));
 		Student Tom = new Student(7.9f,3);
 		PlayingField.gameTimer.add(Euler);
 		PlayingField.gameTimer.add(Tom);

@@ -1,8 +1,8 @@
-package Dozenten;
+package DozentenVsStudenten.Dozenten;
 
 import DozentenVsStudenten.Map.Field;
+import DozentenVsStudenten.Timer.TimerAction;
 import StudentenVsDozenten.Hilfsklasse.Position;
-import Timer.TimerAction;
 
 public class Dozent implements TimerAction{
 
@@ -31,7 +31,7 @@ public class Dozent implements TimerAction{
 		this.BulletSpeet = 1f;
 		F.addDozent(this);
 	}
-	void Shoot() {
+	public void Shoot() {
 		if(thempAttackspeed == attackspeed) {
 			Projectile Bullet = new Projectile(this);
 			thempAttackspeed = 0;

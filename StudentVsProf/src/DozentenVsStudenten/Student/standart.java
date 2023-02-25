@@ -1,14 +1,13 @@
-package Student;
+package DozentenVsStudenten.Student;
 
-import Dozenten.attackType;
+import DozentenVsStudenten.Dozenten.attackType;
 import StudentenVsDozenten.Effekte.Effect;
 
-public class Genie implements DefenseType{
+public class standart implements DefenseType{
 
 	@Override
 	public Effect getHit(int damage, attackType at,int length,int intensity) {
 		return at.attacPattern(this,damage, length, intensity);
-		
 	}
 
 }

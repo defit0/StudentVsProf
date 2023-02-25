@@ -1,10 +1,10 @@
-package Dozenten;
+package DozentenVsStudenten.Dozenten;
 
 import DozentenVsStudenten.Map.Field;
 import DozentenVsStudenten.Map.PlayingField;
-import Student.Student;
+import DozentenVsStudenten.Student.Student;
+import DozentenVsStudenten.Timer.TimerAction;
 import StudentenVsDozenten.Hilfsklasse.Position;
-import Timer.TimerAction;
 
 public class Projectile implements TimerAction{
 	Dozent Doz;
