@@ -19,7 +19,7 @@ public class inLineTwo extends perceptualBehaviour{
 		Field F2 =PlayingField.GameMap.getFieldIn((int)P1.getxPosition(),P1.getyPosition());
 		Position P2 = myDozent.getPos().addX(1);
 		Field F3 =PlayingField.GameMap.getFieldIn((int)P2.getxPosition(),P2.getyPosition());
-		return F1.hasStudents()||F2.hasStudents()||F3.hasStudents();
+		return !F1.hasStudents()||!F2.hasStudents()||!F3.hasStudents();
 	}
 
 }
