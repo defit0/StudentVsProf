@@ -1,6 +1,6 @@
-package Dozenten;
+package DozentenVsStudenten.Dozenten;
 
-import Student.deaf;
+import DozentenVsStudenten.Student.deaf;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Effekte.SingleDamage;
 

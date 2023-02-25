@@ -1,5 +1,5 @@
-package Student;
-import Dozenten.attackType;
+package DozentenVsStudenten.Student;
+import DozentenVsStudenten.Dozenten.attackType;
 import StudentenVsDozenten.Effekte.Effect;
 
 public interface DefenseType {

@@ -1,12 +1,16 @@
 package DozentenVsStudenten.Map;
 
+import java.util.ArrayList;
+
+import DozentenVsStudenten.Student.Student;
 import StudentenVsDozenten.Hilfsklasse.Position;
 
 public class Series {
-int length = PlayingField.EdgeY ;
+int length = PlayingField.Edgex ;
 Map map;
 int yPosition;
 Field [] Fields = new Field [length];
+ArrayList<Student> Studenten = new ArrayList<Student>();
 
 	public Series(int y,Map m) {
 		map = m;
@@ -28,6 +32,17 @@ Field [] Fields = new Field [length];
 			S += F.toString();
 		}
 		return S +"]";
+	}
+	 public boolean hasStudents() {
+		 return !Studenten.isEmpty();
+	 }
+	 
+	public void addStudent(Student S) {
+		Studenten.add(S);
+	}
+	
+	public void removStudent(Student s) {
+		Studenten.remove(s);
 	}
 	
 }

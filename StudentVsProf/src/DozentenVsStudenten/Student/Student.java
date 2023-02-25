@@ -1,13 +1,13 @@
-package Student;
+package DozentenVsStudenten.Student;
 
 import java.util.ArrayList;
 
-import Dozenten.attackType;
+import DozentenVsStudenten.Dozenten.attackType;
 import DozentenVsStudenten.Map.Field;
 import DozentenVsStudenten.Map.PlayingField;
+import DozentenVsStudenten.Timer.TimerAction;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Hilfsklasse.Position;
-import Timer.TimerAction;
 
 public class Student implements TimerAction{
 

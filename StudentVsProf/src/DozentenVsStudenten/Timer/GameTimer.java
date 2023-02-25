@@ -1,4 +1,4 @@
-package Timer;
+package DozentenVsStudenten.Timer;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;

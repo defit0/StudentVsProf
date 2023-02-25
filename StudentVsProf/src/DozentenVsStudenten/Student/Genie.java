@@ -1,9 +1,9 @@
-package Student;
+package DozentenVsStudenten.Student;
 
-import Dozenten.attackType;
+import DozentenVsStudenten.Dozenten.attackType;
 import StudentenVsDozenten.Effekte.Effect;
 
-public class deaf implements DefenseType{
+public class Genie implements DefenseType{
 
 	@Override
 	public Effect getHit(int damage, attackType at,int length,int intensity) {

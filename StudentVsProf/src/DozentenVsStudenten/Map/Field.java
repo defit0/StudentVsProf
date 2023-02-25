@@ -2,9 +2,9 @@ package DozentenVsStudenten.Map;
 
 import java.util.ArrayList;
 
-import Dozenten.Dozent;
-import Dozenten.Projectile;
-import Student.Student;
+import DozentenVsStudenten.Dozenten.Dozent;
+import DozentenVsStudenten.Dozenten.Projectile;
+import DozentenVsStudenten.Student.Student;
 import StudentenVsDozenten.Hilfsklasse.Position;
 
 public class Field {
@@ -12,11 +12,14 @@ Position Pos;
 Series S;
 Dozent Doz;
 ArrayList<Student> Studenten = new ArrayList<Student>();
-ArrayList<Projectile> Bullets = new ArrayList<Projectile>();
+ArrayList<Projectile> Bullets = new ArrayList<Projectile>();//themporer muss vieleicht wieder raus
 
  public Field(Position p, Series s) {
 	 Pos = p;
 	 S = s;
+ }
+ public boolean hasStudents() {
+	 return !Studenten.isEmpty();
  }
  
  public boolean addDozent(Dozent d) {
@@ -61,9 +64,11 @@ public void setPos(Position pos) {
 }
 public void addStudent(Student s) {
 	Studenten.add(s);
+	S.addStudent(s);
 }
 public void removStudent(Student s) {
 	Studenten.remove(s);
+	S.removStudent(s);
 }
 
 public void addProjectile(Projectile p) {

@@ -1,9 +1,9 @@
-package Dozenten;
+package DozentenVsStudenten.Dozenten;
 
 
-import Student.Genie;
-import Student.deaf;
-import Student.standart;
+import DozentenVsStudenten.Student.Genie;
+import DozentenVsStudenten.Student.deaf;
+import DozentenVsStudenten.Student.standart;
 import StudentenVsDozenten.Effekte.Effect;
 
 public abstract class attackType {

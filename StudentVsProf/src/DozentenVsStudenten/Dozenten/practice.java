@@ -1,4 +1,4 @@
-package Dozenten;
+package DozentenVsStudenten.Dozenten;
 
 
 import StudentenVsDozenten.Effekte.Effect;

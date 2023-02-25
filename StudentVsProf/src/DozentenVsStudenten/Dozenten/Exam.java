@@ -1,5 +1,5 @@
-package Dozenten;
-import Student.Genie;
+package DozentenVsStudenten.Dozenten;
+import DozentenVsStudenten.Student.Genie;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Effekte.SingleDamage;
 
