@@ -34,7 +34,7 @@ ArrayList<Student> Studenten = new ArrayList<Student>();
 		return S +"]";
 	}
 	 public boolean hasStudents() {
-		 return Studenten.isEmpty();
+		 return !Studenten.isEmpty();
 	 }
 	 
 	public void addStudent(Student S) {

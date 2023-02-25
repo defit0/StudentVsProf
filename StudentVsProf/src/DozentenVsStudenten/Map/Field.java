@@ -19,7 +19,7 @@ ArrayList<Projectile> Bullets = new ArrayList<Projectile>();//themporer muss vie
 	 S = s;
  }
  public boolean hasStudents() {
-	 return Studenten.isEmpty();
+	 return !Studenten.isEmpty();
  }
  
  public boolean addDozent(Dozent d) {
