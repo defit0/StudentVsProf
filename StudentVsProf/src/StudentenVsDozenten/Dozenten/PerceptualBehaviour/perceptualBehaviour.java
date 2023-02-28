@@ -1,8 +1,8 @@
 package StudentenVsDozenten.Dozenten.PerceptualBehaviour;
 
-import DozentenVsStudenten.Dozenten.Dozent;
-import DozentenVsStudenten.Map.PlayingField;
-import DozentenVsStudenten.Timer.TimerAction;
+import StudentenVsDozenten.Dozenten.Dozent;
+import StudentenVsDozenten.Map.PlayingField;
+import StudentenVsDozenten.Timer.TimerAction;
 
 public abstract class perceptualBehaviour implements TimerAction {
 	Dozent myDozent;

@@ -1,10 +1,10 @@
-package DozentenVsStudenten.Dozenten;
+package StudentenVsDozenten.Dozenten.AttackTypen;
 
 
-import DozentenVsStudenten.Student.Genie;
-import DozentenVsStudenten.Student.deaf;
-import DozentenVsStudenten.Student.standart;
 import StudentenVsDozenten.Effekte.Effect;
+import StudentenVsDozenten.Studenten.DefenseType.Genie;
+import StudentenVsDozenten.Studenten.DefenseType.deaf;
+import StudentenVsDozenten.Studenten.DefenseType.standart;
 
 public abstract class attackType {
 	

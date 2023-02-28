@@ -1,9 +1,9 @@
-package DozentenVsStudenten.Map;
+package StudentenVsDozenten.Map;
 
 import java.util.ArrayList;
 
-import DozentenVsStudenten.Student.Student;
 import StudentenVsDozenten.Hilfsklasse.Position;
+import StudentenVsDozenten.Student.Student;
 
 public class Series {
 int length = PlayingField.Edgex ;

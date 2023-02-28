@@ -1,12 +1,14 @@
-package DozentenVsStudenten.Dozenten;
+package StudentenVsDozenten.Dozenten;
 
-import DozentenVsStudenten.Map.Field;
-import DozentenVsStudenten.Timer.TimerAction;
+import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
+import StudentenVsDozenten.Dozenten.AttackTypen.talk;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.inLineTwo;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.inTrippelLineInfinete;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
 import StudentenVsDozenten.Hilfsklasse.Position;
+import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Timer.TimerAction;
 
 public class Dozent {
 

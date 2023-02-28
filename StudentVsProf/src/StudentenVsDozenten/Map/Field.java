@@ -1,11 +1,11 @@
-package DozentenVsStudenten.Map;
+package StudentenVsDozenten.Map;
 
 import java.util.ArrayList;
 
-import DozentenVsStudenten.Dozenten.Dozent;
-import DozentenVsStudenten.Dozenten.Projectile;
-import DozentenVsStudenten.Student.Student;
+import StudentenVsDozenten.Dozenten.Dozent;
+import StudentenVsDozenten.Dozenten.Projectile;
 import StudentenVsDozenten.Hilfsklasse.Position;
+import StudentenVsDozenten.Student.Student;
 
 public class Field {
 Position Pos;

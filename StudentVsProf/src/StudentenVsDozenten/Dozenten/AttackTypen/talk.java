@@ -1,8 +1,8 @@
-package DozentenVsStudenten.Dozenten;
+package StudentenVsDozenten.Dozenten.AttackTypen;
 
-import DozentenVsStudenten.Student.deaf;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Effekte.SingleDamage;
+import StudentenVsDozenten.Studenten.DefenseType.deaf;
 
 public class talk extends attackType{
 

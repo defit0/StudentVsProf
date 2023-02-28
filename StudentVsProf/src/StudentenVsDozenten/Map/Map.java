@@ -1,4 +1,4 @@
-package DozentenVsStudenten.Map;
+package StudentenVsDozenten.Map;
 
 import StudentenVsDozenten.Hilfsklasse.Position;
 

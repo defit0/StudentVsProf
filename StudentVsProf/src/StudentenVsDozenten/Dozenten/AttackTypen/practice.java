@@ -1,4 +1,4 @@
-package DozentenVsStudenten.Dozenten;
+package StudentenVsDozenten.Dozenten.AttackTypen;
 
 
 import StudentenVsDozenten.Effekte.Effect;
