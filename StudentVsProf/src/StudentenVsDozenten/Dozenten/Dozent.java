@@ -1,5 +1,7 @@
 package StudentenVsDozenten.Dozenten;
 
+import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
+import StudentenVsDozenten.Dozenten.AttackTypen.talk;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.inLineTwo;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.inTrippelLineInfinete;

@@ -1,28 +1,28 @@
-package StudentenVsDozenten.Dozenten;
+package StudentenVsDozenten.Dozenten.AttackTypen;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Effekte.SingleDamage;
-import StudentenVsDozenten.Student.Genie;
+import StudentenVsDozenten.Studenten.DefenseType.Genie;
 
 public class Exam extends attackType{
 
 	@Override
 	public Effect attacPattern(Genie dt, int damage,int length,int intensity) {
-		int criticel = 1;
+		int critical = 1;
 		if(Math.random()<0.10) {
-			criticel = 2;
+			critical = 2;
 		}
-		return new SingleDamage(damage*criticel);
+		return new SingleDamage(damage*critical);
 	}
 
 	
 	
 	@Override
 	protected Effect standard( int damage,int length,int intensity) {
-		int criticel = 1;
+		int critical = 1;
 		if(Math.random()<0.10) {
-			criticel = 1000;
+			critical = 1000;
 		}
-		return new SingleDamage(damage*criticel);
+		return new SingleDamage(damage*critical);
 	}
 	
 

@@ -1,6 +1,6 @@
-package StudentenVsDozenten.Student;
+package StudentenVsDozenten.Studenten.DefenseType;
 
-import StudentenVsDozenten.Dozenten.attackType;
+import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
 import StudentenVsDozenten.Effekte.Effect;
 
 public class standart implements DefenseType{

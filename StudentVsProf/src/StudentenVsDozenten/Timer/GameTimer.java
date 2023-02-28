@@ -4,7 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class GameTimer {
-	final int tack = 1000;
+	final int tack = 1000;//1 Sekunde
 	Timer timer = new Timer();
 	ArrayList<TimerAction> ActionList = new ArrayList<TimerAction>();
 	
