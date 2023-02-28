@@ -1,9 +1,9 @@
 package StudentenVsDozenten.Dozenten.PerceptualBehaviour;
 
-import DozentenVsStudenten.Dozenten.Dozent;
-import DozentenVsStudenten.Map.Field;
-import DozentenVsStudenten.Map.PlayingField;
+import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Hilfsklasse.Position;
+import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Map.PlayingField;
 
 //überprüt ob in den beiden feldern vor dem Dozent Studenten sind und aktiviert die Schuss funktion
 public class inLineTwo extends perceptualBehaviour{

@@ -1,6 +1,6 @@
-package DozentenVsStudenten.Map;
+package StudentenVsDozenten.Map;
 
-import DozentenVsStudenten.Timer.TimerAction;
+import StudentenVsDozenten.Timer.TimerAction;
 
 //ich bin nur um Consolenausgaben zu machen!
 public class Printer implements TimerAction{

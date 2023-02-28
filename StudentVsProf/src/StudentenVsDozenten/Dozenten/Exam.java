@@ -1,7 +1,7 @@
-package DozentenVsStudenten.Dozenten;
-import DozentenVsStudenten.Student.Genie;
+package StudentenVsDozenten.Dozenten;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Effekte.SingleDamage;
+import StudentenVsDozenten.Student.Genie;
 
 public class Exam extends attackType{
 

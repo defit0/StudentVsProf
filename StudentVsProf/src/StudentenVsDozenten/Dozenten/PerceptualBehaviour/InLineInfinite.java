@@ -1,9 +1,9 @@
 package StudentenVsDozenten.Dozenten.PerceptualBehaviour;
 
-import DozentenVsStudenten.Dozenten.Dozent;
-import DozentenVsStudenten.Map.Field;
-import DozentenVsStudenten.Map.PlayingField;
-import DozentenVsStudenten.Map.Series;
+import StudentenVsDozenten.Dozenten.Dozent;
+import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Map.PlayingField;
+import StudentenVsDozenten.Map.Series;
 
 public class InLineInfinite extends perceptualBehaviour{
 

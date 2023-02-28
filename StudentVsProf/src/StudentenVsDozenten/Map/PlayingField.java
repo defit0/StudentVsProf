@@ -1,6 +1,6 @@
-package DozentenVsStudenten.Map;
+package StudentenVsDozenten.Map;
 
-import DozentenVsStudenten.Timer.GameTimer;
+import StudentenVsDozenten.Timer.GameTimer;
 
 public class PlayingField {
 	public static int Edgex = 8;

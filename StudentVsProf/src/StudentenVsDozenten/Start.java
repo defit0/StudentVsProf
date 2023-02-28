@@ -1,11 +1,11 @@
 package StudentenVsDozenten;
 
-import DozentenVsStudenten.Dozenten.Dozent;
-import DozentenVsStudenten.Map.Map;
-import DozentenVsStudenten.Map.PlayingField;
-import DozentenVsStudenten.Map.Printer;
-import DozentenVsStudenten.Student.Student;
-import DozentenVsStudenten.Timer.GameTimer;
+import StudentenVsDozenten.Dozenten.Dozent;
+import StudentenVsDozenten.Map.Map;
+import StudentenVsDozenten.Map.PlayingField;
+import StudentenVsDozenten.Map.Printer;
+import StudentenVsDozenten.Student.Student;
+import StudentenVsDozenten.Timer.GameTimer;
 
 public class Start {
 

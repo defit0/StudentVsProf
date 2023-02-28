@@ -1,6 +1,6 @@
 package StudentenVsDozenten.Effekte;
 
-import DozentenVsStudenten.Student.Student;
+import StudentenVsDozenten.Student.Student;
 
 public class Poisoned implements Effect {
 
