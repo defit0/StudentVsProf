@@ -87,7 +87,7 @@ public String toString() {
 	}else if(!Studenten.isEmpty()) {
 		s = "P";
 	}else if(!Bullets.isEmpty()){
-		s = "°";
+		s = "Â°";
 	}else {
 		s = " ";
 	}

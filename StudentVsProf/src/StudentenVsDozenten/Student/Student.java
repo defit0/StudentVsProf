@@ -52,10 +52,10 @@ public class Student implements TimerAction{
 	}
 	
 	private void run() {
-		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), Pos.getyPosition());
+		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
 		F.removStudent(this);
 		Pos = Pos.subX(speed);
-		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), Pos.getyPosition());
+		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
 		F.addStudent(this);
 	}
 	
@@ -69,9 +69,9 @@ public class Student implements TimerAction{
 	
 	void die(){
 		System.out.println("Ich bin jetzt tot");
-		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), Pos.getyPosition());
+		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
 		F.removStudent(this);
-		PlayingField.gameTimer.remov(this);
+		PlayingField.gameTimer.remove(this);
 	}
 	
 	@Override

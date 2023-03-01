@@ -4,13 +4,22 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class GameTimer {
-	final int tack = 1000;//1 Sekunde
+	int time = 1000;//1 Sekunde
 	Timer timer = new Timer();
 	ArrayList<TimerAction> ActionList = new ArrayList<TimerAction>();
+	
+	public void setTimerTime(int time) {
+		this.time = time;
+	}
 	
 	public GameTimer(){
 		
 	}
+	
+	public GameTimer(int time){
+		setTimerTime(time);
+	}
+	
 	public void start() {
 		creatTimer();
 	}
@@ -31,13 +40,13 @@ public class GameTimer {
 			}
 			
 		};
-		timer.schedule(toDo, tack, tack);
+		timer.schedule(toDo, time, time);
 	}
 	
 	public void add(TimerAction at) {
 		ActionList.add(at);
 	}
-	public void remov(TimerAction at) {
+	public void remove(TimerAction at) {
 		ActionList.remove(at);
 	}
 }
