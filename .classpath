@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="StudentVsProf/src"/>
+	<classpathentry kind="lib" path="StudentVsProf/javafx-swt.jar"/>
+	<classpathentry kind="lib" path="StudentVsProf/javafx.base.jar"/>
+	<classpathentry kind="lib" path="StudentVsProf/javafx.controls.jar"/>
+	<classpathentry kind="lib" path="StudentVsProf/javafx.fxml.jar"/>
+	<classpathentry kind="lib" path="StudentVsProf/javafx.graphics.jar"/>
+	<classpathentry kind="lib" path="StudentVsProf/javafx.media.jar"/>
+	<classpathentry kind="lib" path="StudentVsProf/javafx.swing.jar"/>
+	<classpathentry kind="lib" path="StudentVsProf/javafx.web.jar"/>
+	<classpathentry kind="lib" path="StudentVsProf/mysql-connector-j-8.0.32.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

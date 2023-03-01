@@ -10,7 +10,7 @@ import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Timer.TimerAction;
 
-public class Dozent {
+public abstract class Dozent {
 
 	int attackspeed;
 	int thempAttackspeed;
@@ -19,27 +19,28 @@ public class Dozent {
 	Field myField;
 	attackType attackType;
 	perceptualBehaviour percBehav;
-	//für die Projektiele
+	//fï¿½r die Projektiele
 	int damage;
 	int length;
 	int intensity;
 	float BulletSpeet;
-	
+/*	
 	public Dozent(Field F){
-		this.attackspeed = 5;
-		this.thempAttackspeed = attackspeed;
-		this.hitpoints = 6;
-		this.myField = F;
-		this.Pos = F.getPos();
-		this.percBehav = new InLineInfinite(this);
-		this.attackType = new talk();
-		this.damage = 2;
-		this.length = 0;
-		this.intensity = 0;
-		this.BulletSpeet = 1f;
+		attackspeed = 5;
+		thempAttackspeed = attackspeed;
+		hitpoints = 6;
+		myField = F;
+		Pos = F.getPos();
+		percBehav = new InLineInfinite(this);
+		attackType = new talk();
+		damage = 2;
+		length = 0;
+		intensity = 0;
+		BulletSpeet = 1f;
 		F.addDozent(this);
 	}
-	public void Shoot() {
+	*/
+	public void shoot() {
 		if(thempAttackspeed == attackspeed) {
 			Projectile Bullet = new Projectile(this);
 			thempAttackspeed = 0;

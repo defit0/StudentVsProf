@@ -24,7 +24,7 @@ public class Map {
 			return Series[y];
 		}
 		public Series getSeriesBy(Position P) {
-			return Series[P.getyPosition()];
+			return Series[(int)P.getyPosition()];
 		}
 
 		@Override
@@ -41,8 +41,8 @@ public class Map {
 			
 		}
 		public boolean isPositionInMap(Position P) {
-			int x = (int)P.getxPosition();
-			int y = P.getyPosition();
+			float x = P.getxPosition();
+			float y = P.getyPosition();
 			return (x < PlayingField.Edgex && x >= 0 )&& (y < PlayingField.Edgey && y >= 0 );
 			
 		}

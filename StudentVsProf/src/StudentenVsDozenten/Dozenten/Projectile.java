@@ -68,7 +68,7 @@ public class Projectile implements TimerAction{
 	void removMe() {
 		System.out.print(Pos);
 		F.subProjectile(this);
-		PlayingField.gameTimer.remov(this);
+		PlayingField.gameTimer.remove(this);
 	}
 
 	@Override

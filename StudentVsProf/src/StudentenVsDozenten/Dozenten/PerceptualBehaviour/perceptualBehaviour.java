@@ -14,7 +14,7 @@ public abstract class perceptualBehaviour implements TimerAction {
 	
 	public void TimerActionPerform() {
 		if(ShallIshoot()) {
-			myDozent.Shoot();
+			myDozent.shoot();
 		}
 	}
 	abstract boolean ShallIshoot();

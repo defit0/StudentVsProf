@@ -2,10 +2,10 @@ package StudentenVsDozenten.Hilfsklasse;
 
 public class Position {
 	float xPosition;
-	int yPosition;
+	float yPosition;
 	float lange;
 	
-	public Position(float xP, int yP, float l){
+	public Position(float xP, float yP, float l){
 		xPosition = xP;
 		yPosition = yP;
 		lange = l;
@@ -35,7 +35,7 @@ public class Position {
 		return new Position(xPosition+x,yPosition,lange);
 	}
 	public Position addY(float y) {
-		return new Position(xPosition,yPosition + (int) y,lange);
+		return new Position(xPosition,yPosition + y,lange);
 	}
 	public Position addY(int y) {
 		return new Position(xPosition,yPosition + y,lange);
@@ -49,11 +49,11 @@ public class Position {
 		this.xPosition = xPosition;
 	}
 
-	public int getyPosition() {
+	public float getyPosition() {
 		return yPosition;
 	}
 
-	public void setyPosition(int yPosition) {
+	public void setyPosition(float yPosition) {
 		this.yPosition = yPosition;
 	}
 
