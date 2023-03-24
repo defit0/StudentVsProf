@@ -6,23 +6,28 @@ import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Map.Map;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Studenten.DefenseType.DefenseType;
 import StudentenVsDozenten.Studenten.DefenseType.standart;
 import StudentenVsDozenten.Timer.TimerAction;
+import StudentenVsDozenten.gui.MapObject;
+import StudentenVsDozenten.gui.Visible;
 
-public class Student implements TimerAction{
+public class Student implements TimerAction, Visible {
 
 	int attackspeed;
 	float speed;
 	int hitpoints;
 	int damage;
 	Position Pos;
-	
 	DefenseType dt;
+	public String imagePath = "StudentenVsDozenten/gui/fisch.PNG";
+	public String previousImagePath = "";
+	public MapObject mapObject;
 	public ArrayList<Effect> AllEffects= new ArrayList<Effect>();
 	
-	public Student(float x , int y){
+	public Student(float x , int y) {
 		this.attackspeed = 1;
 		this.speed = 0.2f;
 		this.hitpoints = 6;
@@ -30,6 +35,7 @@ public class Student implements TimerAction{
 		this.dt = new standart();
 		this.Pos = new Position( x, y,0.4f);
 		System.out.println("start:" + this);
+		createMapObject();
 	}
 	
 	public void gethit(int damage,attackType at,int length,int intensity) {
@@ -78,8 +84,8 @@ public class Student implements TimerAction{
 	public void TimerActionPerform() {
 		activateEffects();
 		run();
+		updateMapObject();
 		System.out.println(this);
-		
 	}
 
 	public float getSpeed() {
@@ -113,9 +119,19 @@ public class Student implements TimerAction{
 		Pos = pos;
 	}
 
-	
-	
-	
-	
-	
+
+	@Override
+	public void createMapObject() {
+		mapObject = new MapObject(imagePath, Pos);
+	}
+
+	@Override
+	public void updateMapObject() {
+		if (previousImagePath == imagePath && Pos.equals(mapObject.getPosition())) {
+		} else {
+			mapObject.remove();
+			mapObject = new MapObject(imagePath, Pos);
+			previousImagePath = imagePath;
+		}
+	}
 }
