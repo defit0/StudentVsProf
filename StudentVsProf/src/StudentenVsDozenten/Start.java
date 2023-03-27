@@ -33,5 +33,4 @@ public class Start {
 		PlayingField.allePerceptualBehaviour.start();
 		PlayingField.wissenstimer.start();
 	}
-
 }

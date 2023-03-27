@@ -23,7 +23,7 @@ public class MapObject {
     public MapObject(URL imageIcon, Position p,ContainerPanel panel) {
     	this.panel = panel;
     	this.panel.add(this);
-    	objectLabel.setOpaque(true);
+    	// objectLabel.setOpaque(true);
     	this.objectPosition = p;
     	objectLabel.setBounds(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()),Math.round(objectPosition.getLength()), Math.round(objectPosition.getHeight()));
     	ImageIcon preLodetIcon = new ImageIcon(imageIcon);
@@ -42,7 +42,7 @@ public class MapObject {
     public MapObject(URL imageIcon, Position p,ContainerPanel panel,boolean backgraund) {
     	this.panel = panel;
     	this.panel.add(this);
-    	objectLabel.setOpaque(true);
+    	// objectLabel.setOpaque(true);
     	this.objectPosition = p;
     	objectLabel.setBounds(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()),Math.round(objectPosition.getLength()), Math.round(objectPosition.getHeight()));
     	ImageIcon preLodetIcon = new ImageIcon(imageIcon);

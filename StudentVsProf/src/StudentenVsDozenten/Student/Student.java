@@ -137,7 +137,6 @@ public class Student implements TimerAction, Visible {
 
 	@Override
 	public void createMapObject() {
-		System.out.println(imagePath);
 		mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld);
 	}
 
@@ -145,7 +144,6 @@ public class Student implements TimerAction, Visible {
 	public void updateMapObject() {
 		if (previousImagePath == imagePath && Pos.equals(mapObject.getPosition())) {
 		} else {
-			System.out.println(">>>>>>"+mapObject.objectPosition);
 			mapObject.remove();
 			mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld);
 			previousImagePath = imagePath;

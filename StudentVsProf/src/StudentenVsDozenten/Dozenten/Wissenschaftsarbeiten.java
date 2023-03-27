@@ -2,10 +2,17 @@ package StudentenVsDozenten.Dozenten;
 
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.PlayingField;
+import StudentenVsDozenten.gui.MapObject;
+import StudentenVsDozenten.gui.SetupGame;
+import StudentenVsDozenten.gui.Visible;
 
-public class Wissenschaftsarbeiten {
+import java.net.URL;
+
+public class Wissenschaftsarbeiten implements Visible {
 	Position myPosition;
 	int wissenswert;
+	public URL imagePath = getClass().getResource("knowledge_ball_gro.png");
+	public MapObject mapObject;
 
 	public Wissenschaftsarbeiten(int wissenswert, Position pos) {
 		this.myPosition = pos;
@@ -30,5 +37,15 @@ public class Wissenschaftsarbeiten {
 	@Override
 	public String toString() {
 		return "W-Arbeit [Wissenswert: " + wissenswert + "Position " + myPosition + "]";
+	}
+
+	@Override
+	public void createMapObject() {
+
+	}
+
+	@Override
+	public void updateMapObject() {
+		mapObject = new MapObject(imagePath, myPosition, SetupGame.spielfeld);
 	}
 }

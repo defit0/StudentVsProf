@@ -18,10 +18,9 @@ public class wissensproduktion extends perceptualBehaviour {
 		if(Math.random() < chancewissen){
 			chancewissen = startchancewissen;
 			return true;
-		}else {
+		} else {
 				chancewissen += 0.1f;
 				return false;
-			}
+		}
 	}
-
 }
