@@ -13,6 +13,7 @@ public class GameFrame extends JFrame{
     public GameFrame() {
         this.setTitle("Studenten vs. Dozenten");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setPreferredSize(new Dimension(1280, 720));
         this.setResizable(false);
         this.setSize(width, height);
         this.setLayout(new BorderLayout());

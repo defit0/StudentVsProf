@@ -3,19 +3,22 @@ package StudentenVsDozenten.Hilfsklasse;
 public class Position {
 	float xPosition;
 	float yPosition;
-	float lange;
+	float length;
+	float height;
 	
-	public Position(float xP, float yP, float l){
+	public Position(float xP, float yP, float l, float h){
 		xPosition = xP;
 		yPosition = yP;
-		lange = l;
+		length = l;
+		height = h;
+		
 	}
 	
 	static  public boolean ColiedVerifier(Position p1,Position p2) {
 		float p1x = p1.getxPosition();
-		float p1xende =p1.getxPosition()+p1.getLange();
+		float p1xende =p1.getxPosition()+p1.getLength();
 		float p2x = p1.getxPosition();
-		float p2xende =p1.getxPosition()+p1.getLange();
+		float p2xende =p1.getxPosition()+p1.getLength();
 		
 		if(p1.getyPosition()!= p2.getyPosition())
 			return false;
@@ -26,19 +29,22 @@ public class Position {
 		return false;
 	}
 	public Position subX(float x) {
-		return new Position(xPosition-x,yPosition,lange);
+		return new Position(xPosition-x,yPosition,length, height);
+	}
+	public Position subY(float y) {
+		return new Position(xPosition,yPosition-y,length, height);
 	}
 	public Position addX(float x) {
-		return new Position(xPosition+x,yPosition,lange);
+		return new Position(xPosition+x,yPosition,length, height);
 	}
 	public Position addX(int x) {
-		return new Position(xPosition+x,yPosition,lange);
+		return new Position(xPosition+x,yPosition,length, height);
 	}
 	public Position addY(float y) {
-		return new Position(xPosition,yPosition + y,lange);
+		return new Position(xPosition,yPosition + y,length, height);
 	}
 	public Position addY(int y) {
-		return new Position(xPosition,yPosition + y,lange);
+		return new Position(xPosition,yPosition + y,length, height);
 	}
 
 	public float getxPosition() {
@@ -57,17 +63,27 @@ public class Position {
 		this.yPosition = yPosition;
 	}
 
-	public float getLange() {
-		return lange;
+
+	
+	public float getLength() {
+		return length;
 	}
 
-	public void setLange(float lange) {
-		this.lange = lange;
+	public void setLength(float length) {
+		this.length = length;
+	}
+
+	public float getHeight() {
+		return height;
+	}
+
+	public void setHeight(float height) {
+		this.height = height;
 	}
 
 	@Override
 	public String toString() {
-		return "Position [" + xPosition + "/" + yPosition + ", " + lange + "]";
+		return "Position [" + xPosition + "/" + yPosition + ", " + length + "]";
 	}
 	
 }

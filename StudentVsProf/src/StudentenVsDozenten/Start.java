@@ -1,5 +1,8 @@
 package StudentenVsDozenten;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import StudentenVsDozenten.Dozenten.Forscher;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Map;
@@ -16,18 +19,19 @@ public class Start {
 	public static void main(String[] args) {
 
 		SetupGame setupGame = new SetupGame();
-		// MapObject mapObject = new MapObject("StudentenVsDozenten/gui/fisch.PNG", new Position(0,0,1));
 
-		/*PlayingField pf = new PlayingField();
+		PlayingField pf = new PlayingField();
 		Printer p = new Printer();
 		//Dozent Euler = new Dozent(PlayingField.GameMap.getFieldIn(0, 3));
-		Student Tom = new Student(7.9f,3);
-		Forscher Wissenssammler = new Forscher(PlayingField.GameMap.getFieldIn(0, 4));
+		Student Tom = new Student(PlayingField.GameMap.getFieldIn(700, 300));
+		Tom.setPos(Tom.getPos().addY(90-Tom.getPos().getHeight()));
+		Tom.updateMapObject();
+		Forscher Wissenssammler = new Forscher(PlayingField.GameMap.getFieldIn(0, 400));
 		PlayingField.gameTimer.add(Tom);
 		PlayingField.gameTimer.add(p);
 		PlayingField.gameTimer.start();
 		PlayingField.allePerceptualBehaviour.start();
-		PlayingField.wissenstimer.start();*/
+		PlayingField.wissenstimer.start();
 	}
 
 }
