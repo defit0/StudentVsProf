@@ -1,22 +1,29 @@
 package StudentenVsDozenten.Map;
 
+import java.net.URL;
 import java.util.ArrayList;
 
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Projectile;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Student.Student;
+import StudentenVsDozenten.gui.MapObject;
+import StudentenVsDozenten.gui.SetupGame;
+import StudentenVsDozenten.gui.Visible;
 
-public class Field {
+public class Field implements Visible{
 Position Pos;
 Series S;
 Dozent Doz;
 ArrayList<Student> Studenten = new ArrayList<Student>();
 ArrayList<Projectile> Bullets = new ArrayList<Projectile>();//themporer muss vieleicht wieder raus
+MapObject myMapObject;
+URL imagePath = getClass().getResource("fliese.jpg");
 
  public Field(Position p, Series s) {
 	 Pos = p;
 	 S = s;
+	 createMapObject();
  }
  public boolean hasStudents() {
 	 return !Studenten.isEmpty();
@@ -82,16 +89,28 @@ public void subProjectile(Projectile p) {
 @Override
 public String toString() {
 	String s;
+//	return "["+Pos.getxPosition()+"/"+Pos.getyPosition()+"]";
 	if(Doz != null) {
 		s = "X";
 	}else if(!Studenten.isEmpty()) {
 		s = "P";
 	}else if(!Bullets.isEmpty()){
-		s = "Â°";
+		s = "°";
 	}else {
 		s = " ";
 	}
 	return "["+s+"]";
+}
+@Override
+public void createMapObject() {
+	System.out.println(imagePath);
+	myMapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld,true);
+	
+}
+@Override
+public void updateMapObject() {
+	// TODO Auto-generated method stub
+	
 }
  
  

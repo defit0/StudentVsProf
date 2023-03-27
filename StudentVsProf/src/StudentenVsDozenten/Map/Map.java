@@ -8,7 +8,7 @@ public class Map {
 
 		public Map() {
 			for( int size = 0; size < wide;size++) {
-				Series[size] = new Series(size,this);
+				Series[size] = new Series(size*100,this);
 			}
 		}
 
@@ -17,7 +17,7 @@ public class Map {
 		}
 
 		public Field getFieldIn(int x , int y) {
-			return Series[y].Fields[x];
+			return Series[Math.round(y/100)].Fields[Math.round(x/100)];
 		}
 		
 		public Series getSeriesBy(int y) {

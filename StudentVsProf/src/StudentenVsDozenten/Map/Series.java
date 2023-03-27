@@ -14,9 +14,9 @@ ArrayList<Student> Studenten = new ArrayList<Student>();
 
 	public Series(int y,Map m) {
 		map = m;
-		Position p = new Position(0, y, 1f);
-		for( int size = 0; size < length;size++) {
-			Field F = new Field(p.addX(size),this);
+		Position p = new Position(0, y, 100f, 100f);
+		for( int size = 0; size < length;size ++) {
+			Field F = new Field(p.addX(size*100),this);
 			Fields[size] = F;
 		}
 	}

@@ -1,37 +1,58 @@
 package StudentenVsDozenten.Student;
 
+import java.net.URL;
 import java.util.ArrayList;
+
+
 
 import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Map.Map;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Studenten.DefenseType.DefenseType;
 import StudentenVsDozenten.Studenten.DefenseType.standart;
 import StudentenVsDozenten.Timer.TimerAction;
+import StudentenVsDozenten.gui.MapObject;
+import StudentenVsDozenten.gui.SetupGame;
+import StudentenVsDozenten.gui.Visible;
 
-public class Student implements TimerAction{
+public class Student implements TimerAction, Visible {
 
 	int attackspeed;
 	float speed;
 	int hitpoints;
 	int damage;
 	Position Pos;
-	
 	DefenseType dt;
+	public URL imagePath = getClass().getResource("fisch.PNG");
+	public URL previousImagePath = null;
+	public MapObject mapObject;
 	public ArrayList<Effect> AllEffects= new ArrayList<Effect>();
 	
-	public Student(float x , int y){
+	public Student(float x , int y) {
 		this.attackspeed = 1;
-		this.speed = 0.2f;
+		this.speed = 20.0f;
 		this.hitpoints = 6;
 		this.damage = 2;
 		this.dt = new standart();
-		this.Pos = new Position( x, y,0.4f);
+		this.Pos = new Position( x, y,40f, 40f);
 		System.out.println("start:" + this);
+		createMapObject();
 	}
 	
+	public Student(Field fieldIn) {
+		this.attackspeed = 1;
+		this.speed = 20f;
+		this.hitpoints = 6;
+		this.damage = 2;
+		this.dt = new standart();
+		this.Pos = new Position( fieldIn.getPos().getxPosition(), fieldIn.getPos().getyPosition(),40f, 40f);
+		System.out.println("start:" + this);
+		createMapObject();
+	}
+
 	public void gethit(int damage,attackType at,int length,int intensity) {
 		Effect e = dt.getHit(damage, at, length, intensity);
 		if (e != null) {
@@ -78,8 +99,8 @@ public class Student implements TimerAction{
 	public void TimerActionPerform() {
 		activateEffects();
 		run();
+		updateMapObject();
 		System.out.println(this);
-		
 	}
 
 	public float getSpeed() {
@@ -113,9 +134,21 @@ public class Student implements TimerAction{
 		Pos = pos;
 	}
 
-	
-	
-	
-	
-	
+
+	@Override
+	public void createMapObject() {
+		System.out.println(imagePath);
+		mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld);
+	}
+
+	@Override
+	public void updateMapObject() {
+		if (previousImagePath == imagePath && Pos.equals(mapObject.getPosition())) {
+		} else {
+			System.out.println(">>>>>>"+mapObject.objectPosition);
+			mapObject.remove();
+			mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld);
+			previousImagePath = imagePath;
+		}
+	}
 }

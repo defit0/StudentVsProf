@@ -17,12 +17,13 @@ public class Projectile implements TimerAction{
 	int intensity;
 	float speet;
 	float length = 0.4f;
+	float height = 0.4f;
 	
 	public Projectile(Dozent d) {
 		PlayingField.gameTimer.add(this);
 		Doz = d;
 		attackType = d.getAttackType();
-		Pos = new Position(d.Pos.getxPosition(),d.Pos.getyPosition(),length);
+		Pos = new Position(d.Pos.getxPosition(),d.Pos.getyPosition(),length, length);
 		F = d.getMyField();
 		damage = d.getDamage();
 		EfecktLength = d.getLength();
