@@ -38,14 +38,10 @@ public class Map {
 		}
 		public boolean isPositionInMap(int x, int y) {
 			return (x < PlayingField.Edgex && x >= 0 )&& (y < PlayingField.Edgey && y >= 0 );
-			
 		}
 		public boolean isPositionInMap(Position P) {
 			float x = P.getxPosition();
 			float y = P.getyPosition();
 			return (x < PlayingField.Edgex && x >= 0 )&& (y < PlayingField.Edgey && y >= 0 );
-			
 		}
-		
 	}
-
