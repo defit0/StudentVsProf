@@ -103,6 +103,11 @@ public abstract class Dozent {
 	public void setSpeet(float speet) {
 		this.BulletSpeet = speet;
 	}
+
+	public void TimerActionPerform() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 	

@@ -1,5 +1,6 @@
 package StudentenVsDozenten.Map;
 
+import StudentenVsDozenten.Dozenten.Forscher;
 import StudentenVsDozenten.Dozenten.Wissenschaftsarbeiten;
 import StudentenVsDozenten.Timer.TimerAction;
 
@@ -14,9 +15,10 @@ public class Printer implements TimerAction{
 	    System.out.println(PlayingField.GameMap);
 	    System.out.println("Du hast " + PlayingField.wissenspunkte + " Wissenspunkte.");
 	    
-	    for(Wissenschaftsarbeiten w : PlayingField.Paper) {
+	    for(Wissenschaftsarbeiten w : Field.Paper) {
 	    	System.out.println(w);
 	    }
+	    //System.out.println("paper array: " + Field.Paper.size());
 	}
 
 }

@@ -14,6 +14,13 @@ public class Position {
 		
 	}
 	
+	public Position(Position myPosition) {
+		xPosition = myPosition.getxPosition();
+		yPosition = myPosition.getyPosition();
+		length = myPosition.length;
+		height = myPosition.height;
+	}
+
 	static  public boolean ColiedVerifier(Position p1,Position p2) {
 		float p1x = p1.getxPosition();
 		float p1xende =p1.getxPosition()+p1.getLength();
@@ -47,6 +54,10 @@ public class Position {
 		return new Position(xPosition,yPosition + y,length, height);
 	}
 
+	public Position addXY(float x, float y) {
+		return new Position(xPosition + x,yPosition + y,length, height);
+	}
+	
 	public float getxPosition() {
 		return xPosition;
 	}

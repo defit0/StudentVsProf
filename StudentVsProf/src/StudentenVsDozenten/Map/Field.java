@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Projectile;
+import StudentenVsDozenten.Dozenten.Wissenschaftsarbeiten;
+import StudentenVsDozenten.Dozenten.TestDozent;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Student.Student;
 import StudentenVsDozenten.gui.MapObject;
@@ -19,6 +21,7 @@ ArrayList<Student> Studenten = new ArrayList<Student>();
 ArrayList<Projectile> Bullets = new ArrayList<Projectile>();//themporer muss vieleicht wieder raus
 MapObject myMapObject;
 URL imagePath = getClass().getResource("fliese.jpg");
+public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
 
  public Field(Position p, Series s) {
 	 Pos = p;
@@ -73,6 +76,7 @@ public void addStudent(Student s) {
 	Studenten.add(s);
 	S.addStudent(s);
 }
+
 public void removStudent(Student s) {
 	Studenten.remove(s);
 	S.removStudent(s);
@@ -95,7 +99,7 @@ public String toString() {
 	}else if(!Studenten.isEmpty()) {
 		s = "P";
 	}else if(!Bullets.isEmpty()){
-		s = "°";
+		s = "ï¿½";
 	}else {
 		s = " ";
 	}

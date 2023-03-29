@@ -14,6 +14,4 @@ public class PlayingField {
 	public static GameTimer allePerceptualBehaviour = new GameTimer();
 	public static GameTimer gameTimer = new GameTimer();
 	public static GameTimer wissenstimer = new GameTimer(1000);
-
-	public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList();
 }

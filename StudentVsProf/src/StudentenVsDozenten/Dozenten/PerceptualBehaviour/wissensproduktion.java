@@ -19,7 +19,7 @@ public class wissensproduktion extends perceptualBehaviour {
 			chancewissen = startchancewissen;
 			return true;
 		} else {
-				chancewissen += 0.1f;
+				chancewissen += 0.6f;
 				return false;
 		}
 	}

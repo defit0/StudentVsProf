@@ -12,13 +12,13 @@ import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
 
 import java.net.URL;
+import java.util.ArrayList;
 
 public class Forscher extends Dozent implements Visible {
 	perceptualBehaviour percBehav;
 	int wissenserhoehung = 1;
 	public URL imagePath = getClass().getResource("Dozent_Forscher.png");
 	public MapObject mapObject;
-
 
 
 	public Forscher(Field F) {
@@ -35,9 +35,11 @@ public class Forscher extends Dozent implements Visible {
 
 	public void wissengenerieren() {	
 		Wissenschaftsarbeiten Paper = new Wissenschaftsarbeiten(wissenserhoehung, Pos);
+		System.out.println("sollte generiert werden");
 	}
 	
 	public void shoot() {
+		System.out.println("schuss");
 		wissengenerieren();
 	}
 
