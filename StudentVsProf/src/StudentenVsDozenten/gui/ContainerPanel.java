@@ -25,5 +25,4 @@ public class ContainerPanel extends JPanel {
     public void remove(MapObject mapObject) {
         mapObjects.remove(mapObject);
     }
-
 }

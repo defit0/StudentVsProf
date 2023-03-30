@@ -21,15 +21,9 @@ public class Wissenschaftsarbeiten implements Visible {
 		this.myPosition = pos;
 		this.wissenswert = wissenswert;
 		zufallsPos();
-		Field.Paper.add(this);
+		PlayingField.Paper.add(this);
 		this.createMapObject();
 	}
-	
-	public void anklicken() {
-		PlayingField.wissenspunkte += wissenswert;
-	}
-	
-
 
 	public void zufallsPos() {
 		Position testPosition = new Position(myPosition);
@@ -54,10 +48,18 @@ public class Wissenschaftsarbeiten implements Visible {
 
 	@Override
 	public void createMapObject() {
-		mapObject = new MapObject(imagePath, myPosition, SetupGame.spielfeld);
+		mapObject = new MapObject(imagePath, myPosition, SetupGame.spielfeld, this);
 	}
 	
 	@Override
 	public void updateMapObject() {
+	}
+
+	@Override
+	public void getClicked() {
+		PlayingField.setWissenspunkte(wissenswert);
+		mapObject.remove();
+		mapObject = null;
+		PlayingField.Paper.remove(this);
 	}
 }

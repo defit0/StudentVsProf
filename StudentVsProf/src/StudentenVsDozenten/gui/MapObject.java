@@ -6,6 +6,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Label;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.net.URL;
@@ -19,8 +21,10 @@ public class MapObject {
     boolean isVisible = true;
     ContainerPanel panel;
     boolean backgraund = false;
+    Visible myObject;
 
-    public MapObject(URL imageIcon, Position p,ContainerPanel panel) {
+    public MapObject(URL imageIcon, Position p,ContainerPanel panel, Visible visible) {
+        myObject = visible;
     	this.panel = panel;
     	this.panel.add(this);
     	// objectLabel.setOpaque(true);
@@ -35,13 +39,21 @@ public class MapObject {
         objectLabel.setVisible(true);
         this.panel.add(objectLabel);
         panel.setComponentZOrder(objectLabel, 0);
+        objectLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                getClicked();
+                System.out.println("Label clicked");
+            }
+        });
         this.panel.revalidate();
         this.panel.repaint();
      
     }
     
-    public MapObject(URL imageIcon, Position p,ContainerPanel panel,boolean background) {
-    	this.panel = panel;
+    public MapObject(URL imageIcon, Position p,ContainerPanel panel,boolean background, Visible visible) {
+        myObject = visible;
+        this.panel = panel;
     	this.panel.add(this);
     	// objectLabel.setOpaque(true);
     	this.objectPosition = p;
@@ -53,19 +65,24 @@ public class MapObject {
         objectLabel.setIcon(objectIcon);
         objectLabel.setVisible(true);
         if(background) {
-        	
         }
-        
         this.panel.add(objectLabel);
+        objectLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                getClicked();
+                System.out.println("Label clicked");
+            }
+        });
         this.panel.revalidate();
         this.panel.repaint();
- 
     }
 
     
     
-    public MapObject(String imageIcon, Position p,ContainerPanel panel) {
-    	this.panel = panel;
+    public MapObject(String imageIcon, Position p,ContainerPanel panel, Visible visible) {
+        myObject = visible;
+        this.panel = panel;
     	this.panel.add(this);
     	// objectLabel.setOpaque(true);
     	this.objectPosition = p;
@@ -79,9 +96,15 @@ public class MapObject {
         objectLabel.setVisible(true);
         this.panel.add(objectLabel);
         panel.setComponentZOrder(objectLabel, 0);
+        objectLabel.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                getClicked();
+                System.out.println("Label clicked");
+            }
+        });
         this.panel.revalidate();
         this.panel.repaint();
-     
     }
     
     
@@ -91,6 +114,10 @@ public class MapObject {
     }
     public void setPanel(ContainerPanel panel) {
         this.panel = panel;
+    }
+
+    private void getClicked() {
+        myObject.getClicked();
     }
 
     public void remove() {

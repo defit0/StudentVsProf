@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Hilfsklasse.Position;
 
-public class DozentenAuswahl extends ContainerPanel {
+public class DozentenAuswahl extends ContainerPanel implements Visible {
 	URL Doz;
 	JLabel JKosten = new JLabel();
 	boolean avaliabe;
@@ -17,10 +17,24 @@ public class DozentenAuswahl extends ContainerPanel {
 	
 	public DozentenAuswahl(URL s){
 		Doz = s;
-		MapObject mapObj = new MapObject(Doz, new Position(0, 0, size, size), this);
 		this.setSize(100, 100);
 		JKosten.setBounds(90, 90, 10, 10);
 		this.setBackground(Color.BLACK);
+		createMapObject();
 	}
-	
+
+	@Override
+	public void createMapObject() {
+		MapObject mapObj = new MapObject(Doz, new Position(0, 0, size, size), this, this);
+	}
+
+	@Override
+	public void updateMapObject() {
+
+	}
+
+	@Override
+	public void getClicked() {
+
+	}
 }

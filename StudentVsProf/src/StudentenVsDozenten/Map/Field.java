@@ -21,7 +21,7 @@ ArrayList<Student> Studenten = new ArrayList<Student>();
 ArrayList<Projectile> Bullets = new ArrayList<Projectile>();//themporer muss vieleicht wieder raus
 MapObject myMapObject;
 URL imagePath = getClass().getResource("fliese.jpg");
-public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
+// public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
 
  public Field(Position p, Series s) {
 	 Pos = p;
@@ -108,14 +108,15 @@ public String toString() {
 @Override
 public void createMapObject() {
 	System.out.println(imagePath);
-	myMapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld,true);
-	
+	myMapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld,true, this	);
 }
 @Override
 public void updateMapObject() {
 	// TODO Auto-generated method stub
-	
-}
- 
- 
+	}
+
+	@Override
+	public void getClicked() {
+
+	}
 }

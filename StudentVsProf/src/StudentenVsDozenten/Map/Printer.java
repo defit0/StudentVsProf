@@ -15,7 +15,7 @@ public class Printer implements TimerAction{
 	    System.out.println(PlayingField.GameMap);
 	    System.out.println("Du hast " + PlayingField.wissenspunkte + " Wissenspunkte.");
 	    
-	    for(Wissenschaftsarbeiten w : Field.Paper) {
+	    for(Wissenschaftsarbeiten w : PlayingField.Paper) {
 	    	System.out.println(w);
 	    }
 	    //System.out.println("paper array: " + Field.Paper.size());

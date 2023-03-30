@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import StudentenVsDozenten.Dozenten.Wissenschaftsarbeiten;
 import StudentenVsDozenten.Timer.GameTimer;
+import StudentenVsDozenten.gui.SetupGame;
 
 public class PlayingField {
 	public static int fieldSize = 100;
@@ -15,4 +16,13 @@ public class PlayingField {
 	public static GameTimer allePerceptualBehaviour = new GameTimer();
 	public static GameTimer gameTimer = new GameTimer();
 	public static GameTimer wissenstimer = new GameTimer(1000);
+	public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
+
+	public static int getWissenspunkte() {
+		return wissenspunkte;
+	}
+	public static void setWissenspunkte(int wp) {
+		wissenspunkte += wp;
+		SetupGame.wissensCounter.setText(String.valueOf(wissenspunkte));
+	}
 }

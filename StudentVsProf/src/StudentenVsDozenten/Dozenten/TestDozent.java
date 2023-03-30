@@ -29,10 +29,15 @@ public class TestDozent extends Dozent implements Visible {
 	
 	@Override
 	public void createMapObject() {
-		mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld);
+		mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld, this);
 	}
 
 	@Override
 	public void updateMapObject() {
+	}
+
+	@Override
+	public void getClicked() {
+
 	}
 }

@@ -6,14 +6,15 @@ import java.awt.FlowLayout;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.PlayingField;
 
+import javax.swing.*;
+
 public class SetupGame {
 	int gap = 10;
-	
-	
+
+	public static JLabel wissensCounter = new JLabel("0");
     public static GameFrame gameFrame = new GameFrame();
     public static ContainerPanel spielfeld = new ContainerPanel();
-    
-    
+    public static ContainerPanel wissenspunktLabel = new ContainerPanel();
     public static ContainerPanel teamleiste = new ContainerPanel();
     
    // ContainerPanel myContainerPanel;
@@ -27,11 +28,19 @@ public class SetupGame {
     	//myContainerPanel = spielfeld;
     	ContainerPanel myContainerPanel = teamleiste;
     	spielfeld.setSize(PlayingField.fieldSize*PlayingField.Edgex, PlayingField.fieldSize*PlayingField.Edgey);
-    	teamleiste.setBounds(0, PlayingField.fieldSize*PlayingField.Edgey + gap, PlayingField.fieldSize*PlayingField.Edgex, PlayingField.fieldSize);
+
+        wissensCounter.setSize(20, 20);
+
+        wissenspunktLabel.setBounds(0, PlayingField.fieldSize * PlayingField.Edgey + gap, PlayingField.fieldSize * PlayingField.Edgex, 40);
+        wissenspunktLabel.setBackground(Color.CYAN);
+        wissenspunktLabel.add(wissensCounter);
+
+        teamleiste.setBounds(0, PlayingField.fieldSize * PlayingField.Edgey + wissenspunktLabel.getHeight() + gap * 2, PlayingField.fieldSize*PlayingField.Edgex, PlayingField.fieldSize);
     	teamleiste.setBackground(Color.GREEN);    
     	teamleiste.setLayout(null);
-    	
+
         gameFrame.addContainerPanel(spielfeld);
+        gameFrame.addContainerPanel(wissenspunktLabel);
         gameFrame.addContainerPanel(teamleiste);
         
         //DozentenAuswahl Doz = new DozentenAuswahl();

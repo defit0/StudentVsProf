@@ -42,4 +42,9 @@ public class Team extends Dozent implements Visible{
 	@Override
 	public void updateMapObject() {
 	}
+
+	@Override
+	public void getClicked() {
+
+	}
 }
