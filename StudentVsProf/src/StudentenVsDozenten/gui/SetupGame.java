@@ -11,10 +11,10 @@ import javax.swing.*;
 public class SetupGame {
 	int gap = 10;
 
-	public static JLabel wissensCounter = new JLabel("0");
+	public static JLabel wissensCounter = new JLabel("Wissenspunkte: 0", SwingConstants.CENTER);
     public static GameFrame gameFrame = new GameFrame();
     public static ContainerPanel spielfeld = new ContainerPanel();
-    public static ContainerPanel wissenspunktLabel = new ContainerPanel();
+    public static ContainerPanel wissenspunktPanel = new ContainerPanel();
     public static ContainerPanel teamleiste = new ContainerPanel();
     
    // ContainerPanel myContainerPanel;
@@ -27,20 +27,21 @@ public class SetupGame {
     	//mygameFrame = gameFrame;
     	//myContainerPanel = spielfeld;
     	ContainerPanel myContainerPanel = teamleiste;
-    	spielfeld.setSize(PlayingField.fieldSize*PlayingField.Edgex, PlayingField.fieldSize*PlayingField.Edgey);
+    	spielfeld.setSize(PlayingField.fieldSize * PlayingField.Edgex, PlayingField.fieldSize * PlayingField.Edgey);
 
-        wissensCounter.setSize(20, 20);
+        wissensCounter.setSize(PlayingField.fieldSize * PlayingField.Edgex, 40);
+        wissensCounter.setFont(wissensCounter.getFont().deriveFont(25.0F));
 
-        wissenspunktLabel.setBounds(0, PlayingField.fieldSize * PlayingField.Edgey + gap, PlayingField.fieldSize * PlayingField.Edgex, 40);
-        wissenspunktLabel.setBackground(Color.CYAN);
-        wissenspunktLabel.add(wissensCounter);
+        wissenspunktPanel.setBounds(0, PlayingField.fieldSize * PlayingField.Edgey + gap, PlayingField.fieldSize * PlayingField.Edgex, 40);
+        wissenspunktPanel.setBackground(Color.CYAN);
+        wissenspunktPanel.add(wissensCounter);
 
-        teamleiste.setBounds(0, PlayingField.fieldSize * PlayingField.Edgey + wissenspunktLabel.getHeight() + gap * 2, PlayingField.fieldSize*PlayingField.Edgex, PlayingField.fieldSize);
+        teamleiste.setBounds(0, PlayingField.fieldSize * PlayingField.Edgey + wissenspunktPanel.getHeight() + gap * 2, PlayingField.fieldSize*PlayingField.Edgex, PlayingField.fieldSize);
     	teamleiste.setBackground(Color.GREEN);    
     	teamleiste.setLayout(null);
 
         gameFrame.addContainerPanel(spielfeld);
-        gameFrame.addContainerPanel(wissenspunktLabel);
+        gameFrame.addContainerPanel(wissenspunktPanel);
         gameFrame.addContainerPanel(teamleiste);
         
         //DozentenAuswahl Doz = new DozentenAuswahl();
@@ -49,17 +50,7 @@ public class SetupGame {
         DozentenAuswahlKomplett DozKomp = new DozentenAuswahlKomplett();
         DozKomp.fill(teamleiste);
         DozKomp.setLayout();
-        
-        
-        gameFrame.pack(); // Resize the JFrame to fit its components
-        gameFrame.setVisible(true); 
-        //System.out.println(">>:"+getClass().getResource("fisch.PNG"));
-        // MapObject mapObject = new MapObject(getClass().getResource("fisch.PNG"), new Position(0,0,100,100),spielfeld);
-        /*
-        teamgameFrame = gameFrame;
-        teamContainerPanel = teamleiste;
-        gameFrame.addContainerPanel(teamContainerPanel);
-        */
+
         gameFrame.revalidate();
         gameFrame.repaint();
     }

@@ -23,6 +23,6 @@ public class PlayingField {
 	}
 	public static void setWissenspunkte(int wp) {
 		wissenspunkte += wp;
-		SetupGame.wissensCounter.setText(String.valueOf(wissenspunkte));
+		SetupGame.wissensCounter.setText("Wissenspunkte: " + String.valueOf(wissenspunkte));
 	}
 }
