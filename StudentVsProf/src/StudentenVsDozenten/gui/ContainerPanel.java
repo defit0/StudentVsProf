@@ -8,8 +8,6 @@ import java.util.Map;
 public class ContainerPanel extends JPanel {
 
     ArrayList<MapObject> mapObjects = new ArrayList();
-    private int width;
-    private int height;
 
     public ContainerPanel() {
         this.setBackground(Color.BLUE);
@@ -27,4 +25,5 @@ public class ContainerPanel extends JPanel {
     public void remove(MapObject mapObject) {
         mapObjects.remove(mapObject);
     }
+
 }

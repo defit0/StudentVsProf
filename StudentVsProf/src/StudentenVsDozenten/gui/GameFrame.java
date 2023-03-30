@@ -14,16 +14,19 @@ public class GameFrame extends JFrame{
         this.setTitle("Studenten vs. Dozenten");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setPreferredSize(new Dimension(1280, 720));
-        this.setResizable(false);
+        this.setResizable(true);
         this.setSize(width, height);
-        this.setLayout(new BorderLayout());
+        //this.setLayout(new BorderLayout());
+        this.setLayout(null);
         this.setVisible(true);
     }
 
     public void addContainerPanel(ContainerPanel panel) {
         this.add(panel);
     }
-
+    public void addSouthContainerPanel(ContainerPanel panel) {
+        this.add(panel, BorderLayout.SOUTH);
+    }
     public void setResolution(int width, int height) {
         this.width = width;
         this.height = height;

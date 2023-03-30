@@ -40,7 +40,7 @@ public class MapObject {
      
     }
     
-    public MapObject(URL imageIcon, Position p,ContainerPanel panel,boolean backgraund) {
+    public MapObject(URL imageIcon, Position p,ContainerPanel panel,boolean background) {
     	this.panel = panel;
     	this.panel.add(this);
     	// objectLabel.setOpaque(true);
@@ -52,7 +52,7 @@ public class MapObject {
         objectIcon = new ImageIcon(scaledImg);
         objectLabel.setIcon(objectIcon);
         objectLabel.setVisible(true);
-        if(backgraund) {
+        if(background) {
         	
         }
         

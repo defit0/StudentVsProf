@@ -12,7 +12,7 @@ import StudentenVsDozenten.gui.Visible;
 
 public class TestDozent extends Dozent implements Visible {
 	perceptualBehaviour percBehav;
-	public URL imagePath = getClass().getResource("Dozent_Forscher.png");
+	public URL imagePath = getClass().getResource("Dozent_StandardVorlesung.png");
 	public MapObject mapObject;
 	
 	public TestDozent(Field F) {

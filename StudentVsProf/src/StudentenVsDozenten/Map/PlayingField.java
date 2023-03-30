@@ -6,6 +6,7 @@ import StudentenVsDozenten.Dozenten.Wissenschaftsarbeiten;
 import StudentenVsDozenten.Timer.GameTimer;
 
 public class PlayingField {
+	public static int fieldSize = 100;
 	public static int wissenspunkte = 0;
 	public static int Edgex = 8;
 	public static int Edgey = 5;
