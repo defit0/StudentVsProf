@@ -26,29 +26,29 @@ public class Student implements TimerAction, Visible {
 	int damage;
 	Position Pos;
 	DefenseType dt;
-	public URL imagePath = getClass().getResource("fisch.PNG");
+	public URL imagePath = getClass().getResource("Standart_Student.png");
 	public URL previousImagePath = null;
 	public MapObject mapObject;
 	public ArrayList<Effect> AllEffects= new ArrayList<Effect>();
 	
 	public Student(float x , int y) {
 		this.attackspeed = 1;
-		this.speed = 20.0f;
+		this.speed = 0.2f;
 		this.hitpoints = 6;
 		this.damage = 2;
 		this.dt = new standart();
-		this.Pos = new Position( x, y,40f, 40f);
+		this.Pos = new Position( x, y,100f, 100f);
 		System.out.println("start:" + this);
 		createMapObject();
 	}
 	
 	public Student(Field fieldIn) {
 		this.attackspeed = 1;
-		this.speed = 20f;
+		this.speed = 0.2f;
 		this.hitpoints = 6;
 		this.damage = 2;
 		this.dt = new standart();
-		this.Pos = new Position( fieldIn.getPos().getxPosition(), fieldIn.getPos().getyPosition(),40f, 40f);
+		this.Pos = new Position( fieldIn.getPos().getxPosition(), fieldIn.getPos().getyPosition(),100f, 100f);
 		System.out.println("start:" + this);
 		createMapObject();
 	}
@@ -142,11 +142,14 @@ public class Student implements TimerAction, Visible {
 
 	@Override
 	public void updateMapObject() {
-		if (previousImagePath == imagePath && Pos.equals(mapObject.getPosition())) {
+		if (previousImagePath == imagePath ) {
 		} else {
 			mapObject.remove();
 			mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld, this);
 			previousImagePath = imagePath;
+		}
+		if(!Pos.equals(mapObject.getPosition())) {
+			mapObject.setObjectPosition(Pos);
 		}
 	}
 

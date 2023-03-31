@@ -39,7 +39,6 @@ public class Forscher extends Dozent implements Visible {
 	}
 	
 	public void shoot() {
-		System.out.println("schuss");
 		wissengenerieren();
 	}
 

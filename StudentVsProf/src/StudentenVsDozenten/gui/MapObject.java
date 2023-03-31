@@ -132,4 +132,17 @@ public class MapObject {
 	public JLabel getLabel() {
 		return objectLabel;
 	}
+
+	public Position getObjectPosition() {
+		return objectPosition;
+	}
+
+	public void setObjectPosition(Position objectPosition) {
+		this.objectPosition = objectPosition;
+		objectLabel.setLocation(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()));
+		panel.repaint();
+		
+	
+	}
+	
 }

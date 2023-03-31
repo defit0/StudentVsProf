@@ -61,5 +61,6 @@ public class Wissenschaftsarbeiten implements Visible {
 		mapObject.remove();
 		mapObject = null;
 		PlayingField.Paper.remove(this);
+		SetupGame.spielfeld.repaint();
 	}
 }

@@ -28,7 +28,6 @@ public class Start {
 		Printer p = new Printer();
 		//Dozent Euler = new Dozent(PlayingField.GameMap.getFieldIn(0, 3));
 		Student Tom = new Student(PlayingField.GameMap.getFieldIn(700, 300));
-		Tom.setPos(Tom.getPos().addY(90-Tom.getPos().getHeight()));
 		Tom.updateMapObject();
 		//Forscher Wissenssammler1 = new Forscher(PlayingField.GameMap.getFieldIn(0, 400));
 		//Forscher Wissenssammler2 = new Forscher(PlayingField.GameMap.getFieldIn(0, 0));

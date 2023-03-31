@@ -3,6 +3,7 @@ package StudentenVsDozenten.Dozenten;
 import java.net.URL;
 
 import StudentenVsDozenten.Dozenten.AttackTypen.talk;
+import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.wissensproduktion;
 import StudentenVsDozenten.Map.Field;
@@ -21,10 +22,20 @@ public class TestDozent extends Dozent implements Visible {
 		this.hitpoints = 6;
 		this.myField = F;
 		this.Pos = F.getPos();
-		
+		this.percBehav = new InLineInfinite(this);
 		this.attackType = new talk();
 		F.addDozent(this);
 		this.createMapObject();
+	}
+	public void shoot() {
+		System.out.println("Peng");
+		if(thempAttackspeed == attackspeed) {
+			Projectile Bullet = new Projectile(this);
+			thempAttackspeed = 0;
+		}else {
+			thempAttackspeed ++;
+		}
+		
 	}
 	
 	@Override

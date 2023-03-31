@@ -14,8 +14,8 @@ public class PlayingField {
 	public static Map GameMap = new Map();
 	public static GameTimer alleEfeckte = new GameTimer();
 	public static GameTimer allePerceptualBehaviour = new GameTimer();
-	public static GameTimer gameTimer = new GameTimer();
-	public static GameTimer wissenstimer = new GameTimer(1000);
+	public static GameTimer gameTimer = new GameTimer(10);
+	public static GameTimer wissenstimer = new GameTimer(3000);
 	public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
 
 	public static int getWissenspunkte() {

@@ -17,15 +17,15 @@ public class SetupGame {
     public static ContainerPanel wissenspunktPanel = new ContainerPanel();
     public static ContainerPanel teamleiste = new ContainerPanel();
     
-   // ContainerPanel myContainerPanel;
-   //GameFrame  mygameFrame;
+    ContainerPanel myContainerPanel;
+   GameFrame  mygameFrame;
    /* 
     ContainerPanel teamContainerPanel;
     GameFrame  teamgameFrame;
     */
     public SetupGame() {
-    	//mygameFrame = gameFrame;
-    	//myContainerPanel = spielfeld;
+    	mygameFrame = gameFrame;
+    	myContainerPanel = spielfeld;
     	ContainerPanel myContainerPanel = teamleiste;
     	spielfeld.setSize(PlayingField.fieldSize * PlayingField.Edgex, PlayingField.fieldSize * PlayingField.Edgey);
 
