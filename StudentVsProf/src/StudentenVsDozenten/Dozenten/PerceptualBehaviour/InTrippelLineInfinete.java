@@ -2,14 +2,13 @@ package StudentenVsDozenten.Dozenten.PerceptualBehaviour;
 
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Hilfsklasse.Position;
-import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Map.Series;
 
 //Uberprueft ob in diesr Line oder den beiden benachbarten Linien ein Student ist
-public class inTrippelLineInfinete extends perceptualBehaviour {
+public class InTrippelLineInfinete extends PerceptualBehaviour {
 
-    public inTrippelLineInfinete(Dozent doz) {
+    public InTrippelLineInfinete(Dozent doz) {
         super(doz);
     }
 

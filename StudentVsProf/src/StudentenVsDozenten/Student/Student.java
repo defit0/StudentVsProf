@@ -4,13 +4,13 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import StudentenVsDozenten.Dozenten.Dozent;
-import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
+import StudentenVsDozenten.Dozenten.AttackTypen.AttackType;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Studenten.DefenseType.DefenseType;
-import StudentenVsDozenten.Studenten.DefenseType.standart;
+import StudentenVsDozenten.Studenten.DefenseType.Standard;
 import StudentenVsDozenten.Timer.TimerAction;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
@@ -31,13 +31,14 @@ public class Student implements TimerAction, Visible {
     public ArrayList<Effect> AllEffects = new ArrayList<Effect>();
     int normalImag = 0;
     int eatCooldown = 100;
+    boolean isDead = false;
 
     public Student(float x, int y) {
         this.attackspeed = 1;
         this.speed = 0.2f;
         this.hitpoints = 6;
         this.damage = 2;
-        this.dt = new standart();
+        this.dt = new Standard();
         this.Pos = new Position(x, y, 100f, 100f);
         System.out.println("start:" + this);
         createMapObject();
@@ -48,13 +49,13 @@ public class Student implements TimerAction, Visible {
         this.speed = 0.2f;
         this.hitpoints = 10;
         this.damage = 2;
-        this.dt = new standart();
+        this.dt = new Standard();
         this.Pos = new Position(fieldIn.getPos().getxPosition(), fieldIn.getPos().getyPosition(), 100f, 100f);
         System.out.println("start:" + this);
         createMapObject();
     }
 
-    public void gethit(int damage, attackType at, int length, float intensity) {
+    public void gethit(int damage, AttackType at, int length, float intensity) {
         Effect e = dt.getHit(damage, at, length, intensity);
         imagePath = getClass().getResource("student_damaged.png");
         if (e != null) {
@@ -103,8 +104,9 @@ public class Student implements TimerAction, Visible {
         PlayingField.gameTimer.remove(this);
         mapObject.remove();
         mapObject = null;
-        Pos = new Position(0, 0, 0, 0);
+        Pos = null;
         Client.addScore(10);
+        isDead = true;
     }
 
     public boolean checkDozent() {
@@ -126,12 +128,14 @@ public class Student implements TimerAction, Visible {
 
     @Override
     public void TimerActionPerform() {
-        activateEffects();
-        if (checkDozent()) {
-            eat();
-        } else run();
-        updateMapObject();
-        System.out.println(this);
+        if (isDead == false) {
+            activateEffects();
+            if (checkDozent()) {
+                eat();
+            } else run();
+            updateMapObject();
+            System.out.println(this);
+        }
     }
 
     public float getSpeed() {

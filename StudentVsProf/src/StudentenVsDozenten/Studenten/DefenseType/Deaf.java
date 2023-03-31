@@ -3,7 +3,7 @@ package StudentenVsDozenten.Studenten.DefenseType;
 import StudentenVsDozenten.Dozenten.AttackTypen.AttackType;
 import StudentenVsDozenten.Effekte.Effect;
 
-public class Genie implements DefenseType {
+public class Deaf implements DefenseType {
 
     @Override
     public Effect getHit(int damage, AttackType at, int length, float intensity) {

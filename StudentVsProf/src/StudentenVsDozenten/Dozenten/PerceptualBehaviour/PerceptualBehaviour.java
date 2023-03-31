@@ -4,10 +4,10 @@ import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Timer.TimerAction;
 
-public abstract class perceptualBehaviour implements TimerAction {
+public abstract class PerceptualBehaviour implements TimerAction {
     Dozent myDozent;
 
-    perceptualBehaviour(Dozent doz) {
+    PerceptualBehaviour(Dozent doz) {
         myDozent = doz;
         PlayingField.allePerceptualBehaviour.add(this);
     }

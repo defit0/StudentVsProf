@@ -1,11 +1,10 @@
 package StudentenVsDozenten.Dozenten.PerceptualBehaviour;
 
 import StudentenVsDozenten.Dozenten.Dozent;
-import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Map.Series;
 
-public class InLineInfinite extends perceptualBehaviour {
+public class InLineInfinite extends PerceptualBehaviour {
 
     public InLineInfinite(Dozent doz) {
         super(doz);

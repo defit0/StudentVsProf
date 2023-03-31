@@ -2,11 +2,11 @@ package StudentenVsDozenten.Dozenten.AttackTypen;
 
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Effekte.SingleDamage;
-import StudentenVsDozenten.Studenten.DefenseType.deaf;
+import StudentenVsDozenten.Studenten.DefenseType.Deaf;
 
-public class talk extends attackType {
+public class Talk extends AttackType {
     @Override
-    public Effect attacPattern(deaf dt, int damage, int length, float intensity) {
+    public Effect attacPattern(Deaf dt, int damage, int length, float intensity) {
         return new SingleDamage((int) Math.round(damage * 0.5));
     }
 

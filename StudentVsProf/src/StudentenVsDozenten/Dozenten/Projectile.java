@@ -2,10 +2,9 @@ package StudentenVsDozenten.Dozenten;
 
 import java.net.URL;
 
-import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
+import StudentenVsDozenten.Dozenten.AttackTypen.AttackType;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
-import StudentenVsDozenten.Map.Map;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Student.Student;
 import StudentenVsDozenten.Timer.TimerAction;
@@ -17,7 +16,7 @@ public class Projectile implements TimerAction, Visible {
     public URL imagePath = getClass().getResource("Bullet.png");
     public MapObject mapObject;
     Dozent Doz;
-    attackType attackType;
+    AttackType attackType;
     Position Pos;
     Field F;
     int damage;

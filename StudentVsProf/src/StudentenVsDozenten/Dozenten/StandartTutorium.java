@@ -3,9 +3,8 @@ package StudentenVsDozenten.Dozenten;
 import java.net.URL;
 
 import StudentenVsDozenten.Dozenten.AttackTypen.Exam;
-import StudentenVsDozenten.Dozenten.AttackTypen.talk;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
+import StudentenVsDozenten.Dozenten.PerceptualBehaviour.PerceptualBehaviour;
 import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
@@ -13,7 +12,7 @@ import StudentenVsDozenten.gui.Visible;
 import StudentenVsDozenten.sql.Client;
 
 public class StandartTutorium extends Dozent implements Visible {
-    perceptualBehaviour percBehav;
+    PerceptualBehaviour percBehav;
     public URL imagePath = getClass().getResource("Dozent_StandartTutorium.png");
 
     public StandartTutorium(Field F) {

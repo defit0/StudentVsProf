@@ -6,9 +6,9 @@ import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
 
 //Ueberprueft ob in den beiden feldern vor dem Dozent Studenten sind und aktiviert die Schuss funktion
-public class inLineTwo extends perceptualBehaviour {
+public class InLineTwo extends PerceptualBehaviour {
 
-    public inLineTwo(Dozent doz) {
+    public InLineTwo(Dozent doz) {
         super(doz);
     }
 

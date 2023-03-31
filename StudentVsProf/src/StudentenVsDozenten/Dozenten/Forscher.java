@@ -1,22 +1,18 @@
 package StudentenVsDozenten.Dozenten;
 
-import StudentenVsDozenten.Dozenten.AttackTypen.talk;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.wissensproduktion;
-import StudentenVsDozenten.Hilfsklasse.Position;
+import StudentenVsDozenten.Dozenten.AttackTypen.Talk;
+import StudentenVsDozenten.Dozenten.PerceptualBehaviour.PerceptualBehaviour;
+import StudentenVsDozenten.Dozenten.PerceptualBehaviour.Wissensproduktion;
 import StudentenVsDozenten.Map.Field;
-import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
 import StudentenVsDozenten.sql.Client;
 
 import java.net.URL;
-import java.util.ArrayList;
 
 public class Forscher extends Dozent implements Visible {
-    perceptualBehaviour percBehav;
+    PerceptualBehaviour percBehav;
     int wissenserhoehung = 1;
     public URL imagePath = getClass().getResource("Dozent_Forscher.png");
 
@@ -27,8 +23,8 @@ public class Forscher extends Dozent implements Visible {
         this.hitpoints = 6;
         this.myField = F;
         this.Pos = F.getPos();
-        this.percBehav = new wissensproduktion(this);
-        this.attackType = new talk();
+        this.percBehav = new Wissensproduktion(this);
+        this.attackType = new Talk();
         F.addDozent(this);
         this.createMapObject();
         Client.addScore(3);

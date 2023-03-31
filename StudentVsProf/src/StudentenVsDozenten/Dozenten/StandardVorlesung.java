@@ -2,11 +2,9 @@ package StudentenVsDozenten.Dozenten;
 
 import java.net.URL;
 
-import StudentenVsDozenten.Dozenten.AttackTypen.practice;
-import StudentenVsDozenten.Dozenten.AttackTypen.talk;
+import StudentenVsDozenten.Dozenten.AttackTypen.Practice;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.wissensproduktion;
+import StudentenVsDozenten.Dozenten.PerceptualBehaviour.PerceptualBehaviour;
 import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
@@ -14,7 +12,7 @@ import StudentenVsDozenten.gui.Visible;
 import StudentenVsDozenten.sql.Client;
 
 public class StandardVorlesung extends Dozent implements Visible {
-    perceptualBehaviour percBehav;
+    PerceptualBehaviour percBehav;
     public URL imagePath = getClass().getResource("Dozent_StandardVorlesung.png");
 
     public StandardVorlesung(Field F) {
@@ -24,7 +22,7 @@ public class StandardVorlesung extends Dozent implements Visible {
         this.myField = F;
         this.Pos = F.getPos();
         this.percBehav = new InLineInfinite(this);
-        this.attackType = new practice();
+        this.attackType = new Practice();
         BulletSpeet = 0.5f;
         damage = 1;
         length = 3000;

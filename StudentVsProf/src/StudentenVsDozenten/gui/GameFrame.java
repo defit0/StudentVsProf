@@ -24,7 +24,7 @@ public class GameFrame extends JFrame {
 
             System.exit(input);
         } else {
-            int input = JOptionPane.showConfirmDialog(null, "Willkomen zur�ck, " + Client.player + "!", "Anmeldung erfolgreich", JOptionPane.DEFAULT_OPTION);
+            int input = JOptionPane.showConfirmDialog(null, "Willkomen zurueck, " + Client.player + "!", "Anmeldung erfolgreich", JOptionPane.DEFAULT_OPTION);
         }
 
 

@@ -4,7 +4,7 @@ import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Effekte.SingleDamage;
 import StudentenVsDozenten.Studenten.DefenseType.Genie;
 
-public class Exam extends attackType {
+public class Exam extends AttackType {
 
     @Override
     public Effect attacPattern(Genie dt, int damage, int length, float intensity) {

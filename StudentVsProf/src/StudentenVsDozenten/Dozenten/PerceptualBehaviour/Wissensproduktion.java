@@ -3,11 +3,11 @@ package StudentenVsDozenten.Dozenten.PerceptualBehaviour;
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Map.PlayingField;
 
-public class wissensproduktion extends perceptualBehaviour {
+public class Wissensproduktion extends PerceptualBehaviour {
     final float startchancewissen = 0.1f;
     float chancewissen = 0.1f;
 
-    public wissensproduktion(Dozent doz) {
+    public Wissensproduktion(Dozent doz) {
         super(doz);
         PlayingField.allePerceptualBehaviour.remove(this);
         PlayingField.wissenstimer.add(this);

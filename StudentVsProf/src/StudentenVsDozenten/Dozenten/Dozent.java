@@ -1,15 +1,9 @@
 package StudentenVsDozenten.Dozenten;
 
-import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
-import StudentenVsDozenten.Dozenten.AttackTypen.talk;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.inLineTwo;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.inTrippelLineInfinete;
-import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
+import StudentenVsDozenten.Dozenten.AttackTypen.AttackType;
+import StudentenVsDozenten.Dozenten.PerceptualBehaviour.PerceptualBehaviour;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
-import StudentenVsDozenten.Map.PlayingField;
-import StudentenVsDozenten.Timer.TimerAction;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.sql.Client;
 
@@ -20,8 +14,8 @@ public abstract class Dozent {
     int hitpoints;
     Position Pos;
     Field myField;
-    attackType attackType;
-    perceptualBehaviour percBehav;
+    AttackType attackType;
+    PerceptualBehaviour percBehav;
     int damage;
     int length;
     float intensity;
@@ -70,11 +64,11 @@ public abstract class Dozent {
         this.myField = myField;
     }
 
-    public attackType getAttackType() {
+    public AttackType getAttackType() {
         return attackType;
     }
 
-    public void setAttackType(attackType attackType) {
+    public void setAttackType(AttackType attackType) {
         this.attackType = attackType;
     }
 

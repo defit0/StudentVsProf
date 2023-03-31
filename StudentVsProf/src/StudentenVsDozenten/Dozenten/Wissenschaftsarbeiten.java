@@ -1,6 +1,5 @@
 package StudentenVsDozenten.Dozenten;
 
-import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
