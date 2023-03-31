@@ -9,20 +9,30 @@ import StudentenVsDozenten.gui.SetupGame;
 public class PlayingField {
 	public static int punktzahl;
 	public static int fieldSize = 100;
-	public static int wissenspunkte = 0;
+	public static int wissenspunkte = 10;
 	public static int Edgex = 8;
 	public static int Edgey = 5;
-	public static Map GameMap = new Map();
-	public static GameTimer alleEfeckte = new GameTimer();
-	public static GameTimer allePerceptualBehaviour = new GameTimer(500);
-	public static GameTimer gameTimer = new GameTimer(10);
-	public static GameTimer wissenstimer = new GameTimer(2000);
-	public static GameTimer studentenSpawner = new GameTimer(7000);
-	public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
+	public static Map GameMap;
+	public static GameTimer alleEfeckte;
+	public static GameTimer allePerceptualBehaviour;
+	public static GameTimer gameTimer;
+	public static GameTimer wissenstimer;
+	public static GameTimer studentenSpawner;
+	public static ArrayList <Wissenschaftsarbeiten> Paper;
 	//anschauen:
 	GameTimer allePerceptualBehaviourTEST = allePerceptualBehaviour;
 	
 	public PlayingField() {
+		//setupp
+		GameMap = new Map();
+		alleEfeckte = new GameTimer();
+		allePerceptualBehaviour = new GameTimer(500);
+		gameTimer = new GameTimer(10);
+		wissenstimer = new GameTimer(2000);
+		studentenSpawner = new GameTimer(7000);
+		Paper = new ArrayList<Wissenschaftsarbeiten>();
+		
+		
 		gameTimer.start();
 		allePerceptualBehaviour.start();
 		wissenstimer.start();
@@ -33,8 +43,12 @@ public class PlayingField {
 	public static int getWissenspunkte() {
 		return wissenspunkte;
 	}
-	public static void setWissenspunkte(int wp) {
+	public static void addWissenspunkte(int wp) {
 		wissenspunkte += wp;
+		SetupGame.wissensCounter.setText("Wissenspunkte: " + String.valueOf(wissenspunkte));
+	}
+	public static void setWissenspunkte(int wp) {
+		wissenspunkte = wp;
 		SetupGame.wissensCounter.setText("Wissenspunkte: " + String.valueOf(wissenspunkte));
 	}
 	

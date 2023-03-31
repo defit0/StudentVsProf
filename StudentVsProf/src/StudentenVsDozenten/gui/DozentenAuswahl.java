@@ -14,13 +14,14 @@ import StudentenVsDozenten.Map.PlayingField;
 
 public class DozentenAuswahl extends ContainerPanel implements Visible {
 	URL Doz;
-	JLabel JKosten = new JLabel();
+	JLabel JKosten;
 	boolean avaliabe;
 	int kosten;
 	public static int size = 100;
 	int ausDoz;
 	
 	public DozentenAuswahl(URL s, int d, int k){
+		JKosten = new JLabel();
 		Doz = s;
 		this.setSize(100, 100);
 		JKosten.setBounds(85, 5, 20, 20);

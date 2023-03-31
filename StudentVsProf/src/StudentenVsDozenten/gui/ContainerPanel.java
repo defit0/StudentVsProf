@@ -7,9 +7,10 @@ import java.util.Map;
 
 public class ContainerPanel extends JPanel {
 
-    ArrayList<MapObject> mapObjects = new ArrayList();
+    ArrayList<MapObject> mapObjects;
 
     public ContainerPanel() {
+    	mapObjects = new ArrayList();
         this.setBackground(Color.BLUE);
         this.setVisible(true);
         this.setLayout(null);

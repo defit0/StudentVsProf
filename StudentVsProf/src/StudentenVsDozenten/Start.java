@@ -27,6 +27,9 @@ public class Start {
 	}
 	
 	public static void restart() {
+		setupGame = null;
+		pf = null;
+		p =null;
 		System.gc();
 		setupGame = new SetupGame();
 		pf = new PlayingField();

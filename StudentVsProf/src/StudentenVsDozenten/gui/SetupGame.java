@@ -9,18 +9,19 @@ import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.PlayingField;
+import StudentenVsDozenten.Timer.GameTimer;
 
 import javax.swing.*;
 
 public class SetupGame{
 	int gap = 10;
 
-	public static JLabel wissensCounter = new JLabel("Wissenspunkte: 0", SwingConstants.CENTER);
-    public static GameFrame gameFrame = new GameFrame();
-    public static ContainerPanel gameOverPanel = new ContainerPanel();;
-    public static ContainerPanel spielfeld = new ContainerPanel();
-    public static ContainerPanel wissenspunktPanel = new ContainerPanel();
-    public static ContainerPanel teamleiste = new ContainerPanel();
+	public static JLabel wissensCounter ;
+    public static GameFrame gameFrame ;
+    public static ContainerPanel gameOverPanel;
+    public static ContainerPanel spielfeld; 
+    public static ContainerPanel wissenspunktPanel;
+    public static ContainerPanel teamleiste;
     
     ContainerPanel myContainerPanel;
     GameFrame  mygameFrame;
@@ -29,6 +30,14 @@ public class SetupGame{
     GameFrame  teamgameFrame;
     */
     public SetupGame() {
+    	//setupp
+    	wissensCounter = new JLabel("Wissenspunkte: "+PlayingField.wissenspunkte, SwingConstants.CENTER);
+    	gameFrame = new GameFrame();
+    	gameOverPanel = new ContainerPanel();
+    	spielfeld = new ContainerPanel();
+    	wissenspunktPanel = new ContainerPanel();
+    			 teamleiste = new ContainerPanel();
+    	
     	mygameFrame = gameFrame;
     	gameOverPanel.setBackground(Color.red);
     	myContainerPanel = spielfeld;
@@ -72,9 +81,20 @@ public class SetupGame{
 		Start.main(null);
     	*/
     	
-		JOptionPane.showConfirmDialog(null, "GAME OVER \n","Viel Glück bein Nächsten Versuch!!!", JOptionPane.DEFAULT_OPTION);
-		
+    	PlayingField.alleEfeckte.stopp();
+    	PlayingField.allePerceptualBehaviour.stopp();
+    	PlayingField.gameTimer.stopp();
+    	PlayingField.wissenstimer.stopp();
+    	PlayingField.studentenSpawner.stopp();
+    	
+    	
+    	
+		JOptionPane.showConfirmDialog(null, "Viel Glueck bein Naechsten Versuch!!!","GAME OVER \n", JOptionPane.DEFAULT_OPTION);
+		gameFrame.dispose();
     	Start.restart();
+    	
+    	
+    	
 	}
 
 }

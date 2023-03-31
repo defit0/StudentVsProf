@@ -59,7 +59,7 @@ public class Wissenschaftsarbeiten implements Visible {
 	public void getClicked() {
 		
 		
-		PlayingField.setWissenspunkte(wissenswert);
+		PlayingField.addWissenspunkte(wissenswert);
 		mapObject.remove();
 		mapObject = null;
 		PlayingField.Paper.remove(this);

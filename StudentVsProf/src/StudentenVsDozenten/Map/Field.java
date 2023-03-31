@@ -137,23 +137,23 @@ public void getClicked() {
 		switch (dozArt) {
 	    case 0:
 	    	neurDoz = new Forscher(this);
-	    	PlayingField.setWissenspunkte(-3);
+	    	PlayingField.addWissenspunkte(-3);
 	    	break;
 	    case 1:
 	    	neurDoz = new StandardTestat(this);
-	    	PlayingField.setWissenspunkte(-1);
+	    	PlayingField.addWissenspunkte(-1);
 	    	break;
 	    case 2:
 	    	neurDoz = new StandardVorlesung(this);
-	    	PlayingField.setWissenspunkte(-2);
+	    	PlayingField.addWissenspunkte(-2);
 	    	break;
 	    case 3:
 	    	neurDoz = new StandartTutorium(this);
-	    	PlayingField.setWissenspunkte(-3);
+	    	PlayingField.addWissenspunkte(-3);
 	    	break;
 	    case 4:
 	    	neurDoz = new StandartUmfrage(this);
-	    	PlayingField.setWissenspunkte(-5);
+	    	PlayingField.addWissenspunkte(-5);
 
 		this.setDoz(neurDoz);
 		
