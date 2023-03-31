@@ -10,32 +10,29 @@ import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
 
 public class StudentenSetzen implements TimerAction {
-	int anzStudenten = 100;
-	
-	public StudentenSetzen() {
-		PlayingField.studentenSpawner.add(this);
-	}
+    int anzStudenten = 100;
 
-	public void setStudent() {
-		PlayingField.gameTimer.add(new Student(PlayingField.GameMap.getFieldIn(700, (int) zufallsPos())));
+    public StudentenSetzen() {
+        PlayingField.studentenSpawner.add(this);
+    }
 
-	}
-	
-	
-	public float zufallsPos() {
-		float pos;		
-		pos = (float) Math.random()*500;
-		return pos;
-	}
+    public void setStudent() {
+        PlayingField.gameTimer.add(new Student(PlayingField.GameMap.getFieldIn(700, (int) zufallsPos())));
+    }
 
-	@Override
-	public void TimerActionPerform() {
-		setStudent();
-		anzStudenten--;
-		if(anzStudenten <= 0) {
-			//StudentenSetzen s = new StudentenSetzen();
-			PlayingField.studentenSpawner.remove(this);
-		}
-	}  
 
+    public float zufallsPos() {
+        float pos;
+        pos = (float) Math.random() * 500;
+        return pos;
+    }
+
+    @Override
+    public void TimerActionPerform() {
+        setStudent();
+        anzStudenten--;
+        if (anzStudenten <= 0) {
+            PlayingField.studentenSpawner.remove(this);
+        }
+    }
 }

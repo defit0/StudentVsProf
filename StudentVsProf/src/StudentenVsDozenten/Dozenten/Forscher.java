@@ -16,45 +16,43 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class Forscher extends Dozent implements Visible {
-	perceptualBehaviour percBehav;
-	int wissenserhoehung = 1;
-	public URL imagePath = getClass().getResource("Dozent_Forscher.png");
-	
+    perceptualBehaviour percBehav;
+    int wissenserhoehung = 1;
+    public URL imagePath = getClass().getResource("Dozent_Forscher.png");
 
 
-	public Forscher(Field F) {
-		this.attackspeed = 5;
-		this.thempAttackspeed = attackspeed;
-		this.hitpoints = 6;
-		this.myField = F;
-		this.Pos = F.getPos();
-		this.percBehav = new wissensproduktion(this);
-		this.attackType = new talk();
-		F.addDozent(this);
-		this.createMapObject();
-		Client.addScore(3);
-	}
+    public Forscher(Field F) {
+        this.attackspeed = 5;
+        this.thempAttackspeed = attackspeed;
+        this.hitpoints = 6;
+        this.myField = F;
+        this.Pos = F.getPos();
+        this.percBehav = new wissensproduktion(this);
+        this.attackType = new talk();
+        F.addDozent(this);
+        this.createMapObject();
+        Client.addScore(3);
+    }
 
-	public void wissengenerieren() {	
-		Wissenschaftsarbeiten Paper = new Wissenschaftsarbeiten(wissenserhoehung, Pos);
-		System.out.println("sollte generiert werden");
-	}
-	
-	public void shoot() {
-		wissengenerieren();
-	}
+    public void wissengenerieren() {
+        Wissenschaftsarbeiten Paper = new Wissenschaftsarbeiten(wissenserhoehung, Pos);
+        System.out.println("sollte generiert werden");
+    }
 
-	@Override
-	public void createMapObject() {
-		mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld, this);
-	}
+    public void shoot() {
+        wissengenerieren();
+    }
 
-	@Override
-	public void updateMapObject() {
-	}
+    @Override
+    public void createMapObject() {
+        mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld, this);
+    }
 
-	@Override
-	public void getClicked() {
+    @Override
+    public void updateMapObject() {
+    }
 
-	}
+    @Override
+    public void getClicked() {
+    }
 }
