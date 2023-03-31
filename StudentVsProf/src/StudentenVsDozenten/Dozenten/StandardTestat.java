@@ -7,6 +7,7 @@ import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
+import StudentenVsDozenten.sql.Client;
 
 public class StandardTestat extends Dozent implements Visible  {
 	public URL imagePath = getClass().getResource("Dozent_StandardTestat.png");
@@ -18,6 +19,7 @@ public class StandardTestat extends Dozent implements Visible  {
 		this.Pos = new Position(F.getPos().getxPosition(), F.getPos().getyPosition(), 100, 100);
 		F.addDozent(this);
 		this.createMapObject();
+		Client.addScore(1);
 	}
 
 	@Override

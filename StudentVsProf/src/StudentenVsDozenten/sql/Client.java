@@ -26,16 +26,15 @@ public class Client {
 	}
 
 	public void endOfGame() {
-
-		
-		score = 89;
 		db.insertScore(player, getDate(), score);
-
 	}
 
 	public String getDate() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");// "yyyy.MM.dd - HH:mm:ss" für h,min,s
 		Date currentTime = new Date();
 		return (formatter.format(currentTime));
+	}
+	public static void addScore(int addedScore) {
+		score +=addedScore;
 	}
 }

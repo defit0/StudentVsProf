@@ -10,6 +10,7 @@ import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
+import StudentenVsDozenten.sql.Client;
 
 public class StandartTutorium extends Dozent implements Visible  {
 	perceptualBehaviour percBehav;
@@ -27,6 +28,7 @@ public class StandartTutorium extends Dozent implements Visible  {
 		damage = 1;
 		F.addDozent(this);
 		this.createMapObject();
+		Client.addScore(3);
 	}
 	
 	public void shoot() {

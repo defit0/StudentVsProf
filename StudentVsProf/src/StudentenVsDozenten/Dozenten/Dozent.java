@@ -11,6 +11,7 @@ import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Timer.TimerAction;
 import StudentenVsDozenten.gui.MapObject;
+import StudentenVsDozenten.sql.Client;
 
 public abstract class Dozent {
 
@@ -62,6 +63,7 @@ public abstract class Dozent {
 		mapObject.remove();
 		mapObject = null;
 		Pos = null;
+		Client.addScore(-10);
 	}
 	
 	public void setField(Field F) {

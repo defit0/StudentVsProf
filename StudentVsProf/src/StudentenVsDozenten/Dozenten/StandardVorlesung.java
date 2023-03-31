@@ -11,6 +11,7 @@ import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
+import StudentenVsDozenten.sql.Client;
 
 public class StandardVorlesung extends Dozent implements Visible {
 	perceptualBehaviour percBehav;
@@ -31,6 +32,7 @@ public class StandardVorlesung extends Dozent implements Visible {
 		intensity = -0.1f;
 		F.addDozent(this);
 		this.createMapObject();
+		Client.addScore(2);
 	}
 	public void shoot() {
 		System.out.println("Peng");

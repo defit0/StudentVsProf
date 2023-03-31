@@ -10,7 +10,7 @@ import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
 
 public class StudentenSetzen implements TimerAction {
-	int anzStudenten = 20;
+	int anzStudenten = 100;
 	
 	public StudentenSetzen() {
 		PlayingField.studentenSpawner.add(this);

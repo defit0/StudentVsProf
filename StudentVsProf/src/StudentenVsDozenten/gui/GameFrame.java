@@ -10,7 +10,7 @@ public class GameFrame extends JFrame {
 
 	public static ContainerPanel spielfeld;
 	public static ContainerPanel seitenmenue;
-	Client c1 = new Client();
+	// Client c1 = new Client();
 	private int width = 815; // Magic Number, an Groeße von Fliesen angepasst
 	private int height = 700;
 

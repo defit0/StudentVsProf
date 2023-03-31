@@ -10,6 +10,7 @@ import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
+import StudentenVsDozenten.sql.Client;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -31,6 +32,7 @@ public class Forscher extends Dozent implements Visible {
 		this.attackType = new talk();
 		F.addDozent(this);
 		this.createMapObject();
+		Client.addScore(3);
 	}
 
 	public void wissengenerieren() {	

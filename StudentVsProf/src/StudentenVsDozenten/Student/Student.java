@@ -8,7 +8,6 @@ import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
-import StudentenVsDozenten.Map.Map;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Studenten.DefenseType.DefenseType;
 import StudentenVsDozenten.Studenten.DefenseType.standart;
@@ -16,6 +15,7 @@ import StudentenVsDozenten.Timer.TimerAction;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
+import StudentenVsDozenten.sql.Client;
 
 public class Student implements TimerAction, Visible {
 
@@ -34,7 +34,7 @@ public class Student implements TimerAction, Visible {
 	
 	public Student(float x , int y) {
 		this.attackspeed = 1;
-		this.speed = 1.0f;
+		this.speed = 0.2f;
 		this.hitpoints = 6;
 		this.damage = 2;
 		this.dt = new standart();
@@ -45,7 +45,7 @@ public class Student implements TimerAction, Visible {
 	
 	public Student(Field fieldIn) {
 		this.attackspeed = 1;
-		this.speed = 1.0f;
+		this.speed = 0.2f;
 		this.hitpoints = 10;
 		this.damage = 2;
 		this.dt = new standart();
@@ -106,6 +106,7 @@ public class Student implements TimerAction, Visible {
 		mapObject.remove();
 		mapObject = null;
 		Pos = new Position(0,0,0,0);
+		Client.addScore(10);
 	}
 	
 	public boolean checkDozent() {
