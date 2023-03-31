@@ -81,7 +81,7 @@ public class SetupGame{
     	System.exit(0);
 		Start.main(null);
     	*/
-    	
+    	Client c2 = new Client();
     	PlayingField.alleEfeckte.stopp();
     	PlayingField.allePerceptualBehaviour.stopp();
     	PlayingField.gameTimer.stopp();
@@ -91,7 +91,7 @@ public class SetupGame{
     	
     	
 		JOptionPane.showConfirmDialog(null, "Du hast " +Client.score +"Punkte \nViel Glueck bein Naechsten Versuch!!!","GAME OVER \n", JOptionPane.DEFAULT_OPTION);
-
+		c2.endOfGame();
 		gameFrame.dispose();
     	Start.restart();
 	}
