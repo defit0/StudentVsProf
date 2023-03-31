@@ -19,9 +19,9 @@ public class DozentenAuswahl extends ContainerPanel implements Visible {
 	boolean avaliabe;
 	int kosten;
 	public static int size = 100;
-	Class<?> ausDoz;
+	int ausDoz;
 	
-	public DozentenAuswahl(URL s, Class<?> d){
+	public DozentenAuswahl(URL s, int d){
 		Doz = s;
 		this.setSize(100, 100);
 		JKosten.setBounds(90, 90, 10, 10);
@@ -30,11 +30,11 @@ public class DozentenAuswahl extends ContainerPanel implements Visible {
 		createMapObject();
 	}
 
-	public Class<?> getAusDoz() {
+	public int getAusDoz() {
 		return ausDoz;
 	}
  
-	public void setAusDoz(Class<?> ausDoz) {
+	public void setAusDoz(int ausDoz) {
 		this.ausDoz = ausDoz;
 	}
 	

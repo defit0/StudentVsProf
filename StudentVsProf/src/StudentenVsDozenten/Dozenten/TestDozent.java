@@ -17,7 +17,7 @@ public class TestDozent extends Dozent implements Visible {
 	public MapObject mapObject;
 	
 	public TestDozent(Field F) {
-		this.attackspeed = 1;
+		this.attackspeed = 3;
 		this.thempAttackspeed = attackspeed;
 		this.hitpoints = 6;
 		this.myField = F;

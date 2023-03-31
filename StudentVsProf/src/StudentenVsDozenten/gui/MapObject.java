@@ -141,6 +141,16 @@ public class MapObject {
 		this.objectPosition = objectPosition;
 		objectLabel.setLocation(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()));
 		panel.repaint();
+	
+	}
+	public void setObjectNewImag(URL url) {
+		ImageIcon preLodetIcon = new ImageIcon(url);
+        Image img = preLodetIcon.getImage();
+        Image scaledImg = img.getScaledInstance(objectLabel.getWidth(), objectLabel.getHeight(), Image.SCALE_SMOOTH);
+        objectIcon = new ImageIcon(scaledImg);
+        
+		objectLabel.setIcon(objectIcon);
+		panel.repaint();
 		
 	
 	}

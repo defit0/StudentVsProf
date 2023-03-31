@@ -1,5 +1,7 @@
 package StudentenVsDozenten.Map;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -120,15 +122,25 @@ public void updateMapObject() {
 
 public static boolean setzeDoz = false;
 public static Dozent feldDoz;
-public static Class<?> dozArt;
+public static int dozArt;
 
 @Override
 public void getClicked() {
+	
+	System.out.println("Feld wurde geklickt");
+	
 	if(setzeDoz == true) {
-		Dozent test = (Dozent) DozentenAuswahlKomplett.dozAusw.newInstance();
-		setDoz(new DozentenAuswahlKomplett.dozAusw.newInstance());
+		Dozent neurDoz;
+	
+		switch (dozArt) {
+	    case 0:
+	    	neurDoz = new Forscher(this);
+	    	break;
+	    case 2:
+	    	neurDoz = new TestDozent(this);
+		this.setDoz(neurDoz);
 		
-		
+		}
 		
 		/*
 		if(dozArt == DozentenAuswahlKomplett.dozAusw[0] ) {

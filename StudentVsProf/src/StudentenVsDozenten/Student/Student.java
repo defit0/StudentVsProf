@@ -30,6 +30,7 @@ public class Student implements TimerAction, Visible {
 	public URL previousImagePath = null;
 	public MapObject mapObject;
 	public ArrayList<Effect> AllEffects= new ArrayList<Effect>();
+	int normalImag = 0;
 	
 	public Student(float x , int y) {
 		this.attackspeed = 1;
@@ -149,13 +150,20 @@ public class Student implements TimerAction, Visible {
 	@Override
 	public void updateMapObject() {
 		if (previousImagePath == imagePath ) {
+			if(normalImag > 10 ) {
+				previousImagePath = imagePath;
+				imagePath = getClass().getResource("Standart_Student.png");
+				normalImag = 0;
+			}else {
+				normalImag ++;
+			}
+			
 		} else {
-			mapObject.remove();
-			mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld, this);
+			
+			mapObject.setObjectNewImag(imagePath);
 			previousImagePath = imagePath;
-//			if(imagePath != getClass().getResource("Standart_Student.png")) {
-//				imagePath = getClass().getResource("Standart_Student.png");
-//			}
+			
+			
 		}
 		if(!Pos.equals(mapObject.getPosition())) {
 			mapObject.setObjectPosition(Pos);

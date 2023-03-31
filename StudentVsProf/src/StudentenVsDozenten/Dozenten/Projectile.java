@@ -47,7 +47,7 @@ public class Projectile implements TimerAction, Visible{
 	void flay(){
 		F.subProjectile(this);
 		Position tempPos = Pos.addX(speet);
-		System.out.println(tempPos);
+//		System.out.println(tempPos);
 		if(Math.round(tempPos.getxPosition())>= (PlayingField.Edgex -1)* PlayingField.fieldSize) {
 			//System.out.println(">>"+((PlayingField.Edgex )* PlayingField.fieldSize)+"/"+tempPos.getxPosition());
 			removMe();//auserhalb das Spielfelds
@@ -65,7 +65,7 @@ public class Projectile implements TimerAction, Visible{
 		if(F.getStudenten().isEmpty())
 			return null;
 		for(Student s : F.getStudenten()) {
-			System.out.println("es könnte klappen");
+//			System.out.println("es könnte klappen");
 			if(Position.Colied(Pos, s.getPos())) {
 				return s;
 			}
@@ -76,14 +76,14 @@ public class Projectile implements TimerAction, Visible{
 	boolean CheckAndHit(){
 		Student S =Checkhits();
 		if(S != null) {
-			System.out.println("wurde getroffen");
+//			System.out.println("wurde getroffen");
 			S.gethit(damage, attackType, intensity, EfecktLength);
 			return true;
 		}
 		return false;
 	}
 	void removMe() {
-		System.out.println("remov");
+//		System.out.println("remov");
 		F.subProjectile(this);
 		PlayingField.gameTimer.remove(this);
 		mapObject.remove();

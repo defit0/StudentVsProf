@@ -12,7 +12,7 @@ public class DozentenAuswahlKomplett {
 	int yPos;
 	int gap = 75;
 	URL[] buildPath = new URL[5];
-	public static Class<?>[] dozAusw = new Class<?>[5];
+	public static int[] dozAusw = new int[5];
 	
 	public void setLayout() {
 		for(int i = 0; i < DozWahl.length; i++) {
@@ -28,8 +28,8 @@ public class DozentenAuswahlKomplett {
 		buildPath[4] = getClass().getResource("Dozent_StandartUmfrage.png");
 		
 
-		dozAusw[0] = Forscher.class;
-		dozAusw[2] = TestDozent.class;
+		dozAusw[0] = 0;
+		dozAusw[2] = 2;
 		
 		/*
 		dozAusw[1] = new StandardTestat(null).getClass();
