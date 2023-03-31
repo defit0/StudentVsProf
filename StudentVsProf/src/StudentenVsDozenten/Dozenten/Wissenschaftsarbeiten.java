@@ -18,7 +18,7 @@ public class Wissenschaftsarbeiten implements Visible {
 	public MapObject mapObject;
 
 	public Wissenschaftsarbeiten(int wissenswert, Position pos) {
-		this.myPosition = pos;
+		this.myPosition = new Position(pos.getxPosition(),pos.getyPosition(),100,100);
 		this.wissenswert = wissenswert;
 		zufallsPos();
 		PlayingField.Paper.add(this);

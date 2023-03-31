@@ -20,20 +20,19 @@ public class Position {
 		length = myPosition.length;
 		height = myPosition.height;
 	}
+	
+	public static boolean Colied(Position pos1, Position pos2) {
+	    if (pos1.getxPosition() + pos1.getLength() < pos2.getxPosition() ||
+	        pos2.getxPosition() + pos2.getLength() < pos1.getxPosition()) {
+	        return false;
+	    }
+	    
+	    if (pos1.getyPosition() + pos1.getHeight() < pos2.getyPosition() ||
+	        pos2.getyPosition() + pos2.getHeight() < pos1.getyPosition()) {
+	        return false;
+	    }
 
-	static  public boolean ColiedVerifier(Position p1,Position p2) {
-		float p1x = p1.getxPosition();
-		float p1xende =p1.getxPosition()+p1.getLength();
-		float p2x = p1.getxPosition();
-		float p2xende =p1.getxPosition()+p1.getLength();
-		
-		if(p1.getyPosition()!= p2.getyPosition())
-			return false;
-		if(p1x <= p2x && p1xende >= p2x)
-			return true;
-		if(p1x <= p2xende && p1xende >= p2xende)
-			return true;
-		return false;
+	    return true;
 	}
 	public Position subX(float x) {
 		return new Position(xPosition-x,yPosition,length, height);

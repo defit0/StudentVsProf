@@ -9,6 +9,7 @@ public abstract class perceptualBehaviour implements TimerAction {
 	
 	perceptualBehaviour(Dozent doz){
 		myDozent = doz;
+		//PlayingField.wissenstimer.add(this);
 		PlayingField.allePerceptualBehaviour.add(this);
 	}
 	

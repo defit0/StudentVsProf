@@ -8,7 +8,7 @@ public class Map {
 
 		public Map() {
 			for( int size = 0; size < wide;size++) {
-				Series[size] = new Series(size*100,this);
+				Series[size] = new Series(size*PlayingField.fieldSize,this);
 			}
 		}
 
@@ -17,14 +17,14 @@ public class Map {
 		}
 
 		public Field getFieldIn(int x , int y) {
-			return Series[Math.round(y/100)].Fields[Math.round(x/100)];
+			return Series[(int)(y/PlayingField.fieldSize)].Fields[(int)(x/PlayingField.fieldSize)];
 		}
 		
 		public Series getSeriesBy(int y) {
 			return Series[y];
 		}
 		public Series getSeriesBy(Position P) {
-			return Series[(int)P.getyPosition()];
+			return Series[Math.round(P.getyPosition()/PlayingField.fieldSize)];
 		}
 
 		@Override
@@ -37,11 +37,11 @@ public class Map {
 			return S ;
 		}
 		public boolean isPositionInMap(int x, int y) {
-			return (x < (PlayingField.Edgex)*100 && x >= 0 )&& (y < (PlayingField.Edgey)*100 && y >= 0 );
+			return (x < (PlayingField.Edgex)*PlayingField.fieldSize && x >= 0 )&& (y < (PlayingField.Edgey)*PlayingField.fieldSize && y >= 0 );
 		}
-		public boolean isPositionInMap(Position P) {
+		public static boolean isPositionInMap(Position P) {
 			float x = P.getxPosition();
 			float y = P.getyPosition();
-			return (x < (PlayingField.Edgex)*100 && x >= 0 )&& (y < (PlayingField.Edgey)*100 && y >= 0 );
+			return (x < (PlayingField.Edgex)*PlayingField.fieldSize && x >= 0 )&& (y < (PlayingField.Edgey)*PlayingField.fieldSize && y >= 0 );
 		}
 	}

@@ -13,6 +13,8 @@ public class InLineInfinite extends perceptualBehaviour{
 
 	@Override
 	boolean ShallIshoot() {
+		
+		System.out.println("jaaaaa");
 		Series S = PlayingField.GameMap.getSeriesBy(myDozent.getPos());
 		return S.hasStudents();
 	}

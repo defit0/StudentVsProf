@@ -22,7 +22,7 @@ ArrayList<Student> Studenten = new ArrayList<Student>();
 	}
 	
 	public Field isIn(Position P) {
-		return Fields[Math.round(P.getxPosition())];
+		return Fields[Math.round(P.getxPosition()/PlayingField.fieldSize)];
 	}
 
 	@Override

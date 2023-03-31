@@ -27,7 +27,8 @@ public class Start {
 		PlayingField pf = new PlayingField();
 		Printer p = new Printer();
 		//Dozent Euler = new Dozent(PlayingField.GameMap.getFieldIn(0, 3));
-		Student Tom = new Student(PlayingField.GameMap.getFieldIn(700, 300));
+		Student Tom = new Student(PlayingField.GameMap.getFieldIn(600, 300));
+		Tom.setPos(Tom.getPos().addX(PlayingField.fieldSize-90));
 		Tom.updateMapObject();
 		//Forscher Wissenssammler1 = new Forscher(PlayingField.GameMap.getFieldIn(0, 400));
 		//Forscher Wissenssammler2 = new Forscher(PlayingField.GameMap.getFieldIn(0, 0));
@@ -37,7 +38,7 @@ public class Start {
 		PlayingField.gameTimer.start();
 		PlayingField.allePerceptualBehaviour.start();
 		PlayingField.wissenstimer.start();
-		//MapObject Debug = new MapObject("C:\\Users\\marku\\OneDrive\\Desktop\\MIB14 Softwareentwicklungsprojekt\\blanck.png", new Position(100, 100, PlayingField.Edgex*10, PlayingField.Edgey*10), SetupGame.spielfeld);
+		PlayingField.alleEfeckte.start();
 		Team TestTeam = new Team();
 	}
 }

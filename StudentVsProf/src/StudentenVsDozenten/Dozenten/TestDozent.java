@@ -17,13 +17,14 @@ public class TestDozent extends Dozent implements Visible {
 	public MapObject mapObject;
 	
 	public TestDozent(Field F) {
-		this.attackspeed = 5;
+		this.attackspeed = 1;
 		this.thempAttackspeed = attackspeed;
 		this.hitpoints = 6;
 		this.myField = F;
 		this.Pos = F.getPos();
 		this.percBehav = new InLineInfinite(this);
 		this.attackType = new talk();
+		BulletSpeet = 0.5f;
 		F.addDozent(this);
 		this.createMapObject();
 	}

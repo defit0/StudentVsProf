@@ -6,6 +6,7 @@ import java.util.TimerTask;
 public class GameTimer {
 	int time = 1000;//1 Sekunde
 	Timer timer = new Timer();
+	public boolean isRunnig = false;
 	ArrayList<TimerAction> ActionList = new ArrayList<TimerAction>();
 	
 	public void setTimerTime(int time) {
@@ -21,9 +22,11 @@ public class GameTimer {
 	}
 	
 	public void start() {
+		isRunnig = true;
 		creatTimer();
 	}
 	public void stopp() {
+		isRunnig = false;
 		timer.cancel();
 	}
 	
@@ -32,11 +35,12 @@ public class GameTimer {
 
 			@Override
 			public void run() {
+				isRunnig = false;
 				ArrayList<TimerAction> tuDo = new ArrayList<TimerAction>(ActionList);
 				for(TimerAction at: tuDo) {
 					at.TimerActionPerform();
 				}
-				
+				isRunnig = true;
 			}
 			
 		};

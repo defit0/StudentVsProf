@@ -6,14 +6,20 @@ import StudentenVsDozenten.Timer.TimerAction;
 
 //ich bin nur um Consolenausgaben zu machen!
 public class Printer implements TimerAction{
-
+int time = 0;
 	@Override
 	public void TimerActionPerform() {
 		for(int i = 0; i < 10; i++) {
 			System.out.println();
 		}
+	
+		System.out.println("Frame: "+ time +" ---------------------------------------");
+		System.out.println("Timer: " +PlayingField.allePerceptualBehaviour.isRunnig);		
 	    System.out.println(PlayingField.GameMap);
 	    System.out.println("Du hast " + PlayingField.wissenspunkte + " Wissenspunkte.");
+	    System.out.println("Frame: "+ time +" ---------------------------------------");
+	    time++;
+	    
 	    
 	 //   for(Wissenschaftsarbeiten w : PlayingField.Paper) {
 	 //   	System.out.println(w);
