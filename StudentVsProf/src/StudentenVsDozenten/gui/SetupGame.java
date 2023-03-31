@@ -2,13 +2,17 @@ package StudentenVsDozenten.gui;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.net.URL;
 
+import StudentenVsDozenten.Auswahl.Team;
+import StudentenVsDozenten.Dozenten.Dozent;
+import StudentenVsDozenten.Dozenten.TestDozent;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.PlayingField;
 
 import javax.swing.*;
 
-public class SetupGame {
+public class SetupGame{
 	int gap = 10;
 
 	public static JLabel wissensCounter = new JLabel("Wissenspunkte: 0", SwingConstants.CENTER);
@@ -18,7 +22,7 @@ public class SetupGame {
     public static ContainerPanel teamleiste = new ContainerPanel();
     
     ContainerPanel myContainerPanel;
-   GameFrame  mygameFrame;
+    GameFrame  mygameFrame;
    /* 
     ContainerPanel teamContainerPanel;
     GameFrame  teamgameFrame;
@@ -54,4 +58,5 @@ public class SetupGame {
         gameFrame.revalidate();
         gameFrame.repaint();
     }
+
 }

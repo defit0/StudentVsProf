@@ -15,8 +15,9 @@ import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
 
 public class Team extends Dozent implements Visible{
-	static int teamGroesse = 4;
-	static Dozent[] team = new Dozent[teamGroesse];
+	//public static int teamGroesse = 4;
+	//public static Dozent[] team = new Dozent[teamGroesse];
+	public static ArrayList <Dozent> team = new ArrayList<Dozent>();
 	
 	public URL imagePath = getClass().getResource("Dozent_Forscher.png");
 	public MapObject mapObject;
@@ -24,11 +25,12 @@ public class Team extends Dozent implements Visible{
 	
 	
 	public Team() {
+		/*
 		team[0] = new Forscher(PlayingField.GameMap.getFieldIn(0, 400));
 		team[1] = new Forscher(PlayingField.GameMap.getFieldIn(0, 0));
 		team[2] = new Forscher(PlayingField.GameMap.getFieldIn(300, 100));
 		team[3] = new TestDozent(PlayingField.GameMap.getFieldIn(200, 300));
-
+		 */
 	}
 	
 
