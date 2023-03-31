@@ -20,8 +20,8 @@ public class Map {
 			return Series[(int)(y/PlayingField.fieldSize)].Fields[(int)(x/PlayingField.fieldSize)];
 		}
 		
-		public Series getSeriesBy(int y) {
-			return Series[y];
+		public Series getSeriesBy(float y) {
+			return Series[(int)y/100];
 		}
 		public Series getSeriesBy(Position P) {
 			return Series[Math.round(P.getyPosition()/PlayingField.fieldSize)];

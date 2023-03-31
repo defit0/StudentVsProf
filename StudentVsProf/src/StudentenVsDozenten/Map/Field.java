@@ -5,7 +5,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
 
-import StudentenVsDozenten.Auswahl.Team;
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Forscher;
 import StudentenVsDozenten.Dozenten.Projectile;
