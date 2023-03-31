@@ -18,25 +18,25 @@ import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 
 public class Start {
-	static SetupGame setupGame;
-	static PlayingField pf;
-	static Printer p;
-	
-	public static void main(String[] args) {
-		restart();
-	}
-	
-	public static void restart() {
-		setupGame = null;
-		pf = null;
-		p =null;
-		System.gc();
-		setupGame = new SetupGame();
-		pf = new PlayingField();
-		p = new Printer();
-		PlayingField.gameTimer.add(p);
-		
-		StudentenSetzen TestStudenten = new StudentenSetzen();
-		PlayingField.setWissenspunkte(10);
-	}
+    static SetupGame setupGame;
+    static PlayingField pf;
+    static Printer p;
+
+    public static void main(String[] args) {
+        restart();
+    }
+
+    public static void restart() {
+        setupGame = null;
+        pf = null;
+        p = null;
+        System.gc();
+        setupGame = new SetupGame();
+        pf = new PlayingField();
+        p = new Printer();
+        PlayingField.gameTimer.add(p);
+
+        StudentenSetzen TestStudenten = new StudentenSetzen();
+        PlayingField.setWissenspunkte(10);
+    }
 }

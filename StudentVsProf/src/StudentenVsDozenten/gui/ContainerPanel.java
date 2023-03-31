@@ -10,12 +10,10 @@ public class ContainerPanel extends JPanel {
     ArrayList<MapObject> mapObjects;
 
     public ContainerPanel() {
-    	mapObjects = new ArrayList();
+        mapObjects = new ArrayList();
         this.setBackground(Color.BLUE);
         this.setVisible(true);
         this.setLayout(null);
-//        JLabel objectLabel = new JLabel("toll");
-//        this.add(objectLabel);
     }
 
     public void add(MapObject mapObject) {
@@ -23,6 +21,7 @@ public class ContainerPanel extends JPanel {
         revalidate();
         repaint();
     }
+
     public void remove(MapObject mapObject) {
         mapObjects.remove(mapObject);
     }

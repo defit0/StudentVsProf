@@ -23,19 +23,17 @@ public class MapObject {
     boolean backgraund = false;
     Visible myObject;
 
-    public MapObject(URL imageIcon, Position p,ContainerPanel panel, Visible visible) {
+    public MapObject(URL imageIcon, Position p, ContainerPanel panel, Visible visible) {
         myObject = visible;
-    	this.panel = panel;
-    	this.panel.add(this);
-    	//objectLabel.setOpaque(true);
-    	this.objectPosition = p;
-    	objectLabel.setBounds(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()),Math.round(objectPosition.getLength()), Math.round(objectPosition.getHeight()));
-    	ImageIcon preLodetIcon = new ImageIcon(imageIcon);
+        this.panel = panel;
+        this.panel.add(this);
+        this.objectPosition = p;
+        objectLabel.setBounds(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()), Math.round(objectPosition.getLength()), Math.round(objectPosition.getHeight()));
+        ImageIcon preLodetIcon = new ImageIcon(imageIcon);
         Image img = preLodetIcon.getImage();
         Image scaledImg = img.getScaledInstance(objectLabel.getWidth(), objectLabel.getHeight(), Image.SCALE_SMOOTH);
         objectIcon = new ImageIcon(scaledImg);
         objectLabel.setIcon(objectIcon);
-       //objectLabel.setText("testText");
         objectLabel.setVisible(true);
         this.panel.add(objectLabel);
         panel.setComponentZOrder(objectLabel, 0);
@@ -48,23 +46,22 @@ public class MapObject {
         });
         this.panel.revalidate();
         this.panel.repaint();
-     
+
     }
-    
-    public MapObject(URL imageIcon, Position p,ContainerPanel panel,boolean background, Visible visible) {
+
+    public MapObject(URL imageIcon, Position p, ContainerPanel panel, boolean background, Visible visible) {
         myObject = visible;
         this.panel = panel;
-    	this.panel.add(this);
-    	// objectLabel.setOpaque(true);
-    	this.objectPosition = p;
-    	objectLabel.setBounds(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()),Math.round(objectPosition.getLength()), Math.round(objectPosition.getHeight()));
-    	ImageIcon preLodetIcon = new ImageIcon(imageIcon);
+        this.panel.add(this);
+        this.objectPosition = p;
+        objectLabel.setBounds(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()), Math.round(objectPosition.getLength()), Math.round(objectPosition.getHeight()));
+        ImageIcon preLodetIcon = new ImageIcon(imageIcon);
         Image img = preLodetIcon.getImage();
         Image scaledImg = img.getScaledInstance(objectLabel.getWidth(), objectLabel.getHeight(), Image.SCALE_SMOOTH);
         objectIcon = new ImageIcon(scaledImg);
         objectLabel.setIcon(objectIcon);
         objectLabel.setVisible(true);
-        if(background) {
+        if (background) {
         }
         this.panel.add(objectLabel);
         objectLabel.addMouseListener(new MouseAdapter() {
@@ -78,21 +75,18 @@ public class MapObject {
         this.panel.repaint();
     }
 
-    
-    
-    public MapObject(String imageIcon, Position p,ContainerPanel panel, Visible visible) {
+
+    public MapObject(String imageIcon, Position p, ContainerPanel panel, Visible visible) {
         myObject = visible;
         this.panel = panel;
-    	this.panel.add(this);
-    	// objectLabel.setOpaque(true);
-    	this.objectPosition = p;
-    	objectLabel.setBounds(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()),Math.round(objectPosition.getLength()), Math.round(objectPosition.getHeight()));
-    	ImageIcon preLodetIcon = new ImageIcon(imageIcon);
+        this.panel.add(this);
+        this.objectPosition = p;
+        objectLabel.setBounds(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()), Math.round(objectPosition.getLength()), Math.round(objectPosition.getHeight()));
+        ImageIcon preLodetIcon = new ImageIcon(imageIcon);
         Image img = preLodetIcon.getImage();
         Image scaledImg = img.getScaledInstance(objectLabel.getWidth(), objectLabel.getHeight(), Image.SCALE_SMOOTH);
         objectIcon = new ImageIcon(scaledImg);
         objectLabel.setIcon(objectIcon);
-       //objectLabel.setText("testText");
         objectLabel.setVisible(true);
         this.panel.add(objectLabel);
         panel.setComponentZOrder(objectLabel, 0);
@@ -106,12 +100,12 @@ public class MapObject {
         this.panel.revalidate();
         this.panel.repaint();
     }
-    
-    
 
-	public ContainerPanel getPanel() {
+
+    public ContainerPanel getPanel() {
         return panel;
     }
+
     public void setPanel(ContainerPanel panel) {
         this.panel = panel;
     }
@@ -121,7 +115,7 @@ public class MapObject {
     }
 
     public void remove() {
-    	panel.remove(objectLabel);
+        panel.remove(objectLabel);
         panel.remove(this);
     }
 
@@ -129,30 +123,28 @@ public class MapObject {
         return objectPosition;
     }
 
-	public JLabel getLabel() {
-		return objectLabel;
-	}
+    public JLabel getLabel() {
+        return objectLabel;
+    }
 
-	public Position getObjectPosition() {
-		return objectPosition;
-	}
+    public Position getObjectPosition() {
+        return objectPosition;
+    }
 
-	public void setObjectPosition(Position objectPosition) {
-		this.objectPosition = objectPosition;
-		objectLabel.setLocation(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()));
-		panel.repaint();
-	
-	}
-	public void setObjectNewImag(URL url) {
-		ImageIcon preLodetIcon = new ImageIcon(url);
+    public void setObjectPosition(Position objectPosition) {
+        this.objectPosition = objectPosition;
+        objectLabel.setLocation(Math.round(objectPosition.getxPosition()), Math.round(objectPosition.getyPosition()));
+        panel.repaint();
+
+    }
+
+    public void setObjectNewImag(URL url) {
+        ImageIcon preLodetIcon = new ImageIcon(url);
         Image img = preLodetIcon.getImage();
         Image scaledImg = img.getScaledInstance(objectLabel.getWidth(), objectLabel.getHeight(), Image.SCALE_SMOOTH);
         objectIcon = new ImageIcon(scaledImg);
-        
-		objectLabel.setIcon(objectIcon);
-		panel.repaint();
-		
-	
-	}
-	
+
+        objectLabel.setIcon(objectIcon);
+        panel.repaint();
+    }
 }

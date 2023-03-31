@@ -13,51 +13,51 @@ import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
 
 public class DozentenAuswahl extends ContainerPanel implements Visible {
-	URL Doz;
-	public JLabel JKosten;
-	boolean avaliabe;
-	int kosten;
-	public static int size = 100;
-	int ausDoz;
-	
-	public DozentenAuswahl(URL s, int d, int k){
-		JKosten = new JLabel();
-		Doz = s;
-		this.setSize(100, 100);
-		JKosten.setBounds(85, 5, 20, 20);
-		JKosten.setText(String.valueOf(k));
-		JKosten.setFont(JKosten.getFont().deriveFont(20.0F));
-		this.setBackground(Color.LIGHT_GRAY);
-		add(JKosten);
-		ausDoz = d;
-		kosten = k;
-		createMapObject();
-	}
+    URL Doz;
+    public JLabel JKosten;
+    boolean avaliabe;
+    int kosten;
+    public static int size = 100;
+    int ausDoz;
 
-	public int getAusDoz() {
-		return ausDoz;
-	}
- 
-	public void setAusDoz(int ausDoz) {
-		this.ausDoz = ausDoz;
-	}
-	
-	@Override
-	public void createMapObject() {
-		MapObject mapObj = new MapObject(Doz, new Position(0, 0, size, size), this, this);
-	}
+    public DozentenAuswahl(URL s, int d, int k) {
+        JKosten = new JLabel();
+        Doz = s;
+        this.setSize(100, 100);
+        JKosten.setBounds(85, 5, 20, 20);
+        JKosten.setText(String.valueOf(k));
+        JKosten.setFont(JKosten.getFont().deriveFont(20.0F));
+        this.setBackground(Color.LIGHT_GRAY);
+        add(JKosten);
+        ausDoz = d;
+        kosten = k;
+        createMapObject();
+    }
 
-	@Override
-	public void updateMapObject() {
-	}
+    public int getAusDoz() {
+        return ausDoz;
+    }
 
-	@Override
-	public void getClicked() {
-		if(PlayingField.wissenspunkte >= kosten) {
-			Field.setzeDoz = true;
-			JKosten.setForeground(Color.RED);
-		}
-		Field.dozArt = ausDoz;	
-		SetupGame.spielfeld.repaint();
-	}
+    public void setAusDoz(int ausDoz) {
+        this.ausDoz = ausDoz;
+    }
+
+    @Override
+    public void createMapObject() {
+        MapObject mapObj = new MapObject(Doz, new Position(0, 0, size, size), this, this);
+    }
+
+    @Override
+    public void updateMapObject() {
+    }
+
+    @Override
+    public void getClicked() {
+        if (PlayingField.wissenspunkte >= kosten) {
+            Field.setzeDoz = true;
+            JKosten.setForeground(Color.RED);
+        }
+        Field.dozArt = ausDoz;
+        SetupGame.spielfeld.repaint();
+    }
 }
