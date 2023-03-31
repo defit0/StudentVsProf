@@ -5,6 +5,7 @@ import java.net.URL;
 import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Map.Map;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Student.Student;
 import StudentenVsDozenten.Timer.TimerAction;
@@ -21,20 +22,20 @@ public class Projectile implements TimerAction, Visible{
 	Field F;
 	int damage;
 	int EfecktLength;
-	int intensity;
+	float intensity;
 	float speet;
 	float length = 50f;
 	float height = 50f;
 	boolean generiert = false;
 	float gap = 10f;
 	
-	public Projectile(Dozent d) {
+	public Projectile(Dozent d,Position Pos) {
 		PlayingField.gameTimer.add(this);
 		Doz = d;
 		attackType = d.getAttackType();
-		Pos = new Position(d.Pos.getxPosition()+gap*3,d.Pos.getyPosition()+gap,length, height);
+		this.Pos = new Position(Pos.getxPosition()+gap*3,Pos.getyPosition()+gap,length, height);
 		createMapObject();
-		F = d.getMyField();
+		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(),(int)Pos.getyPosition());
 		damage = d.getDamage();
 		EfecktLength = d.getLength();
 		intensity = d.getIntensity();
@@ -65,7 +66,7 @@ public class Projectile implements TimerAction, Visible{
 		if(F.getStudenten().isEmpty())
 			return null;
 		for(Student s : F.getStudenten()) {
-//			System.out.println("es könnte klappen");
+//			System.out.println("es kï¿½nnte klappen");
 			if(Position.Colied(Pos, s.getPos())) {
 				return s;
 			}
@@ -77,7 +78,7 @@ public class Projectile implements TimerAction, Visible{
 		Student S =Checkhits();
 		if(S != null) {
 //			System.out.println("wurde getroffen");
-			S.gethit(damage, attackType, intensity, EfecktLength);
+			S.gethit(damage, attackType, EfecktLength, intensity);
 			return true;
 		}
 		return false;

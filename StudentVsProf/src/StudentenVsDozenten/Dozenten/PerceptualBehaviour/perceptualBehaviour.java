@@ -20,5 +20,9 @@ public abstract class perceptualBehaviour implements TimerAction {
 	}
 	abstract boolean ShallIshoot();
 	
-
+	public void stop() {
+		PlayingField.allePerceptualBehaviour.remove(this);
+		PlayingField.wissenstimer.remove(this);
+		myDozent = null;
+	}
 }

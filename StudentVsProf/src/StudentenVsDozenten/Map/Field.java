@@ -9,8 +9,11 @@ import StudentenVsDozenten.Auswahl.Team;
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Forscher;
 import StudentenVsDozenten.Dozenten.Projectile;
+import StudentenVsDozenten.Dozenten.StandardTestat;
 import StudentenVsDozenten.Dozenten.Wissenschaftsarbeiten;
-import StudentenVsDozenten.Dozenten.TestDozent;
+import StudentenVsDozenten.Dozenten.StandardVorlesung;
+import StudentenVsDozenten.Dozenten.StandartTutorium;
+import StudentenVsDozenten.Dozenten.StandartUmfrage;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Student.Student;
 import StudentenVsDozenten.gui.DozentenAuswahlKomplett;
@@ -135,30 +138,27 @@ public void getClicked() {
 		switch (dozArt) {
 	    case 0:
 	    	neurDoz = new Forscher(this);
+	    	PlayingField.setWissenspunkte(-3);
+	    	break;
+	    case 1:
+	    	neurDoz = new StandardTestat(this);
+	    	PlayingField.setWissenspunkte(-1);
 	    	break;
 	    case 2:
-	    	neurDoz = new TestDozent(this);
+	    	neurDoz = new StandardVorlesung(this);
+	    	PlayingField.setWissenspunkte(-2);
+	    	break;
+	    case 3:
+	    	neurDoz = new StandartTutorium(this);
+	    	PlayingField.setWissenspunkte(-3);
+	    	break;
+	    case 4:
+	    	neurDoz = new StandartUmfrage(this);
+	    	PlayingField.setWissenspunkte(-5);
+
 		this.setDoz(neurDoz);
 		
-		}
-		
-		/*
-		if(dozArt == DozentenAuswahlKomplett.dozAusw[0] ) {
-			Team.team.add(new Forscher(PlayingField.GameMap.getFieldIn((int) myMapObject.getObjectPosition().getxPosition(), (int) myMapObject.getObjectPosition().getyPosition())));
-		}else if (dozArt == DozentenAuswahlKomplett.dozAusw[2]){ 
-			Team.team.add(new TestDozent(PlayingField.GameMap.getFieldIn((int) myMapObject.getObjectPosition().getxPosition(), (int) myMapObject.getObjectPosition().getyPosition())));
-		}
-			
-		else if (dozArt == DozentenAuswahlKomplett.dozAusw[1]){ 
-			Team.team.add(new StandardTestat(PlayingField.GameMap.getFieldIn((int) myMapObject.getObjectPosition().getxPosition(), (int) myMapObject.getObjectPosition().getyPosition())));
-		}else if (dozArt == DozentenAuswahlKomplett.dozAusw[2]){ 
-			Team.team.add(new StandardVorlesung(PlayingField.GameMap.getFieldIn((int) myMapObject.getObjectPosition().getxPosition(), (int) myMapObject.getObjectPosition().getyPosition())));
-		}else if (dozArt == DozentenAuswahlKomplett.dozAusw[3]){ 
-			Team.team.add(new StandartTutorium(PlayingField.GameMap.getFieldIn((int) myMapObject.getObjectPosition().getxPosition(), (int) myMapObject.getObjectPosition().getyPosition())));
-		}else if (dozArt == DozentenAuswahlKomplett.dozAusw[4]){ 
-			Team.team.add(new StandartUmfrage(PlayingField.GameMap.getFieldIn((int) myMapObject.getObjectPosition().getxPosition(), (int) myMapObject.getObjectPosition().getyPosition())));
-		}*/
-		
+		}		
 		setzeDoz = false;
 	}
 	SetupGame.spielfeld.repaint();

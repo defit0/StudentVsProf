@@ -4,9 +4,9 @@ import StudentenVsDozenten.Student.Student;
 
 public class SlowDown implements Effect {
 	int duration;
-	int speedMalus;
+	float speedMalus;
 	int Damage;
-	public SlowDown(int Damage,int duration,int malus){
+	public SlowDown(int Damage,int duration,float malus){
 		this.Damage = Damage;
 		this.duration = duration;
 		this.speedMalus = malus;
@@ -29,7 +29,7 @@ public class SlowDown implements Effect {
 		boolean found = false;
 		SlowDown otherEffect = null; 
 		
-		//überprüft ob es bereits einen solo down efeckt gibt... 
+		//ï¿½berprï¿½ft ob es bereits einen solo down efeckt gibt... 
 		for(Effect E: S.AllEffects) {
 			if(E.getClass() == this.getClass()&& !this.equals(E)) {
 				found = true;

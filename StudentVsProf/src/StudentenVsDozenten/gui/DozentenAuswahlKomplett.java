@@ -4,7 +4,7 @@ import java.net.URL;
 
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Forscher;
-import StudentenVsDozenten.Dozenten.TestDozent;
+import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Map.PlayingField;
 
 public class DozentenAuswahlKomplett {
@@ -13,6 +13,9 @@ public class DozentenAuswahlKomplett {
 	int gap = 75;
 	URL[] buildPath = new URL[5];
 	public static int[] dozAusw = new int[5];
+	int [] kosten = {
+			3, 1, 2, 3, 5
+	};
 	
 	public void setLayout() {
 		for(int i = 0; i < DozWahl.length; i++) {
@@ -29,17 +32,14 @@ public class DozentenAuswahlKomplett {
 		
 
 		dozAusw[0] = 0;
+		dozAusw[1] = 1;
 		dozAusw[2] = 2;
-		
-		/*
-		dozAusw[1] = new StandardTestat(null).getClass();
-		dozAusw[2] = new StandardVorlesung(null).getClass();
-		dozAusw[3] = new StandartTutorium(null).getClass();
-		dozAusw[4] = new StandartUmfrageForscher(null).getClass();
-*/
+		dozAusw[3] = 3;
+		dozAusw[4] = 4;
+
 		
 		for(int i = 0; i < DozWahl.length; i++) {
-			DozWahl[i] = new DozentenAuswahl(buildPath[i], dozAusw[i]);
+			DozWahl[i] = new DozentenAuswahl(buildPath[i], dozAusw[i], kosten[i]);
 			cp.add(DozWahl[i]);
 		}
 	}

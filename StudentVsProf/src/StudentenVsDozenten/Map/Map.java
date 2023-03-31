@@ -16,7 +16,7 @@ public class Map {
 			return Series;
 		}
 
-		public Field getFieldIn(int x , int y) {
+		public  Field getFieldIn(int x , int y) {
 			return Series[(int)(y/PlayingField.fieldSize)].Fields[(int)(x/PlayingField.fieldSize)];
 		}
 		

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import StudentenVsDozenten.Start;
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Forscher;
-import StudentenVsDozenten.Dozenten.TestDozent;
+import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
@@ -15,8 +15,6 @@ import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
 
 public class Team extends Dozent implements Visible{
-	//public static int teamGroesse = 4;
-	//public static Dozent[] team = new Dozent[teamGroesse];
 	public static ArrayList <Dozent> team = new ArrayList<Dozent>();
 	
 	public URL imagePath = getClass().getResource("Dozent_Forscher.png");
@@ -25,15 +23,7 @@ public class Team extends Dozent implements Visible{
 	
 	
 	public Team() {
-		/*
-		team[0] = new Forscher(PlayingField.GameMap.getFieldIn(0, 400));
-		team[1] = new Forscher(PlayingField.GameMap.getFieldIn(0, 0));
-		team[2] = new Forscher(PlayingField.GameMap.getFieldIn(300, 100));
-		team[3] = new TestDozent(PlayingField.GameMap.getFieldIn(200, 300));
-		 */
-		team.add(new TestDozent(PlayingField.GameMap.getFieldIn(200, 300)));
-
-
+		team.add(new StandardVorlesung(PlayingField.GameMap.getFieldIn(200, 300)));
 	}
 	
 
@@ -41,7 +31,6 @@ public class Team extends Dozent implements Visible{
 	
 	@Override
 	public void createMapObject() {
-	//	mapObject = new MapObject(imagePath, Pos, SetupGame.teamleiste);
 	}
 
 	@Override
@@ -50,6 +39,5 @@ public class Team extends Dozent implements Visible{
 
 	@Override
 	public void getClicked() {
-
 	}
 }

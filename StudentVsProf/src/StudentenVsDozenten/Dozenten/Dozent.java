@@ -8,7 +8,9 @@ import StudentenVsDozenten.Dozenten.PerceptualBehaviour.inTrippelLineInfinete;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Timer.TimerAction;
+import StudentenVsDozenten.gui.MapObject;
 
 public abstract class Dozent {
 
@@ -22,8 +24,9 @@ public abstract class Dozent {
 	//f�r die Projektiele
 	int damage;
 	int length;
-	int intensity;
+	float intensity;
 	float BulletSpeet;
+	public MapObject mapObject;
 /*	
 	public Dozent(Field F){
 		attackspeed = 5;
@@ -42,12 +45,23 @@ public abstract class Dozent {
 	*/
 	public void shoot() {
 		if(thempAttackspeed == attackspeed) {
-			Projectile Bullet = new Projectile(this);
+			Projectile Bullet = new Projectile(this,Pos);
 			thempAttackspeed = 0;
 		}else {
 			thempAttackspeed ++;
 		}
 		
+	}
+	
+	private void die() {
+		if(percBehav != null) {
+			percBehav.stop();
+		}	
+		myField.setDoz(null);
+		//percBehav = null;
+		mapObject.remove();
+		mapObject = null;
+		Pos = null;
 	}
 	
 	public void setField(Field F) {
@@ -91,10 +105,10 @@ public abstract class Dozent {
 	public void setLength(int length) {
 		this.length = length;
 	}
-	public int getIntensity() {
+	public float getIntensity() {
 		return intensity;
 	}
-	public void setIntensity(int intensity) {
+	public void setIntensity(float intensity) {
 		this.intensity = intensity;
 	}
 	public float getSpeet() {
@@ -102,6 +116,17 @@ public abstract class Dozent {
 	}
 	public void setSpeet(float speet) {
 		this.BulletSpeet = speet;
+	}
+
+	public int getHitpoints() {
+		return hitpoints;
+	}
+
+	public void setHitpoints(int hitpoints) {
+		this.hitpoints = hitpoints;
+		if(hitpoints <= 0) {
+			die();
+		}
 	}
 
 	public void TimerActionPerform() {
