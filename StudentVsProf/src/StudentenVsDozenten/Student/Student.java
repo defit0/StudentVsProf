@@ -3,8 +3,7 @@ package StudentenVsDozenten.Student;
 import java.net.URL;
 import java.util.ArrayList;
 
-
-
+import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
 import StudentenVsDozenten.Effekte.Effect;
 import StudentenVsDozenten.Hilfsklasse.Position;
@@ -31,6 +30,7 @@ public class Student implements TimerAction, Visible {
 	public MapObject mapObject;
 	public ArrayList<Effect> AllEffects= new ArrayList<Effect>();
 	int normalImag = 0;
+	int eatCooldown = 100;
 	
 	public Student(float x , int y) {
 		this.attackspeed = 1;
@@ -102,10 +102,29 @@ public class Student implements TimerAction, Visible {
 		Pos = new Position(0,0,0,0);
 	}
 	
+	public boolean checkDozent() {
+		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
+		Dozent d = F.getDoz();
+		return d != null;
+	}
+	
+	private void eat() {
+		if(eatCooldown == 0) {
+			Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
+			Dozent d = F.getDoz();
+			d.setHitpoints(d.getHitpoints() - damage);
+			eatCooldown = 100;
+		}else {
+			eatCooldown --;
+		}
+	}
+	
 	@Override
 	public void TimerActionPerform() {
 		activateEffects();
-		run();
+		if(checkDozent()) {
+			eat();
+		}else run();
 		updateMapObject();
 		System.out.println(this);
 	}

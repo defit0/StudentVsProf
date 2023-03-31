@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import StudentenVsDozenten.Auswahl.Team;
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Forscher;
-import StudentenVsDozenten.Dozenten.TestDozent;
+import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
 import StudentenVsDozenten.Map.PlayingField;
@@ -57,11 +57,7 @@ public class DozentenAuswahl extends ContainerPanel implements Visible {
 		if(PlayingField.wissenspunkte >= kosten) {
 			Field.setzeDoz = true;
 		}
-		Field.dozArt = ausDoz;
-		
-		//System.out.println("Art des Dozenten ");
-		
-		
+		Field.dozArt = ausDoz;	
 		SetupGame.spielfeld.repaint();
 	}
 }

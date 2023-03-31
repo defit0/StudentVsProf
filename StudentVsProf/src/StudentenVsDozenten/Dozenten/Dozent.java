@@ -8,7 +8,9 @@ import StudentenVsDozenten.Dozenten.PerceptualBehaviour.inTrippelLineInfinete;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Timer.TimerAction;
+import StudentenVsDozenten.gui.MapObject;
 
 public abstract class Dozent {
 
@@ -24,6 +26,7 @@ public abstract class Dozent {
 	int length;
 	int intensity;
 	float BulletSpeet;
+	public MapObject mapObject;
 /*	
 	public Dozent(Field F){
 		attackspeed = 5;
@@ -48,6 +51,17 @@ public abstract class Dozent {
 			thempAttackspeed ++;
 		}
 		
+	}
+	
+	private void die() {
+		if(percBehav != null) {
+			percBehav.stop();
+		}	
+		myField.setDoz(null);
+		//percBehav = null;
+		mapObject.remove();
+		mapObject = null;
+		Pos = null;
 	}
 	
 	public void setField(Field F) {
@@ -102,6 +116,17 @@ public abstract class Dozent {
 	}
 	public void setSpeet(float speet) {
 		this.BulletSpeet = speet;
+	}
+
+	public int getHitpoints() {
+		return hitpoints;
+	}
+
+	public void setHitpoints(int hitpoints) {
+		this.hitpoints = hitpoints;
+		if(hitpoints <= 0) {
+			die();
+		}
 	}
 
 	public void TimerActionPerform() {

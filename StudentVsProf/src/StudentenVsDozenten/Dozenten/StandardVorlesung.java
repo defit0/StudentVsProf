@@ -11,12 +11,12 @@ import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
 
-public class TestDozent extends Dozent implements Visible {
+public class StandardVorlesung extends Dozent implements Visible {
 	perceptualBehaviour percBehav;
 	public URL imagePath = getClass().getResource("Dozent_StandardVorlesung.png");
-	public MapObject mapObject;
+
 	
-	public TestDozent(Field F) {
+	public StandardVorlesung(Field F) {
 		this.attackspeed = 3;
 		this.thempAttackspeed = attackspeed;
 		this.hitpoints = 6;

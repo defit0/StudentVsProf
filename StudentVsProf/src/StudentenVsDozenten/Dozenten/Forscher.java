@@ -18,7 +18,7 @@ public class Forscher extends Dozent implements Visible {
 	perceptualBehaviour percBehav;
 	int wissenserhoehung = 1;
 	public URL imagePath = getClass().getResource("Dozent_Forscher.png");
-	public MapObject mapObject;
+	
 
 
 	public Forscher(Field F) {

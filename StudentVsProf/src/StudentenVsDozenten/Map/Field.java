@@ -10,7 +10,7 @@ import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Forscher;
 import StudentenVsDozenten.Dozenten.Projectile;
 import StudentenVsDozenten.Dozenten.Wissenschaftsarbeiten;
-import StudentenVsDozenten.Dozenten.TestDozent;
+import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Student.Student;
 import StudentenVsDozenten.gui.DozentenAuswahlKomplett;
@@ -138,7 +138,7 @@ public void getClicked() {
 	    	PlayingField.setWissenspunkte(-3);
 	    	break;
 	    case 2:
-	    	neurDoz = new TestDozent(this);
+	    	neurDoz = new StandardVorlesung(this);
 	    	PlayingField.setWissenspunkte(-3);
 		this.setDoz(neurDoz);
 		

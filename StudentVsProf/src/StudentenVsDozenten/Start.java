@@ -5,7 +5,7 @@ import java.net.URL;
 
 import StudentenVsDozenten.Auswahl.Team;
 import StudentenVsDozenten.Dozenten.Forscher;
-import StudentenVsDozenten.Dozenten.TestDozent;
+import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Map;
 import StudentenVsDozenten.Map.PlayingField;
