@@ -7,6 +7,7 @@ import StudentenVsDozenten.Timer.GameTimer;
 import StudentenVsDozenten.gui.SetupGame;
 
 public class PlayingField {
+	public static int punktzahl;
 	public static int fieldSize = 100;
 	public static int wissenspunkte = 0;
 	public static int Edgex = 8;
