@@ -46,7 +46,7 @@ public class Student implements TimerAction, Visible {
 	public Student(Field fieldIn) {
 		this.attackspeed = 1;
 		this.speed = 0.2f;
-		this.hitpoints = 6;
+		this.hitpoints = 10;
 		this.damage = 2;
 		this.dt = new standart();
 		this.Pos = new Position( fieldIn.getPos().getxPosition(), fieldIn.getPos().getyPosition(),100f, 100f);
@@ -54,7 +54,7 @@ public class Student implements TimerAction, Visible {
 		createMapObject();
 	}
 
-	public void gethit(int damage,attackType at,int length,int intensity) {
+	public void gethit(int damage,attackType at,int length,float intensity) {
 		Effect e = dt.getHit(damage, at, length, intensity);
 		imagePath = getClass().getResource("student_damaged.png");
 		if (e != null) {

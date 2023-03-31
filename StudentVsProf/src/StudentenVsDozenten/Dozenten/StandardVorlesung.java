@@ -2,6 +2,7 @@ package StudentenVsDozenten.Dozenten;
 
 import java.net.URL;
 
+import StudentenVsDozenten.Dozenten.AttackTypen.practice;
 import StudentenVsDozenten.Dozenten.AttackTypen.talk;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.InLineInfinite;
 import StudentenVsDozenten.Dozenten.PerceptualBehaviour.perceptualBehaviour;
@@ -17,15 +18,17 @@ public class StandardVorlesung extends Dozent implements Visible {
 
 	
 	public StandardVorlesung(Field F) {
-		this.attackspeed = 3;
+		this.attackspeed = 6;
 		this.thempAttackspeed = attackspeed;
-		this.hitpoints = 6;
+		this.hitpoints = 10;
 		this.myField = F;
 		this.Pos = F.getPos();
 		this.percBehav = new InLineInfinite(this);
-		this.attackType = new talk();
+		this.attackType = new practice();
 		BulletSpeet = 0.5f;
 		damage = 1;
+		length = 3000;
+		intensity = -0.1f;
 		F.addDozent(this);
 		this.createMapObject();
 	}

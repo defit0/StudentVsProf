@@ -12,7 +12,7 @@ public class StandardTestat extends Dozent implements Visible  {
 	
 
 	public StandardTestat(Field F){
-		this.hitpoints = 6;
+		this.hitpoints = 60;
 		this.myField = F;
 		this.Pos = F.getPos();
 		F.addDozent(this);

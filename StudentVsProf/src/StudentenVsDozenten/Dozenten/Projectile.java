@@ -21,7 +21,7 @@ public class Projectile implements TimerAction, Visible{
 	Field F;
 	int damage;
 	int EfecktLength;
-	int intensity;
+	float intensity;
 	float speet;
 	float length = 50f;
 	float height = 50f;
@@ -65,7 +65,7 @@ public class Projectile implements TimerAction, Visible{
 		if(F.getStudenten().isEmpty())
 			return null;
 		for(Student s : F.getStudenten()) {
-//			System.out.println("es könnte klappen");
+//			System.out.println("es kï¿½nnte klappen");
 			if(Position.Colied(Pos, s.getPos())) {
 				return s;
 			}
@@ -77,7 +77,7 @@ public class Projectile implements TimerAction, Visible{
 		Student S =Checkhits();
 		if(S != null) {
 //			System.out.println("wurde getroffen");
-			S.gethit(damage, attackType, intensity, EfecktLength);
+			S.gethit(damage, attackType, EfecktLength, intensity);
 			return true;
 		}
 		return false;

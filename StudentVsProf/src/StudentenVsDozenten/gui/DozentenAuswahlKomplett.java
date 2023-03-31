@@ -14,7 +14,7 @@ public class DozentenAuswahlKomplett {
 	URL[] buildPath = new URL[5];
 	public static int[] dozAusw = new int[5];
 	int [] kosten = {
-			3, 1, 3, 3, 3
+			3, 1, 2, 3, 5
 	};
 	
 	public void setLayout() {

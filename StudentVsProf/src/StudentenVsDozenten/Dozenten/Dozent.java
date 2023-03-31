@@ -24,7 +24,7 @@ public abstract class Dozent {
 	//f�r die Projektiele
 	int damage;
 	int length;
-	int intensity;
+	float intensity;
 	float BulletSpeet;
 	public MapObject mapObject;
 /*	
@@ -105,10 +105,10 @@ public abstract class Dozent {
 	public void setLength(int length) {
 		this.length = length;
 	}
-	public int getIntensity() {
+	public float getIntensity() {
 		return intensity;
 	}
-	public void setIntensity(int intensity) {
+	public void setIntensity(float intensity) {
 		this.intensity = intensity;
 	}
 	public float getSpeet() {
