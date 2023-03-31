@@ -9,7 +9,7 @@ public class Client {
 	Datenbank db = new Datenbank();
 	public static String player;
 	public String pw;
-	public int score;
+	public static int score;
 
 
 	public boolean start(String name, String password) {
