@@ -30,7 +30,6 @@ public class Start {
 		setupGame = null;
 		pf = null;
 		p =null;
-		System.gc();
 		setupGame = new SetupGame();
 		pf = new PlayingField();
 		p = new Printer();
@@ -38,5 +37,7 @@ public class Start {
 		
 		StudentenSetzen TestStudenten = new StudentenSetzen();
 		PlayingField.setWissenspunkte(10);
+		
+		System.gc();
 	}
 }

@@ -105,7 +105,7 @@ public class Student implements TimerAction, Visible {
 		PlayingField.gameTimer.remove(this);
 		mapObject.remove();
 		mapObject = null;
-		Pos = new Position(0,0,0,0);
+		Pos = null;
 		Client.addScore(10);
 	}
 	
