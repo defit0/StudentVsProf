@@ -3,7 +3,7 @@ package StudentenVsDozenten;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import StudentenVsDozenten.Auswahl.Team;
+
 import StudentenVsDozenten.Dozenten.Forscher;
 import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Hilfsklasse.Position;
@@ -40,7 +40,7 @@ public class Start {
 		PlayingField.wissenstimer.start();
 		PlayingField.alleEfeckte.start();
 		PlayingField.studentenSpawner.start();
-		Team TestTeam = new Team();
+	
 		StudentenSetzen TestStudenten = new StudentenSetzen();
 		PlayingField.setWissenspunkte(600);
 	}

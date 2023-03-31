@@ -5,7 +5,6 @@ import java.net.URL;
 
 import javax.swing.JLabel;
 
-import StudentenVsDozenten.Auswahl.Team;
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Forscher;
 import StudentenVsDozenten.Dozenten.StandardVorlesung;

@@ -34,7 +34,7 @@ public class Student implements TimerAction, Visible {
 	
 	public Student(float x , int y) {
 		this.attackspeed = 1;
-		this.speed = 0.2f;
+		this.speed = 1.0f;
 		this.hitpoints = 6;
 		this.damage = 2;
 		this.dt = new standart();
@@ -45,7 +45,7 @@ public class Student implements TimerAction, Visible {
 	
 	public Student(Field fieldIn) {
 		this.attackspeed = 1;
-		this.speed = 0.2f;
+		this.speed = 1.0f;
 		this.hitpoints = 10;
 		this.damage = 2;
 		this.dt = new standart();
@@ -75,9 +75,15 @@ public class Student implements TimerAction, Visible {
 	}
 	
 	private void run() {
+		
 		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
 		F.removStudent(this);
-		Pos = Pos.subX(speed);
+		Position tempPos = Pos.subX(speed);
+		if(Math.round(tempPos.getxPosition())<= 0) {
+			SetupGame.gameOver();
+			int i = 1/0;
+		}
+		Pos = tempPos;
 		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
 		F.addStudent(this);
 		
