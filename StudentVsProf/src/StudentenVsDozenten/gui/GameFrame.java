@@ -15,19 +15,19 @@ public class GameFrame extends JFrame {
 	private int height = 700;
 
 	public GameFrame() {
-
+/*
 		final JFrame parent = new JFrame();
 
 		String name = JOptionPane.showInputDialog(parent, "What is your name?", null);
 		String password = JOptionPane.showInputDialog(parent, "What is your password?", null);
 		if (c1.start(name, password) == false) {
-			int input = JOptionPane.showConfirmDialog(null, "Bitte stelle sicher, ob eine Internetverbindung zur Verfügung steht und ob die eingegebenen Daten korrekt eingegeben worden sind.\nNeu hier? \nRegistriere dich unter: http://hochschule.indieentwickler.net/ !", "Anmeldung fehlgeschlagen", JOptionPane.DEFAULT_OPTION);
+			int input = JOptionPane.showConfirmDialog(null, "Bitte stelle sicher, ob eine Internetverbindung zur Verfï¿½gung steht und ob die eingegebenen Daten korrekt eingegeben worden sind.\nNeu hier? \nRegistriere dich unter: http://hochschule.indieentwickler.net/ !", "Anmeldung fehlgeschlagen", JOptionPane.DEFAULT_OPTION);
 			
 			System.exit(input);
 		}else {
-			int input = JOptionPane.showConfirmDialog(null, "Willkomen zurück, "+Client.player +"!","Anmeldung erfolgreich", JOptionPane.DEFAULT_OPTION);
+			int input = JOptionPane.showConfirmDialog(null, "Willkomen zurï¿½ck, "+Client.player +"!","Anmeldung erfolgreich", JOptionPane.DEFAULT_OPTION);
 		}
-		
+		*/
 		
 		this.setTitle("Studenten vs. Dozenten");
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -21,6 +21,14 @@ public class PlayingField {
 	public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
 	//anschauen:
 	GameTimer allePerceptualBehaviourTEST = allePerceptualBehaviour;
+	
+	public PlayingField() {
+		gameTimer.start();
+		allePerceptualBehaviour.start();
+		wissenstimer.start();
+		alleEfeckte.start();
+		studentenSpawner.start();
+	}
 
 	public static int getWissenspunkte() {
 		return wissenspunkte;

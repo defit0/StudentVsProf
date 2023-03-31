@@ -81,7 +81,7 @@ public class Student implements TimerAction, Visible {
 		Position tempPos = Pos.subX(speed);
 		if(Math.round(tempPos.getxPosition())<= 0) {
 			SetupGame.gameOver();
-			int i = 1/0;
+			//int i = 1/0;
 		}
 		Pos = tempPos;
 		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());

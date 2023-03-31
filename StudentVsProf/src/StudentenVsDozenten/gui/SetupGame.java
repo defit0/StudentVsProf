@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.FlowLayout;
 import java.net.URL;
 
+import StudentenVsDozenten.Start;
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Hilfsklasse.Position;
@@ -60,11 +61,20 @@ public class SetupGame{
         gameFrame.repaint();
     }
     public static void gameOver() {
+    	/*
     	System.out.println("Du bist ein VERSAGER!!!");
+    	
     	gameFrame.remove(spielfeld);
     	gameFrame.remove(teamleiste);
     	gameFrame.remove(wissenspunktPanel);
     	gameFrame.add(gameOverPanel);
-    }
+    	System.exit(0);
+		Start.main(null);
+    	*/
+    	
+		JOptionPane.showConfirmDialog(null, "GAME OVER \n","Viel Glück bein Nächsten Versuch!!!", JOptionPane.DEFAULT_OPTION);
+		
+    	Start.restart();
+	}
 
 }

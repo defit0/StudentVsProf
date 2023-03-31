@@ -18,30 +18,22 @@ import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 
 public class Start {
-
-	public static void main(String[] args) {
-
-		System.gc();
-		
-		SetupGame setupGame = new SetupGame();
-
-		PlayingField pf = new PlayingField();
-		Printer p = new Printer();
-		//Student Tom = new Student(PlayingField.GameMap.getFieldIn(600, 300));
-		//Tom.setPos(Tom.getPos().addX(PlayingField.fieldSize-90));
-		//Tom.updateMapObject();
-		//Forscher Wissenssammler1 = new Forscher(PlayingField.GameMap.getFieldIn(0, 400));
-		//Forscher Wissenssammler2 = new Forscher(PlayingField.GameMap.getFieldIn(0, 0));
-		//Forscher Wissenssammler3 = new Forscher(PlayingField.GameMap.getFieldIn(300, 100));
-		//PlayingField.gameTimer.add(Tom);
-		PlayingField.gameTimer.add(p);
-		PlayingField.gameTimer.start();
-		PlayingField.allePerceptualBehaviour.start();
-		PlayingField.wissenstimer.start();
-		PlayingField.alleEfeckte.start();
-		PlayingField.studentenSpawner.start();
+	static SetupGame setupGame;
+	static PlayingField pf;
+	static Printer p;
 	
+	public static void main(String[] args) {
+		restart();
+	}
+	
+	public static void restart() {
+		System.gc();
+		setupGame = new SetupGame();
+		pf = new PlayingField();
+		p = new Printer();
+		PlayingField.gameTimer.add(p);
+		
 		StudentenSetzen TestStudenten = new StudentenSetzen();
-		PlayingField.setWissenspunkte(600);
+		PlayingField.setWissenspunkte(10);
 	}
 }
