@@ -94,7 +94,7 @@ public class Datenbank {
 
 	}
 
-	public void login(String player, String pw) {
+	public boolean login(String player, String pw) {
 
 		try {
 
@@ -109,7 +109,7 @@ public class Datenbank {
 			}
 			if (pwdb == null || playerdb == null) {
 				System.out.println("Falscher Benutzername.");
-				return;
+				return false;
 			}
 			salt = "$2a$" + pwdb.substring(4);
 
@@ -122,6 +122,7 @@ public class Datenbank {
 			if (pw.equals(pwdb)) {
 
 				System.out.println("angemeldet");
+				return true;
 
 			} else {
 				System.out.println("Falsches Passwort.");
@@ -130,6 +131,7 @@ public class Datenbank {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		return false;
 
 	}
 
