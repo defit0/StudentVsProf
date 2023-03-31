@@ -23,16 +23,16 @@ public class Projectile implements TimerAction, Visible{
 	int EfecktLength;
 	int intensity;
 	float speet;
-	float length = 30f;
-	float height = 30f;
+	float length = 50f;
+	float height = 50f;
 	boolean generiert = false;
-	float gap = 30f;
+	float gap = 10f;
 	
 	public Projectile(Dozent d) {
 		PlayingField.gameTimer.add(this);
 		Doz = d;
 		attackType = d.getAttackType();
-		Pos = new Position(d.Pos.getxPosition()+gap*2,d.Pos.getyPosition()+gap,length, height);
+		Pos = new Position(d.Pos.getxPosition()+gap*3,d.Pos.getyPosition()+gap,length, height);
 		createMapObject();
 		F = d.getMyField();
 		damage = d.getDamage();
@@ -67,7 +67,6 @@ public class Projectile implements TimerAction, Visible{
 		for(Student s : F.getStudenten()) {
 			System.out.println("es könnte klappen");
 			if(Position.Colied(Pos, s.getPos())) {
-				System.out.println("hit");
 				return s;
 			}
 		}
@@ -77,6 +76,7 @@ public class Projectile implements TimerAction, Visible{
 	boolean CheckAndHit(){
 		Student S =Checkhits();
 		if(S != null) {
+			System.out.println("wurde getroffen");
 			S.gethit(damage, attackType, intensity, EfecktLength);
 			return true;
 		}

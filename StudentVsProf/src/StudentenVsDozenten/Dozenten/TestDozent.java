@@ -25,6 +25,7 @@ public class TestDozent extends Dozent implements Visible {
 		this.percBehav = new InLineInfinite(this);
 		this.attackType = new talk();
 		BulletSpeet = 0.5f;
+		damage = 1;
 		F.addDozent(this);
 		this.createMapObject();
 	}

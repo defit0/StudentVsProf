@@ -55,6 +55,7 @@ public class Student implements TimerAction, Visible {
 
 	public void gethit(int damage,attackType at,int length,int intensity) {
 		Effect e = dt.getHit(damage, at, length, intensity);
+		imagePath = getClass().getResource("student_damaged.png");
 		if (e != null) {
 			AllEffects.add(e);
 			e.influenceFirst(this);
@@ -73,11 +74,13 @@ public class Student implements TimerAction, Visible {
 	}
 	
 	private void run() {
-		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
+		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition()+PlayingField.fieldSize, (int)Pos.getyPosition());
 		F.removStudent(this);
 		Pos = Pos.subX(speed);
 		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
 		F.addStudent(this);
+		
+		
 	}
 	
 	
@@ -90,9 +93,12 @@ public class Student implements TimerAction, Visible {
 	
 	void die(){
 		System.out.println("Ich bin jetzt tot");
-		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
+		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition()+PlayingField.fieldSize, (int)Pos.getyPosition());
 		F.removStudent(this);
 		PlayingField.gameTimer.remove(this);
+		mapObject.remove();
+		mapObject = null;
+		Pos = new Position(0,0,0,0);
 	}
 	
 	@Override
@@ -147,6 +153,9 @@ public class Student implements TimerAction, Visible {
 			mapObject.remove();
 			mapObject = new MapObject(imagePath, Pos, SetupGame.spielfeld, this);
 			previousImagePath = imagePath;
+//			if(imagePath != getClass().getResource("Standart_Student.png")) {
+//				imagePath = getClass().getResource("Standart_Student.png");
+//			}
 		}
 		if(!Pos.equals(mapObject.getPosition())) {
 			mapObject.setObjectPosition(Pos);
