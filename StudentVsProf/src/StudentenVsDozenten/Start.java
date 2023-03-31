@@ -42,6 +42,6 @@ public class Start {
 		PlayingField.studentenSpawner.start();
 		Team TestTeam = new Team();
 		StudentenSetzen TestStudenten = new StudentenSetzen();
-		PlayingField.setWissenspunkte(6);
+		PlayingField.setWissenspunkte(600);
 	}
 }

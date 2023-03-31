@@ -16,14 +16,14 @@ public class StandartUmfrage extends Dozent implements Visible {
 	public URL imagePath = getClass().getResource("Dozent_StandartUmfrage.png");
 	
 	public StandartUmfrage(Field F){
-		this.attackspeed = 3;
+		this.attackspeed = 5;
 		this.thempAttackspeed = attackspeed;
 		this.hitpoints = 6;
 		this.myField = F;
 		this.Pos = F.getPos();
 		this.percBehav = new inTrippelLineInfinete(this);
 		this.attackType = new talk();
-		BulletSpeet = 0.5f;
+		BulletSpeet = 0.6f;
 		damage = 1;
 		F.addDozent(this);
 		this.createMapObject();
@@ -32,11 +32,9 @@ public class StandartUmfrage extends Dozent implements Visible {
 	public void shoot() {
 		System.out.println("Peng");
 		if(thempAttackspeed == attackspeed) {
-			Projectile BulletMitte = new Projectile(this);
-			Projectile BulletLinks = new Projectile(this);
-			Projectile BulletRechts = new Projectile(this);
-			BulletLinks.Pos.addY(-100);
-			BulletRechts.Pos.addY(+100);
+			Projectile BulletMitte = new Projectile(this,Pos);
+			Projectile BulletLinks = new Projectile(this,Pos.addY(-100));
+			Projectile BulletRechts = new Projectile(this,Pos.addY(+100));
 			thempAttackspeed = 0;
 		}else {
 			thempAttackspeed ++;

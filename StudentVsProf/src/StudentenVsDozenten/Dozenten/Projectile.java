@@ -5,6 +5,7 @@ import java.net.URL;
 import StudentenVsDozenten.Dozenten.AttackTypen.attackType;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.Field;
+import StudentenVsDozenten.Map.Map;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Student.Student;
 import StudentenVsDozenten.Timer.TimerAction;
@@ -28,13 +29,13 @@ public class Projectile implements TimerAction, Visible{
 	boolean generiert = false;
 	float gap = 10f;
 	
-	public Projectile(Dozent d) {
+	public Projectile(Dozent d,Position Pos) {
 		PlayingField.gameTimer.add(this);
 		Doz = d;
 		attackType = d.getAttackType();
-		Pos = new Position(d.Pos.getxPosition()+gap*3,d.Pos.getyPosition()+gap,length, height);
+		this.Pos = new Position(Pos.getxPosition()+gap*3,Pos.getyPosition()+gap,length, height);
 		createMapObject();
-		F = d.getMyField();
+		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(),(int)Pos.getyPosition());
 		damage = d.getDamage();
 		EfecktLength = d.getLength();
 		intensity = d.getIntensity();

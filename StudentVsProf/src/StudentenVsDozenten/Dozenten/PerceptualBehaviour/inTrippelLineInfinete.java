@@ -24,14 +24,14 @@ public class inTrippelLineInfinete extends perceptualBehaviour{
 			Series S1 = PlayingField.GameMap.getSeriesBy(myDozent.getPos());
 		f1 = S1.hasStudents();
 		}
-		Position P1 = myDozent.getPos().addY(1);
+		Position P1 = myDozent.getPos().addY(PlayingField.fieldSize);
 		if(PlayingField.GameMap.isPositionInMap(P1)) {
-			Series S2 = PlayingField.GameMap.getSeriesBy(myDozent.getPos().addY(1));
+			Series S2 = PlayingField.GameMap.getSeriesBy(myDozent.getPos().addY(PlayingField.fieldSize));
 			f2 = S2.hasStudents();
 		}		
-		Position P2 = myDozent.getPos().addY(-1);
+		Position P2 = myDozent.getPos().addY(-PlayingField.fieldSize);
 		if(PlayingField.GameMap.isPositionInMap(P2)) {
-			Series S3 = PlayingField.GameMap.getSeriesBy(myDozent.getPos().addY(-1));
+			Series S3 = PlayingField.GameMap.getSeriesBy(myDozent.getPos().addY(-PlayingField.fieldSize));
 			f3 = S3.hasStudents();
 		}
 		

@@ -19,7 +19,7 @@ public class Exam extends attackType{
 	@Override
 	protected Effect standard( int damage,int length,float intensity) {
 		int critical = 1;
-		if(Math.random()<0.10) {
+		if(Math.random()<0.30) {
 			critical = 1000;
 		}
 		return new SingleDamage(damage*critical);

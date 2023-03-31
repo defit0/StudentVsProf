@@ -45,7 +45,7 @@ public abstract class Dozent {
 	*/
 	public void shoot() {
 		if(thempAttackspeed == attackspeed) {
-			Projectile Bullet = new Projectile(this);
+			Projectile Bullet = new Projectile(this,Pos);
 			thempAttackspeed = 0;
 		}else {
 			thempAttackspeed ++;

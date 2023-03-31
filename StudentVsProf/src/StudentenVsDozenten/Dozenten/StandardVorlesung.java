@@ -35,7 +35,7 @@ public class StandardVorlesung extends Dozent implements Visible {
 	public void shoot() {
 		System.out.println("Peng");
 		if(thempAttackspeed == attackspeed) {
-			Projectile Bullet = new Projectile(this);
+			Projectile Bullet = new Projectile(this,Pos);
 			thempAttackspeed = 0;
 		}else {
 			thempAttackspeed ++;
