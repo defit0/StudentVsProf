@@ -1,9 +1,11 @@
 package StudentenVsDozenten.Map;
 
+import java.awt.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Set;
 
 import StudentenVsDozenten.Dozenten.Dozent;
 import StudentenVsDozenten.Dozenten.Forscher;
@@ -15,12 +17,11 @@ import StudentenVsDozenten.Dozenten.StandartTutorium;
 import StudentenVsDozenten.Dozenten.StandartUmfrage;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Student.Student;
-import StudentenVsDozenten.gui.DozentenAuswahlKomplett;
-import StudentenVsDozenten.gui.MapObject;
-import StudentenVsDozenten.gui.SetupGame;
-import StudentenVsDozenten.gui.Visible;
+import StudentenVsDozenten.gui.*;
 
-public class Field implements Visible{
+import javax.swing.*;
+
+public class Field implements Visible {
 Position Pos;
 Series S;
 Dozent Doz;
@@ -157,7 +158,9 @@ public void getClicked() {
 
 		this.setDoz(neurDoz);
 		
-		}		
+		}
+		DozentenAuswahl da = (DozentenAuswahl) SetupGame.teamleiste.getComponent(dozArt);
+		da.JKosten.setForeground(Color.BLACK);
 		setzeDoz = false;
 	}
 	SetupGame.spielfeld.repaint();
