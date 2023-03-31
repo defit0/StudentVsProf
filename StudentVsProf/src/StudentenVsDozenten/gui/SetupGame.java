@@ -49,11 +49,11 @@ public class SetupGame{
         wissensCounter.setFont(wissensCounter.getFont().deriveFont(25.0F));
 
         wissenspunktPanel.setBounds(0, PlayingField.fieldSize * PlayingField.Edgey + gap, PlayingField.fieldSize * PlayingField.Edgex, 40);
-        wissenspunktPanel.setBackground(Color.CYAN);
+        wissenspunktPanel.setBackground(Color.ORANGE);
         wissenspunktPanel.add(wissensCounter);
 
         teamleiste.setBounds(0, PlayingField.fieldSize * PlayingField.Edgey + wissenspunktPanel.getHeight() + gap * 2, PlayingField.fieldSize*PlayingField.Edgex, PlayingField.fieldSize);
-    	teamleiste.setBackground(Color.GREEN);    
+    	teamleiste.setBackground(Color.ORANGE);
     	teamleiste.setLayout(null);
 
         gameFrame.addContainerPanel(spielfeld);

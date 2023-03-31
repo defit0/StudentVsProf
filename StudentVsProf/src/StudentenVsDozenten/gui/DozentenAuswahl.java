@@ -14,7 +14,7 @@ import StudentenVsDozenten.Map.PlayingField;
 
 public class DozentenAuswahl extends ContainerPanel implements Visible {
 	URL Doz;
-	JLabel JKosten;
+	public JLabel JKosten;
 	boolean avaliabe;
 	int kosten;
 	public static int size = 100;
@@ -27,7 +27,7 @@ public class DozentenAuswahl extends ContainerPanel implements Visible {
 		JKosten.setBounds(85, 5, 20, 20);
 		JKosten.setText(String.valueOf(k));
 		JKosten.setFont(JKosten.getFont().deriveFont(20.0F));
-		this.setBackground(Color.GRAY);
+		this.setBackground(Color.LIGHT_GRAY);
 		add(JKosten);
 		ausDoz = d;
 		kosten = k;
@@ -49,13 +49,13 @@ public class DozentenAuswahl extends ContainerPanel implements Visible {
 
 	@Override
 	public void updateMapObject() {
-
 	}
 
 	@Override
 	public void getClicked() {
 		if(PlayingField.wissenspunkte >= kosten) {
 			Field.setzeDoz = true;
+			JKosten.setForeground(Color.RED);
 		}
 		Field.dozArt = ausDoz;	
 		SetupGame.spielfeld.repaint();
