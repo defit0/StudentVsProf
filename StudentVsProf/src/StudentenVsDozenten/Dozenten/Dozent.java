@@ -63,7 +63,7 @@ public abstract class Dozent {
 		mapObject.remove();
 		mapObject = null;
 		Pos = null;
-		Client.addScore(-10);
+		Client.addScore(-3);
 	}
 	
 	public void setField(Field F) {

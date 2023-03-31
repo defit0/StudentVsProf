@@ -8,7 +8,7 @@ public class Map {
 
 		public Map() {
 			for( int size = 0; size < wide;size++) {
-				Series[size] = new Series(size*PlayingField.fieldSize,this);
+				Series[size] = new Series(size*PlayingField.fieldSize,this,size%2);
 			}
 		}
 

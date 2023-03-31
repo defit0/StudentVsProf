@@ -7,6 +7,7 @@ import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.gui.MapObject;
 import StudentenVsDozenten.gui.SetupGame;
 import StudentenVsDozenten.gui.Visible;
+import StudentenVsDozenten.sql.Client;
 
 import java.net.URL;
 
@@ -23,6 +24,7 @@ public class Wissenschaftsarbeiten implements Visible {
 		zufallsPos();
 		PlayingField.Paper.add(this);
 		this.createMapObject();
+		Client.addScore(1);
 	}
 
 	public void zufallsPos() {

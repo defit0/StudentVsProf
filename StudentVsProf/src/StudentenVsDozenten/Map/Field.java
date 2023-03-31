@@ -27,10 +27,11 @@ Dozent Doz;
 ArrayList<Student> Studenten = new ArrayList<Student>();
 ArrayList<Projectile> Bullets = new ArrayList<Projectile>();//themporer muss vieleicht wieder raus
 MapObject myMapObject;
-URL imagePath = getClass().getResource("fliese.jpg");
+URL imagePath = getClass().getResource("Carpet_1.png");
 // public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
 
- public Field(Position p, Series s) {
+ public Field(Position p, Series s, URL url) {
+	 imagePath = url;
 	 Pos = p;
 	 S = s;
 	 createMapObject();

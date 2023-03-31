@@ -10,6 +10,8 @@ import StudentenVsDozenten.Dozenten.StandardVorlesung;
 import StudentenVsDozenten.Hilfsklasse.Position;
 import StudentenVsDozenten.Map.PlayingField;
 import StudentenVsDozenten.Timer.GameTimer;
+import StudentenVsDozenten.sql.Client;
+
 import javax.swing.*;
 
 public class SetupGame{
@@ -88,7 +90,7 @@ public class SetupGame{
     	
     	
     	
-		JOptionPane.showConfirmDialog(null, "Viel Glueck bein Naechsten Versuch!!!","GAME OVER \n", JOptionPane.DEFAULT_OPTION);
+		JOptionPane.showConfirmDialog(null, "Du hast " +Client.score +"Punkte \nViel Glueck bein Naechsten Versuch!!!","GAME OVER \n", JOptionPane.DEFAULT_OPTION);
 
 		gameFrame.dispose();
     	Start.restart();

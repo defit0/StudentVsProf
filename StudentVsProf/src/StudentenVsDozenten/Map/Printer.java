@@ -3,6 +3,7 @@ package StudentenVsDozenten.Map;
 import StudentenVsDozenten.Dozenten.Forscher;
 import StudentenVsDozenten.Dozenten.Wissenschaftsarbeiten;
 import StudentenVsDozenten.Timer.TimerAction;
+import StudentenVsDozenten.sql.Client;
 
 //ich bin nur um Consolenausgaben zu machen!
 public class Printer implements TimerAction{
@@ -19,7 +20,10 @@ int time = 0;
 	    System.out.println("Du hast " + PlayingField.wissenspunkte + " Wissenspunkte.");
 	    System.out.println("Frame: "+ time +" ---------------------------------------");
 	    time++;
-	    
+	    if(time>2000) {
+	    	time = 0;
+	    	Client.addScore(5);
+	    }
 	    
 	 //   for(Wissenschaftsarbeiten w : PlayingField.Paper) {
 	 //   	System.out.println(w);
