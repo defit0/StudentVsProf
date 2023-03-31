@@ -99,11 +99,11 @@ public class Datenbank {
 		try {
 
 			Connection db = DriverManager.getConnection(url, user, pass);
-			System.out.println("Verbindung erfolgreich hergestellt");
+			//System.out.println("Verbindung erfolgreich hergestellt");
 			Statement stm = db.createStatement();
 			ResultSet rs = stm.executeQuery("SELECT * FROM benutzer WHERE name = '" + player + "'");
 			while (rs.next()) {
-				System.out.println(rs.getString(1) + " " + rs.getString(2));
+				//System.out.println(rs.getString(1) + " " + rs.getString(2));
 				playerdb = rs.getString(1);
 				pwdb = rs.getString(2);
 			}
@@ -140,7 +140,7 @@ public class Datenbank {
 
 		try {
 			Connection db = DriverManager.getConnection(url, user, pass);
-			System.out.println("Verbindung erfolgreich hergestellt");
+			//System.out.println("Verbindung erfolgreich hergestellt");
 
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
