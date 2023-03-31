@@ -75,7 +75,7 @@ public class Student implements TimerAction, Visible {
 	}
 	
 	private void run() {
-		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition()+PlayingField.fieldSize, (int)Pos.getyPosition());
+		Field F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());
 		F.removStudent(this);
 		Pos = Pos.subX(speed);
 		F = PlayingField.GameMap.getFieldIn((int)Pos.getxPosition(), (int)Pos.getyPosition());

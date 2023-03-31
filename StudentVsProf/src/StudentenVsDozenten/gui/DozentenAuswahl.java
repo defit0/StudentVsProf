@@ -21,12 +21,16 @@ public class DozentenAuswahl extends ContainerPanel implements Visible {
 	public static int size = 100;
 	int ausDoz;
 	
-	public DozentenAuswahl(URL s, int d){
+	public DozentenAuswahl(URL s, int d, int k){
 		Doz = s;
 		this.setSize(100, 100);
-		JKosten.setBounds(90, 90, 10, 10);
-		this.setBackground(Color.BLACK);
+		JKosten.setBounds(85, 5, 20, 20);
+		JKosten.setText(String.valueOf(k));
+		JKosten.setFont(JKosten.getFont().deriveFont(20.0F));
+		this.setBackground(Color.GRAY);
+		add(JKosten);
 		ausDoz = d;
+		kosten = k;
 		createMapObject();
 	}
 
@@ -50,7 +54,9 @@ public class DozentenAuswahl extends ContainerPanel implements Visible {
 
 	@Override
 	public void getClicked() {
-		Field.setzeDoz = true;
+		if(PlayingField.wissenspunkte >= kosten) {
+			Field.setzeDoz = true;
+		}
 		Field.dozArt = ausDoz;
 		
 		//System.out.println("Art des Dozenten ");

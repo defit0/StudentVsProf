@@ -13,6 +13,9 @@ public class DozentenAuswahlKomplett {
 	int gap = 75;
 	URL[] buildPath = new URL[5];
 	public static int[] dozAusw = new int[5];
+	int [] kosten = {
+			3, 1, 3, 3, 3
+	};
 	
 	public void setLayout() {
 		for(int i = 0; i < DozWahl.length; i++) {
@@ -39,7 +42,7 @@ public class DozentenAuswahlKomplett {
 */
 		
 		for(int i = 0; i < DozWahl.length; i++) {
-			DozWahl[i] = new DozentenAuswahl(buildPath[i], dozAusw[i]);
+			DozWahl[i] = new DozentenAuswahl(buildPath[i], dozAusw[i], kosten[i]);
 			cp.add(DozWahl[i]);
 		}
 	}

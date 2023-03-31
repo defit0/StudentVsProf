@@ -16,9 +16,10 @@ public class PlayingField {
 	public static GameTimer allePerceptualBehaviour = new GameTimer(500);
 	public static GameTimer gameTimer = new GameTimer(10);
 	public static GameTimer wissenstimer = new GameTimer(3000);
+	public static GameTimer studentenSpawner = new GameTimer(7000);
 	public static ArrayList <Wissenschaftsarbeiten> Paper = new ArrayList<Wissenschaftsarbeiten>();
 	//anschauen:
-	 GameTimer allePerceptualBehaviourTEST = allePerceptualBehaviour;
+	GameTimer allePerceptualBehaviourTEST = allePerceptualBehaviour;
 
 	public static int getWissenspunkte() {
 		return wissenspunkte;
@@ -27,7 +28,5 @@ public class PlayingField {
 		wissenspunkte += wp;
 		SetupGame.wissensCounter.setText("Wissenspunkte: " + String.valueOf(wissenspunkte));
 	}
-
-	
 	
 }

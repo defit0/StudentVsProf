@@ -135,9 +135,11 @@ public void getClicked() {
 		switch (dozArt) {
 	    case 0:
 	    	neurDoz = new Forscher(this);
+	    	PlayingField.setWissenspunkte(-3);
 	    	break;
 	    case 2:
 	    	neurDoz = new TestDozent(this);
+	    	PlayingField.setWissenspunkte(-3);
 		this.setDoz(neurDoz);
 		
 		}
