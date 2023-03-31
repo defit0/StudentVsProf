@@ -63,9 +63,9 @@ public class Projectile implements TimerAction, Visible{
 		updateMapObject();
 	}
 	Student Checkhits() {
-		if(F.getStudenten().isEmpty())
+		if(!PlayingField.GameMap.getSeriesBy(Pos.getyPosition()).hasStudents())
 			return null;
-		for(Student s : F.getStudenten()) {
+		for(Student s : PlayingField.GameMap.getSeriesBy(Pos.getyPosition()).getStudenten()) {
 //			System.out.println("es k�nnte klappen");
 			if(Position.Colied(Pos, s.getPos())) {
 				return s;

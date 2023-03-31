@@ -44,5 +44,14 @@ ArrayList<Student> Studenten = new ArrayList<Student>();
 	public void removStudent(Student s) {
 		Studenten.remove(s);
 	}
+
+	public ArrayList<Student> getStudenten() {
+		return Studenten;
+	}
+
+	public void setStudenten(ArrayList<Student> studenten) {
+		Studenten = studenten;
+	}
+	
 	
 }
