@@ -27,7 +27,7 @@ public class DozentenAuswahl extends ContainerPanel implements Visible {
 		JKosten.setBounds(85, 5, 20, 20);
 		JKosten.setText(String.valueOf(k));
 		JKosten.setFont(JKosten.getFont().deriveFont(20.0F));
-		this.setBackground(Color.GRAY);
+		this.setBackground(Color.LIGHT_GRAY);
 		add(JKosten);
 		ausDoz = d;
 		kosten = k;
